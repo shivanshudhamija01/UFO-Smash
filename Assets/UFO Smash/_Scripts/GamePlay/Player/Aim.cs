@@ -9,6 +9,7 @@ public class Aim : MonoBehaviour
     private TrajectoryPredictor trajectoryPredictor;
     private Vector3 initialMousePos;
     private Vector2 direction;
+    private float speed;
     void Awake()
     {
         trajectoryPredictor = GetComponent<TrajectoryPredictor>();
@@ -16,18 +17,19 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePos - initialMousePos).normalized;
+            speed = (mousePos - initialMousePos).magnitude;
             playerTransform.up = direction;
-            trajectoryPredictor.ShowTrajectory(direction * shootSpeed);
+            trajectoryPredictor.ShowTrajectory(direction * shootSpeed * speed);
         }
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
             Shoot(direction);
             trajectoryPredictor.HideTrajectory();
@@ -40,6 +42,6 @@ public class Aim : MonoBehaviour
     {
         GameObject stone = Instantiate(stonePrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = stone.GetComponent<Rigidbody2D>();
-        rb.linearVelocity = direction * shootSpeed;
+        rb.velocity = direction * shootSpeed * speed;
     }
 }
