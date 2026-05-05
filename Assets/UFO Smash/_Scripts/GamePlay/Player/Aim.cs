@@ -42,6 +42,6 @@ public class Aim : MonoBehaviour
     {
         GameObject stone = Instantiate(stonePrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = stone.GetComponent<Rigidbody2D>();
-        rb.velocity = direction * shootSpeed * speed;
+        rb.linearVelocity = direction * shootSpeed * speed;
     }
 }
