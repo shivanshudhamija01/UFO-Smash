@@ -2692,7 +2692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFO
   currentState: 0
-  splineContainer: {fileID: 1701355738}
+  splineContainer: {fileID: 454656014}
   splineMoveSpeed: 5
   rotateAlongSpline: 1
   manualMoveSpeed: 0.5
@@ -2798,17 +2798,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f76c4cd185749f78b613cdab9a2937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFOLight
-  smallShapePoints:
-  - {x: -0.2, y: 0.6, z: 0}
-  - {x: -0.2, y: 0.6, z: 0}
-  - {x: 0.2, y: 0.6, z: 0}
-  - {x: 0.2, y: 0.6, z: 0}
-  largeShapePoints:
-  - {x: -0.2, y: 0.6, z: 0}
-  - {x: -1.5, y: -5, z: 0}
-  - {x: 1.5, y: -5, z: 0}
-  - {x: 0.2, y: 0.6, z: 0}
-  speed: 1.5
+  leftX: -0.2
+  rightX: 0.2
+  leftY: 0.6
+  rightY: 0.6
+  speed: 0
   animalLayer:
     serializedVersion: 2
     m_Bits: 8

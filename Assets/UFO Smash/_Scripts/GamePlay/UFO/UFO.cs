@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Splines;
 
 public class UFO : MonoBehaviour
@@ -23,9 +24,11 @@ public class UFO : MonoBehaviour
 
     public Vector2 moveDirection = Vector2.right;
 
+    [SerializeField] private Light2D UFOTorchLight;
     [SerializeField] private Transform lockedAnimal;
     [SerializeField] private float tiltSpeed;
     [SerializeField] private Vector2 offset;
+
     private Vector2 targetAnimal;
     private float t = 0;
     private void Start()
@@ -112,8 +115,9 @@ public class UFO : MonoBehaviour
             Debug.Log("Means animal is present to the right of the UFO");
         }
         int dir = direction.x < 0 ? -1 : 1;
-        float angle = dir * 45;
-        Vector2 shiftValue = dir * offset;
+        float angle = dir * 30;
+        Vector2 shiftValue = new Vector2(dir * offset.x, offset.y);
+
 
         StartCoroutine(UFOIntroMovement(shiftValue, angle));
     }
@@ -125,32 +129,62 @@ public class UFO : MonoBehaviour
 
     private IEnumerator UFOIntroMovement(Vector2 shiftValue, float targetAngle)
     {
-        yield return StartCoroutine(OverShootAndTilt(shiftValue, targetAngle));
-        yield return new WaitForSeconds(0.1f);
-        yield return StartCoroutine(OverShootAndTilt(-shiftValue, -targetAngle));
+        yield return StartCoroutine(OverShootAndTiltWithJerk(shiftValue.x, shiftValue.y, targetAngle));
+        yield return new WaitForSeconds(0.3f);
+        yield return StartCoroutine(OverShootAndTiltWithJerk(-shiftValue.x, shiftValue.y, -targetAngle));
+        yield return StartCoroutine(OverShootAndTilt(shiftValue.x / 2, shiftValue.y, targetAngle / 2));
+        yield return StartCoroutine(OverShootAndTilt(-shiftValue.x / 2, shiftValue.y, -targetAngle / 2));
+        yield return StartCoroutine(MoveToAnimal());
 
     }
-    // private IEnumerator OverShootAndTilt(Vector2 offset, float targetAngle)
-    // {
-    //     Vector2 targetPos = new Vector2(transform.position.x + offset.x, transform.position.y + offset.y);
-    //     float elapsedTime = 0;
-    //     while (elapsedTime < 1f)
-    //     {
-    //         elapsedTime += manualMoveSpeed * Time.deltaTime;
-    //         transform.position = Vector2.Lerp(transform.position, targetPos, elapsedTime);
-    //     }
-    //     yield return null;
-    // }
-    private IEnumerator OverShootAndTilt(Vector2 offset, float targetAngle)
+    private IEnumerator OverShootAndTiltWithJerk(float x, float y, float targetAngle)
     {
+        Debug.Log("OverShootAndTiltWithJerk is called");
         Vector2 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
-        Vector2 targetPos = new Vector2(lockedAnimal.position.x + offset.x, lockedAnimal.position.y + offset.y);
+        Vector2 targetPos = new Vector2(lockedAnimal.position.x + x, lockedAnimal.position.y + y);
 
         Quaternion targetRot = Quaternion.Euler(0, 0, targetAngle);
 
-        float duration = 0.3f;
+        float duration = manualMoveSpeed;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            float t = elapsed / duration;
+
+            // Smooth easing
+
+            // Position interpolation
+            transform.position = Vector2.Lerp(startPos, targetPos, t);
+
+            // Rotation interpolation
+            if (t > 0.35f)
+            {
+                t = Mathf.SmoothStep(0, 1, t);
+                transform.rotation = Quaternion.Lerp(startRot, targetRot, t);
+            }
+
+            yield return null;
+        }
+
+        transform.position = targetPos;
+        transform.rotation = targetRot;
+    }
+    private IEnumerator OverShootAndTilt(float x, float y, float targetAngle)
+    {
+        Debug.Log("OverShootAndTilt is called");
+        Vector2 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
+
+        Vector2 targetPos = new Vector2(lockedAnimal.position.x + x, lockedAnimal.position.y + y);
+
+        Quaternion targetRot = Quaternion.Euler(0, 0, targetAngle);
+
+        float duration = manualMoveSpeed;
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -166,7 +200,7 @@ public class UFO : MonoBehaviour
             transform.position = Vector2.Lerp(startPos, targetPos, t);
 
             // Rotation interpolation
-            transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
+            transform.rotation = Quaternion.Lerp(startRot, targetRot, t);
 
             yield return null;
         }
@@ -176,9 +210,10 @@ public class UFO : MonoBehaviour
     }
     private IEnumerator MoveToAnimal()
     {
+        Debug.Log("Move To Animal");
         Vector2 startPos = transform.position;
-        Vector2 targetPos = lockedAnimal.position;
-
+        Vector2 targetPos = new Vector2(lockedAnimal.position.x, lockedAnimal.position.y + offset.y);
+        Quaternion targetRot = Quaternion.Euler(0, 0, 0);
         float duration = 0.4f;
         float elapsed = 0f;
 
@@ -191,10 +226,12 @@ public class UFO : MonoBehaviour
             t = Mathf.SmoothStep(0, 1, t);
 
             transform.position = Vector2.Lerp(startPos, targetPos, t);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, t);
 
             yield return null;
         }
 
         transform.position = targetPos;
+        UFOTorchLight.gameObject.SetActive(true);
     }
 }
