@@ -7,5 +7,14 @@ public enum AnimalType
 public enum UFOState
 {
     SplineMovement,
-    ManualMovement
+    ManualMovement,
+    AbductSequence
+}
+
+public enum UFOType
+{
+    Basic,
+    Fast,
+    Shield,
+    Boss,
 }

@@ -66,6 +66,8 @@ public class UFO : MonoBehaviour
         Vector3 position =
             splineContainer.EvaluatePosition(normalizedDistance);
 
+        // Here what i can try is that, when the UFO reached the 0.5f of the spline length 
+        // then it will start lerping towards the offset position of the walking animal 
         transform.position = position;
 
         // Rotate UFO in 2D
@@ -80,7 +82,6 @@ public class UFO : MonoBehaviour
             transform.rotation =
                 Quaternion.Euler(0, 0, angle + 180f);
         }
-
         // Reached end of spline
         if (normalizedDistance >= 0.75f)
         {
@@ -98,13 +99,6 @@ public class UFO : MonoBehaviour
 
     void ManualMovement()
     {
-        // // Here i need to lerp towards the targetted animal and then need
-        // // lerp towards it in terms of rotation and transform a little ahead and then little back and then follow it and turn on the light
-        // t = manualMoveSpeed * Time.deltaTime;
-
-        // transform.position = Vector2.Lerp(transform.position, targetAnimal, t);
-        // // transform.rotation = Vector3.Lerp(transform.rotation,new Quaternion.(0,0,45f),)
-
         Vector2 direction = (lockedAnimal.position - transform.position).normalized;
         if (direction.x < 0)
         {
@@ -121,17 +115,13 @@ public class UFO : MonoBehaviour
 
         StartCoroutine(UFOIntroMovement(shiftValue, angle));
     }
-    // in this , i am going to pass the direction of tilt and movement, 
-    // i will call this coroutine in two different direction . 
-    // then i will call a another method that will reach the exact position of animal head and then
-    // then spawn the light , and after locking an animal , it start shivering 
-
 
     private IEnumerator UFOIntroMovement(Vector2 shiftValue, float targetAngle)
     {
         yield return StartCoroutine(OverShootAndTiltWithJerk(shiftValue.x, shiftValue.y, targetAngle));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.15f);
         yield return StartCoroutine(OverShootAndTiltWithJerk(-shiftValue.x, shiftValue.y, -targetAngle));
+        manualMoveSpeed = 0.7f;
         yield return StartCoroutine(OverShootAndTilt(shiftValue.x / 2, shiftValue.y, targetAngle / 2));
         yield return StartCoroutine(OverShootAndTilt(-shiftValue.x / 2, shiftValue.y, -targetAngle / 2));
         yield return StartCoroutine(MoveToAnimal());
@@ -156,13 +146,9 @@ public class UFO : MonoBehaviour
 
             float t = elapsed / duration;
 
-            // Smooth easing
-
-            // Position interpolation
             transform.position = Vector2.Lerp(startPos, targetPos, t);
 
-            // Rotation interpolation
-            if (t > 0.35f)
+            if (t > 0.25f)
             {
                 t = Mathf.SmoothStep(0, 1, t);
                 transform.rotation = Quaternion.Lerp(startRot, targetRot, t);
@@ -177,6 +163,8 @@ public class UFO : MonoBehaviour
     private IEnumerator OverShootAndTilt(float x, float y, float targetAngle)
     {
         Debug.Log("OverShootAndTilt is called");
+        AnimalMotion animal = lockedAnimal.gameObject.GetComponent<AnimalMotion>();
+        animal.SetAbduct();
         Vector2 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
@@ -193,10 +181,8 @@ public class UFO : MonoBehaviour
 
             float t = elapsed / duration;
 
-            // Smooth easing
             t = Mathf.SmoothStep(0, 1, t);
 
-            // Position interpolation
             transform.position = Vector2.Lerp(startPos, targetPos, t);
 
             // Rotation interpolation

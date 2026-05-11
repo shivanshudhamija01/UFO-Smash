@@ -1,0 +1,1081 @@
+fileFormatVersion: 2
+guid: fd64394dff68542f7848ed96d1a103ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1769264140890812100
+    second: Cow Walk Anim Low_0
+  - first:
+      213: 4094481142629536550
+    second: Cow Walk Anim Low_1
+  - first:
+      213: -8711154678261273371
+    second: Cow Walk Anim Low_2
+  - first:
+      213: 1663484518267536459
+    second: Cow Walk Anim Low_3
+  - first:
+      213: 1340590176301899460
+    second: Cow Walk Anim Low_4
+  - first:
+      213: 8070372593521021812
+    second: Cow Walk Anim Low_5
+  - first:
+      213: -3399591213933895164
+    second: Cow Walk Anim Low_6
+  - first:
+      213: 4333616769653289797
+    second: Cow Walk Anim Low_7
+  - first:
+      213: -1048508361603563009
+    second: Cow Walk Anim Low_8
+  - first:
+      213: -5917397480730835355
+    second: Cow Walk Anim Low_9
+  - first:
+      213: -7145010987874121328
+    second: Cow Walk Anim Low_10
+  - first:
+      213: -2156476388619375017
+    second: Cow Walk Anim Low_11
+  - first:
+      213: 1197578817421296443
+    second: Cow Walk Anim Low_12
+  - first:
+      213: 5305729071397501289
+    second: Cow Walk Anim Low_13
+  - first:
+      213: -6698954434165986050
+    second: Cow Walk Anim Low_14
+  - first:
+      213: 342793941491129342
+    second: Cow Walk Anim Low_15
+  - first:
+      213: 7707111136549939630
+    second: Cow Walk Anim Low_16
+  - first:
+      213: 1389085829323050062
+    second: Cow Walk Anim Low_17
+  - first:
+      213: -4146308903296504809
+    second: Cow Walk Anim Low_18
+  - first:
+      213: -4643332778452649588
+    second: Cow Walk Anim Low_19
+  - first:
+      213: 4475013116764824360
+    second: Cow Walk Anim Low_20
+  - first:
+      213: -7617706458374305867
+    second: Cow Walk Anim Low_21
+  - first:
+      213: -6259339858158634206
+    second: Cow Walk Anim Low_22
+  - first:
+      213: 8525754959661041314
+    second: Cow Walk Anim Low_23
+  - first:
+      213: -8663281897309394576
+    second: Cow Walk Anim Low_24
+  - first:
+      213: 2348305597330708721
+    second: Cow Walk Anim Low_25
+  - first:
+      213: -6370227402501257476
+    second: Cow Walk Anim Low_26
+  - first:
+      213: -5612772013324035610
+    second: Cow Walk Anim Low_27
+  - first:
+      213: 6106535165825478310
+    second: Cow Walk Anim Low_28
+  - first:
+      213: -821374692304983762
+    second: Cow Walk Anim Low_29
+  - first:
+      213: 911686513910512222
+    second: Cow Walk Anim Low_30
+  - first:
+      213: 3575732680810032806
+    second: Cow Walk Anim Low_31
+  - first:
+      213: 5405359369080609239
+    second: Cow Walk Anim Low_32
+  - first:
+      213: -2061311682902690752
+    second: Cow Walk Anim Low_33
+  - first:
+      213: 4787453202524625643
+    second: Cow Walk Anim Low_34
+  - first:
+      213: 2598660253200298519
+    second: Cow Walk Anim Low_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31dd5843af4277e0800000000000000
+      internalID: -1769264140890812100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 480
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62318fdd7e482d830800000000000000
+      internalID: 4094481142629536550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 480
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec21ca49f2cb1780800000000000000
+      internalID: -8711154678261273371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 480
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44c2b81b52e51710800000000000000
+      internalID: 1663484518267536459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_4
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 480
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce5adf99abba9210800000000000000
+      internalID: 1340590176301899460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_5
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 480
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4735ed97d19bfff60800000000000000
+      internalID: 8070372593521021812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4026eef7dc932d0d0800000000000000
+      internalID: -3399591213933895164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_7
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 384
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5433cd3dd79142c30800000000000000
+      internalID: 4333616769653289797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_8
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 384
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1c79a4333f271f0800000000000000
+      internalID: -1048508361603563009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_9
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 384
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5664f3ec75e21eda0800000000000000
+      internalID: -5917397480730835355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_10
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 384
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0990087cc52d7dc90800000000000000
+      internalID: -7145010987874121328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_11
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 384
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e23d96628a212e0800000000000000
+      internalID: -2156476388619375017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33cde2e697ae9010800000000000000
+      internalID: 1197578817421296443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_13
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 288
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9697c1fba7cb1a940800000000000000
+      internalID: 5305729071397501289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_14
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 288
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc22094f688803a0800000000000000
+      internalID: -6698954434165986050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_15
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 288
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb1cb90649d1c400800000000000000
+      internalID: 342793941491129342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_16
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 288
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea92482aeb825fa60800000000000000
+      internalID: 7707111136549939630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_17
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 288
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c445bb336074310800000000000000
+      internalID: 1389085829323050062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ce8f1450a5576c0800000000000000
+      internalID: -4146308903296504809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_19
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 192
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89f66e70719f8fb0800000000000000
+      internalID: -4643332778452649588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_20
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 192
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8232bf558b07a1e30800000000000000
+      internalID: 4475013116764824360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_21
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 192
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b786612658784690800000000000000
+      internalID: -7617706458374305867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_22
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 192
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bb20aff8b5229a0800000000000000
+      internalID: -6259339858158634206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_23
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 192
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a60f94e6f0915670800000000000000
+      internalID: 8525754959661041314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0792dc1b307d5c780800000000000000
+      internalID: -8663281897309394576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_25
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 96
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f855f8bf7bd69020800000000000000
+      internalID: 2348305597330708721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_26
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 96
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf60477ade76897a0800000000000000
+      internalID: -6370227402501257476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_27
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 96
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e91194779d6b12b0800000000000000
+      internalID: -5612772013324035610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_28
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 96
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae65772165ceb450800000000000000
+      internalID: 6106535165825478310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_29
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 96
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e296aa5b114e994f0800000000000000
+      internalID: -821374692304983762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a7628dd06f6ac00800000000000000
+      internalID: 911686513910512222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_31
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aeef6b9ded8f9130800000000000000
+      internalID: 3575732680810032806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_32
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9116515b1b30b40800000000000000
+      internalID: 5405359369080609239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_33
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044f83912ffb463e0800000000000000
+      internalID: -2061311682902690752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_34
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea594b9253707240800000000000000
+      internalID: 4787453202524625643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Low_35
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 0
+        width: 134
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7123ee36bbb401420800000000000000
+      internalID: 2598660253200298519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 110d23bdf39454cdeb56a658129d8934
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":6.0},"gridSpriteSize":{"x":134.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cow Walk Anim Low_0: -1769264140890812100
+      Cow Walk Anim Low_1: 4094481142629536550
+      Cow Walk Anim Low_10: -7145010987874121328
+      Cow Walk Anim Low_11: -2156476388619375017
+      Cow Walk Anim Low_12: 1197578817421296443
+      Cow Walk Anim Low_13: 5305729071397501289
+      Cow Walk Anim Low_14: -6698954434165986050
+      Cow Walk Anim Low_15: 342793941491129342
+      Cow Walk Anim Low_16: 7707111136549939630
+      Cow Walk Anim Low_17: 1389085829323050062
+      Cow Walk Anim Low_18: -4146308903296504809
+      Cow Walk Anim Low_19: -4643332778452649588
+      Cow Walk Anim Low_2: -8711154678261273371
+      Cow Walk Anim Low_20: 4475013116764824360
+      Cow Walk Anim Low_21: -7617706458374305867
+      Cow Walk Anim Low_22: -6259339858158634206
+      Cow Walk Anim Low_23: 8525754959661041314
+      Cow Walk Anim Low_24: -8663281897309394576
+      Cow Walk Anim Low_25: 2348305597330708721
+      Cow Walk Anim Low_26: -6370227402501257476
+      Cow Walk Anim Low_27: -5612772013324035610
+      Cow Walk Anim Low_28: 6106535165825478310
+      Cow Walk Anim Low_29: -821374692304983762
+      Cow Walk Anim Low_3: 1663484518267536459
+      Cow Walk Anim Low_30: 911686513910512222
+      Cow Walk Anim Low_31: 3575732680810032806
+      Cow Walk Anim Low_32: 5405359369080609239
+      Cow Walk Anim Low_33: -2061311682902690752
+      Cow Walk Anim Low_34: 4787453202524625643
+      Cow Walk Anim Low_35: 2598660253200298519
+      Cow Walk Anim Low_4: 1340590176301899460
+      Cow Walk Anim Low_5: 8070372593521021812
+      Cow Walk Anim Low_6: -3399591213933895164
+      Cow Walk Anim Low_7: 4333616769653289797
+      Cow Walk Anim Low_8: -1048508361603563009
+      Cow Walk Anim Low_9: -5917397480730835355
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

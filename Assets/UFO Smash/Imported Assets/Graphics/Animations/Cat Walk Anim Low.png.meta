@@ -1,0 +1,1081 @@
+fileFormatVersion: 2
+guid: 135d1f4d49d7a4a3fbe2361cc748ec3e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3743662645592855759
+    second: Cat Walk Anim Low_0
+  - first:
+      213: -3853151120807268925
+    second: Cat Walk Anim Low_1
+  - first:
+      213: -5274149147274018240
+    second: Cat Walk Anim Low_2
+  - first:
+      213: 9176922149546566779
+    second: Cat Walk Anim Low_3
+  - first:
+      213: 456910581104554879
+    second: Cat Walk Anim Low_4
+  - first:
+      213: -4833064032797585101
+    second: Cat Walk Anim Low_5
+  - first:
+      213: 4867050618451783045
+    second: Cat Walk Anim Low_6
+  - first:
+      213: 3287623782791228179
+    second: Cat Walk Anim Low_7
+  - first:
+      213: 4446070867238689658
+    second: Cat Walk Anim Low_8
+  - first:
+      213: -3606148747119716283
+    second: Cat Walk Anim Low_9
+  - first:
+      213: 6922812592975403523
+    second: Cat Walk Anim Low_10
+  - first:
+      213: 5917308362073190217
+    second: Cat Walk Anim Low_11
+  - first:
+      213: -4852422325161289422
+    second: Cat Walk Anim Low_12
+  - first:
+      213: -4005125982212864558
+    second: Cat Walk Anim Low_13
+  - first:
+      213: -4342901166854180486
+    second: Cat Walk Anim Low_14
+  - first:
+      213: -4135405970565990066
+    second: Cat Walk Anim Low_15
+  - first:
+      213: 7340598179194449934
+    second: Cat Walk Anim Low_16
+  - first:
+      213: -5423197325673192056
+    second: Cat Walk Anim Low_17
+  - first:
+      213: 1112032056075051959
+    second: Cat Walk Anim Low_18
+  - first:
+      213: 7054526404231977546
+    second: Cat Walk Anim Low_19
+  - first:
+      213: -5743530003604183673
+    second: Cat Walk Anim Low_20
+  - first:
+      213: -5655510191573265951
+    second: Cat Walk Anim Low_21
+  - first:
+      213: -6912350638294524903
+    second: Cat Walk Anim Low_22
+  - first:
+      213: -820420444415257369
+    second: Cat Walk Anim Low_23
+  - first:
+      213: 4997174667070165833
+    second: Cat Walk Anim Low_24
+  - first:
+      213: 692972384203848739
+    second: Cat Walk Anim Low_25
+  - first:
+      213: -3762207594150614865
+    second: Cat Walk Anim Low_26
+  - first:
+      213: -9098642040194235297
+    second: Cat Walk Anim Low_27
+  - first:
+      213: 9050532849903356208
+    second: Cat Walk Anim Low_28
+  - first:
+      213: -5675738660827206351
+    second: Cat Walk Anim Low_29
+  - first:
+      213: -9076924046958938461
+    second: Cat Walk Anim Low_30
+  - first:
+      213: -7536254315162429980
+    second: Cat Walk Anim Low_31
+  - first:
+      213: -2843679217597771394
+    second: Cat Walk Anim Low_32
+  - first:
+      213: -146143678212706158
+    second: Cat Walk Anim Low_33
+  - first:
+      213: -7984227960100727237
+    second: Cat Walk Anim Low_34
+  - first:
+      213: 6841990353386161252
+    second: Cat Walk Anim Low_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 470
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc41675675924f330800000000000000
+      internalID: 3743662645592855759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 470
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd6262787bd68ac0800000000000000
+      internalID: -3853151120807268925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 470
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0428d405b457ec6b0800000000000000
+      internalID: -5274149147274018240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_3
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 470
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b742327d21afa5f70800000000000000
+      internalID: 9176922149546566779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_4
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 470
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73bad0b0c5475600800000000000000
+      internalID: 456910581104554879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_5
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 470
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331126c6ed18decb0800000000000000
+      internalID: -4833064032797585101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58de9a030cc3b8340800000000000000
+      internalID: 4867050618451783045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_7
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 376
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ba560796cff9d20800000000000000
+      internalID: 3287623782791228179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_8
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 376
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b99ffb5ed93bd30800000000000000
+      internalID: 4446070867238689658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_9
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 376
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54895b812d264fdc0800000000000000
+      internalID: -3606148747119716283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_10
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 376
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a56eaef55c21060800000000000000
+      internalID: 6922812592975403523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_11
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 376
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f22d3aa908e1250800000000000000
+      internalID: 5917308362073190217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2391690ca9bb8acb0800000000000000
+      internalID: -4852422325161289422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_13
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 282
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5c385a32fea68c0800000000000000
+      internalID: -4005125982212864558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_14
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 282
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71f60ff56aeab3c0800000000000000
+      internalID: -4342901166854180486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_15
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 282
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49726a1e261c96c0800000000000000
+      internalID: -4135405970565990066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_16
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 282
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00b3cdd62b0fd560800000000000000
+      internalID: 7340598179194449934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_17
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 282
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885a66004ceecb4b0800000000000000
+      internalID: -5423197325673192056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b36331634bbe6f00800000000000000
+      internalID: 1112032056075051959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 188
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a5cde5366b6e160800000000000000
+      internalID: 7054526404231977546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_20
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 188
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785ef5a64e1ea40b0800000000000000
+      internalID: -5743530003604183673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_21
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 188
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e19ca7e1779381b0800000000000000
+      internalID: -5655510191573265951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_22
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 188
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c9289b7b56210a0800000000000000
+      internalID: -6912350638294524903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_23
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 188
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4192cd3f74d94f0800000000000000
+      internalID: -820420444415257369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9435c4f22e7895540800000000000000
+      internalID: 4997174667070165833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 94
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c30af36beed9900800000000000000
+      internalID: 692972384203848739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_26
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 94
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8206b4024f9cbc0800000000000000
+      internalID: -3762207594150614865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_27
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 94
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5489c765412bb180800000000000000
+      internalID: -9098642040194235297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_28
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 94
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0394e7adca3f99d70800000000000000
+      internalID: 9050532849903356208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_29
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 94
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d617362c9bb31b0800000000000000
+      internalID: -5675738660827206351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a6bfcfbba9480280800000000000000
+      internalID: -9076924046958938461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_31
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e51dbf01a8d96790800000000000000
+      internalID: -7536254315162429980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_32
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e719ceb61d83988d0800000000000000
+      internalID: -2843679217597771394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_33
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29076f5591bc8fdf0800000000000000
+      internalID: -146143678212706158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_34
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b365478f8f2523190800000000000000
+      internalID: -7984227960100727237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat Walk Anim Low_35
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 0
+        width: 138
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4644b3ad9f1a3fe50800000000000000
+      internalID: 6841990353386161252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c81e934813f9f473a9185db3500e4188
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":6.0},"gridSpriteSize":{"x":138.0,"y":94.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cat Walk Anim Low_0: 3743662645592855759
+      Cat Walk Anim Low_1: -3853151120807268925
+      Cat Walk Anim Low_10: 6922812592975403523
+      Cat Walk Anim Low_11: 5917308362073190217
+      Cat Walk Anim Low_12: -4852422325161289422
+      Cat Walk Anim Low_13: -4005125982212864558
+      Cat Walk Anim Low_14: -4342901166854180486
+      Cat Walk Anim Low_15: -4135405970565990066
+      Cat Walk Anim Low_16: 7340598179194449934
+      Cat Walk Anim Low_17: -5423197325673192056
+      Cat Walk Anim Low_18: 1112032056075051959
+      Cat Walk Anim Low_19: 7054526404231977546
+      Cat Walk Anim Low_2: -5274149147274018240
+      Cat Walk Anim Low_20: -5743530003604183673
+      Cat Walk Anim Low_21: -5655510191573265951
+      Cat Walk Anim Low_22: -6912350638294524903
+      Cat Walk Anim Low_23: -820420444415257369
+      Cat Walk Anim Low_24: 4997174667070165833
+      Cat Walk Anim Low_25: 692972384203848739
+      Cat Walk Anim Low_26: -3762207594150614865
+      Cat Walk Anim Low_27: -9098642040194235297
+      Cat Walk Anim Low_28: 9050532849903356208
+      Cat Walk Anim Low_29: -5675738660827206351
+      Cat Walk Anim Low_3: 9176922149546566779
+      Cat Walk Anim Low_30: -9076924046958938461
+      Cat Walk Anim Low_31: -7536254315162429980
+      Cat Walk Anim Low_32: -2843679217597771394
+      Cat Walk Anim Low_33: -146143678212706158
+      Cat Walk Anim Low_34: -7984227960100727237
+      Cat Walk Anim Low_35: 6841990353386161252
+      Cat Walk Anim Low_4: 456910581104554879
+      Cat Walk Anim Low_5: -4833064032797585101
+      Cat Walk Anim Low_6: 4867050618451783045
+      Cat Walk Anim Low_7: 3287623782791228179
+      Cat Walk Anim Low_8: 4446070867238689658
+      Cat Walk Anim Low_9: -3606148747119716283
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

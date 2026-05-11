@@ -1,0 +1,1081 @@
+fileFormatVersion: 2
+guid: a0ed1c54399a64e6d8d4809b72455c79
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2737559050157067602
+    second: Dog Walk Anim Low_0
+  - first:
+      213: -5196594456086219382
+    second: Dog Walk Anim Low_1
+  - first:
+      213: -121633646288729995
+    second: Dog Walk Anim Low_2
+  - first:
+      213: 3350453133404555800
+    second: Dog Walk Anim Low_3
+  - first:
+      213: 1503817785349764364
+    second: Dog Walk Anim Low_4
+  - first:
+      213: -8673189522766504270
+    second: Dog Walk Anim Low_5
+  - first:
+      213: 848342188448228884
+    second: Dog Walk Anim Low_6
+  - first:
+      213: 180208362217275411
+    second: Dog Walk Anim Low_7
+  - first:
+      213: 5407936120424717070
+    second: Dog Walk Anim Low_8
+  - first:
+      213: -342432826085819224
+    second: Dog Walk Anim Low_9
+  - first:
+      213: 6915688888760814809
+    second: Dog Walk Anim Low_10
+  - first:
+      213: 54861323546054035
+    second: Dog Walk Anim Low_11
+  - first:
+      213: 3787271994448070949
+    second: Dog Walk Anim Low_12
+  - first:
+      213: -1870652339654993609
+    second: Dog Walk Anim Low_13
+  - first:
+      213: 9113994087997169445
+    second: Dog Walk Anim Low_14
+  - first:
+      213: -313653944123997162
+    second: Dog Walk Anim Low_15
+  - first:
+      213: 2487416472141663316
+    second: Dog Walk Anim Low_16
+  - first:
+      213: -79291254503951528
+    second: Dog Walk Anim Low_17
+  - first:
+      213: -9035800166382836029
+    second: Dog Walk Anim Low_18
+  - first:
+      213: -6724164138847644262
+    second: Dog Walk Anim Low_19
+  - first:
+      213: -6714070904483560501
+    second: Dog Walk Anim Low_20
+  - first:
+      213: -8445584075397107678
+    second: Dog Walk Anim Low_21
+  - first:
+      213: -450675469395406277
+    second: Dog Walk Anim Low_22
+  - first:
+      213: -8434762218613198478
+    second: Dog Walk Anim Low_23
+  - first:
+      213: -6531856577695432189
+    second: Dog Walk Anim Low_24
+  - first:
+      213: 5986378985131533573
+    second: Dog Walk Anim Low_25
+  - first:
+      213: -1218810086288608699
+    second: Dog Walk Anim Low_26
+  - first:
+      213: -7499737111831725082
+    second: Dog Walk Anim Low_27
+  - first:
+      213: 3095645190730858630
+    second: Dog Walk Anim Low_28
+  - first:
+      213: -1698929888403114350
+    second: Dog Walk Anim Low_29
+  - first:
+      213: -864829362874710049
+    second: Dog Walk Anim Low_30
+  - first:
+      213: 3861306062770540036
+    second: Dog Walk Anim Low_31
+  - first:
+      213: -8721191953078494145
+    second: Dog Walk Anim Low_32
+  - first:
+      213: 8996973530076021954
+    second: Dog Walk Anim Low_33
+  - first:
+      213: 8535409945213088061
+    second: Dog Walk Anim Low_34
+  - first:
+      213: 6205227104335651429
+    second: Dog Walk Anim Low_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d8440b373cdf520800000000000000
+      internalID: 2737559050157067602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 455
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85773bffdcf1e7b0800000000000000
+      internalID: -5196594456086219382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_2
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 455
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5788938d7dedf4ef0800000000000000
+      internalID: -121633646288729995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_3
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 455
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a4c259f533f7e20800000000000000
+      internalID: 3350453133404555800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_4
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 455
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c05ffa6ee42aed410800000000000000
+      internalID: 1503817785349764364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_5
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 455
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bedcd1e414a2a780800000000000000
+      internalID: -8673189522766504270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 364
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4162f66c9bae5cb00800000000000000
+      internalID: 848342188448228884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 364
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3100487fc8a308200800000000000000
+      internalID: 180208362217275411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_8
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 364
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b5be1cf39dc0b40800000000000000
+      internalID: 5407936120424717070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 364
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8acb8b1b82f6f3bf0800000000000000
+      internalID: -342432826085819224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_10
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 364
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc44b7476679ff50800000000000000
+      internalID: 6915688888760814809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_11
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 364
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39dced54518e2c000800000000000000
+      internalID: 54861323546054035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529ccd820d71f8430800000000000000
+      internalID: 3787271994448070949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_13
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 273
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7395c94bb9b1a06e0800000000000000
+      internalID: -1870652339654993609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_14
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 273
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52fd414c5596b7e70800000000000000
+      internalID: 9113994087997169445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_15
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 273
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614c61e466da5abf0800000000000000
+      internalID: -313653944123997162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_16
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 273
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c857e3a14158220800000000000000
+      internalID: 2487416472141663316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_17
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 273
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8533f7d260d46eef0800000000000000
+      internalID: -79291254503951528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 182
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6e5555f936a9280800000000000000
+      internalID: -9035800166382836029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 182
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95d0948758fea2a0800000000000000
+      internalID: -6724164138847644262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_20
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 182
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3c875c514d2d2a0800000000000000
+      internalID: -6714070904483560501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_21
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 182
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2207241b7024bca80800000000000000
+      internalID: -8445584075397107678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_22
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 182
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3254b16c01eeb9f0800000000000000
+      internalID: -450675469395406277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_23
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 182
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 271bca29374b1fa80800000000000000
+      internalID: -8434762218613198478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 91
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3024aa2cc0f2a55a0800000000000000
+      internalID: -6531856577695432189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_25
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 91
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505e0a348f3e31350800000000000000
+      internalID: 5986378985131533573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_26
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 91
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542ba1e1faae51fe0800000000000000
+      internalID: -1218810086288608699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_27
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 91
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebb47405d49be790800000000000000
+      internalID: -7499737111831725082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_28
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 91
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680c82846e0f5fa20800000000000000
+      internalID: 3095645190730858630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_29
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 91
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296307f84403c68e0800000000000000
+      internalID: -1698929888403114350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd7868ac6428ff3f0800000000000000
+      internalID: -864829362874710049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_31
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e0080f76d169530800000000000000
+      internalID: 3861306062770540036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_32
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3cd2c2202a18f680800000000000000
+      internalID: -8721191953078494145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_33
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 0
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c406c1f1cbabdc70800000000000000
+      internalID: 8996973530076021954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_34
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3133c46f1ed37670800000000000000
+      internalID: 8535409945213088061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog Walk Anim Low_35
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 0
+        width: 133
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5626d88bc256d1650800000000000000
+      internalID: 6205227104335651429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42c51199776ac4987802c82eb96a72a5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":6.0},"gridSpriteSize":{"x":133.0,"y":91.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Dog Walk Anim Low_0: 2737559050157067602
+      Dog Walk Anim Low_1: -5196594456086219382
+      Dog Walk Anim Low_10: 6915688888760814809
+      Dog Walk Anim Low_11: 54861323546054035
+      Dog Walk Anim Low_12: 3787271994448070949
+      Dog Walk Anim Low_13: -1870652339654993609
+      Dog Walk Anim Low_14: 9113994087997169445
+      Dog Walk Anim Low_15: -313653944123997162
+      Dog Walk Anim Low_16: 2487416472141663316
+      Dog Walk Anim Low_17: -79291254503951528
+      Dog Walk Anim Low_18: -9035800166382836029
+      Dog Walk Anim Low_19: -6724164138847644262
+      Dog Walk Anim Low_2: -121633646288729995
+      Dog Walk Anim Low_20: -6714070904483560501
+      Dog Walk Anim Low_21: -8445584075397107678
+      Dog Walk Anim Low_22: -450675469395406277
+      Dog Walk Anim Low_23: -8434762218613198478
+      Dog Walk Anim Low_24: -6531856577695432189
+      Dog Walk Anim Low_25: 5986378985131533573
+      Dog Walk Anim Low_26: -1218810086288608699
+      Dog Walk Anim Low_27: -7499737111831725082
+      Dog Walk Anim Low_28: 3095645190730858630
+      Dog Walk Anim Low_29: -1698929888403114350
+      Dog Walk Anim Low_3: 3350453133404555800
+      Dog Walk Anim Low_30: -864829362874710049
+      Dog Walk Anim Low_31: 3861306062770540036
+      Dog Walk Anim Low_32: -8721191953078494145
+      Dog Walk Anim Low_33: 8996973530076021954
+      Dog Walk Anim Low_34: 8535409945213088061
+      Dog Walk Anim Low_35: 6205227104335651429
+      Dog Walk Anim Low_4: 1503817785349764364
+      Dog Walk Anim Low_5: -8673189522766504270
+      Dog Walk Anim Low_6: 848342188448228884
+      Dog Walk Anim Low_7: 180208362217275411
+      Dog Walk Anim Low_8: 5407936120424717070
+      Dog Walk Anim Low_9: -342432826085819224
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1081 @@
+fileFormatVersion: 2
+guid: 80e4e8a37d75240abb7a0b7c55cb097e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3203663432427264122
+    second: Cow Walk Anim Max_0
+  - first:
+      213: 187312320867038250
+    second: Cow Walk Anim Max_1
+  - first:
+      213: 2802067885544351540
+    second: Cow Walk Anim Max_2
+  - first:
+      213: 8641397639966510051
+    second: Cow Walk Anim Max_3
+  - first:
+      213: -2661894886886839179
+    second: Cow Walk Anim Max_4
+  - first:
+      213: -6964565580192570475
+    second: Cow Walk Anim Max_5
+  - first:
+      213: 5252996070610804063
+    second: Cow Walk Anim Max_6
+  - first:
+      213: -6375817367141529902
+    second: Cow Walk Anim Max_7
+  - first:
+      213: 5669243362411294956
+    second: Cow Walk Anim Max_8
+  - first:
+      213: -4753863366296906517
+    second: Cow Walk Anim Max_9
+  - first:
+      213: -6235288920835752144
+    second: Cow Walk Anim Max_10
+  - first:
+      213: -7546574672206341715
+    second: Cow Walk Anim Max_11
+  - first:
+      213: 2188860123631201632
+    second: Cow Walk Anim Max_12
+  - first:
+      213: -8199041660184064998
+    second: Cow Walk Anim Max_13
+  - first:
+      213: -8763421262105590678
+    second: Cow Walk Anim Max_14
+  - first:
+      213: -3534211237782050753
+    second: Cow Walk Anim Max_15
+  - first:
+      213: 1666658266800467528
+    second: Cow Walk Anim Max_16
+  - first:
+      213: -1146548585133638312
+    second: Cow Walk Anim Max_17
+  - first:
+      213: -2521815271975122565
+    second: Cow Walk Anim Max_18
+  - first:
+      213: 1929887744014557
+    second: Cow Walk Anim Max_19
+  - first:
+      213: -7163025169915233816
+    second: Cow Walk Anim Max_20
+  - first:
+      213: -9031990054988838370
+    second: Cow Walk Anim Max_21
+  - first:
+      213: -3856178802641262467
+    second: Cow Walk Anim Max_22
+  - first:
+      213: 8233171705261428570
+    second: Cow Walk Anim Max_23
+  - first:
+      213: 8915572817489628291
+    second: Cow Walk Anim Max_24
+  - first:
+      213: -8089917539851058924
+    second: Cow Walk Anim Max_25
+  - first:
+      213: 4176439141284771442
+    second: Cow Walk Anim Max_26
+  - first:
+      213: -4721962230465182469
+    second: Cow Walk Anim Max_27
+  - first:
+      213: 5981443635476775782
+    second: Cow Walk Anim Max_28
+  - first:
+      213: 4472784736189473763
+    second: Cow Walk Anim Max_29
+  - first:
+      213: 1424149576735968703
+    second: Cow Walk Anim Max_30
+  - first:
+      213: 6483599956938724106
+    second: Cow Walk Anim Max_31
+  - first:
+      213: -7461623481957290431
+    second: Cow Walk Anim Max_32
+  - first:
+      213: 231299977311978308
+    second: Cow Walk Anim Max_33
+  - first:
+      213: 2199334062743586727
+    second: Cow Walk Anim Max_34
+  - first:
+      213: 2690664795676462045
+    second: Cow Walk Anim Max_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2230
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a785cb50be2b57c20800000000000000
+      internalID: 3203663432427264122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2230
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24755b3097799200800000000000000
+      internalID: 187312320867038250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2230
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437a66a55e1f2e620800000000000000
+      internalID: 2802067885544351540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2230
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb4a159e596ce770800000000000000
+      internalID: 8641397639966510051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2230
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c6ea524bc0f0bd0800000000000000
+      internalID: -2661894886886839179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_5
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2230
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593a5b13184e85f90800000000000000
+      internalID: -6964565580192570475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1784
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d974b381466e840800000000000000
+      internalID: 5252996070610804063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_7
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1784
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d643c692eb8487a0800000000000000
+      internalID: -6375817367141529902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1784
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce034c91dc23dae40800000000000000
+      internalID: 5669243362411294956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_9
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1784
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be451259472e60eb0800000000000000
+      internalID: -4753863366296906517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1784
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ff7a133cdc779a0800000000000000
+      internalID: -6235288920835752144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_11
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1784
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da95e20b15e254790800000000000000
+      internalID: -7546574672206341715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1338
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d2e047fa4606e10800000000000000
+      internalID: 2188860123631201632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1338
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c891aec07273e80800000000000000
+      internalID: -8199041660184064998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_14
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1338
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64471feac2126680800000000000000
+      internalID: -8763421262105590678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1338
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38aec2ba95f3fec0800000000000000
+      internalID: -3534211237782050753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_16
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1338
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e2c920dd8212710800000000000000
+      internalID: 1666658266800467528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_17
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1338
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85df161f224a610f0800000000000000
+      internalID: -1146548585133638312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 892
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7984cc0f56b00dd0800000000000000
+      internalID: -2521815271975122565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_19
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 892
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd83071093bd60000800000000000000
+      internalID: 1929887744014557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 892
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9350e2f82d79c90800000000000000
+      internalID: -7163025169915233816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_21
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 892
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a878506ece7a280800000000000000
+      internalID: -9031990054988838370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_22
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 892
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d782d265fc91c7ac0800000000000000
+      internalID: -3856178802641262467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_23
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 892
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f87e27b0a124270800000000000000
+      internalID: 8233171705261428570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 446
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c0993ad3a7abb70800000000000000
+      internalID: 8915572817489628291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_25
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 446
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411c9f61cd6dabf80800000000000000
+      internalID: -8089917539851058924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_26
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 446
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276f0527541b5f930800000000000000
+      internalID: 4176439141284771442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_27
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 446
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4cf429e58387eb0800000000000000
+      internalID: -4721962230465182469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_28
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 446
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6634d90ab4b520350800000000000000
+      internalID: 5981443635476775782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_29
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 446
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3ec5d0506821e30800000000000000
+      internalID: 4472784736189473763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbdce5c9e7893c310800000000000000
+      internalID: 1424149576735968703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_31
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03121b2fcf5af950800000000000000
+      internalID: 6483599956938724106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_32
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ee83ef9fcf27890800000000000000
+      internalID: -7461623481957290431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_33
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4438c389a1eb53300800000000000000
+      internalID: 231299977311978308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_34
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a78f307daa958e10800000000000000
+      internalID: 2199334062743586727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow Walk Anim Max_35
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 640
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddbc1fb3069275520800000000000000
+      internalID: 2690664795676462045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2be7f57295f2540cb886e0cb70e7671d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":6.0},"gridSpriteSize":{"x":640.0,"y":446.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cow Walk Anim Max_0: 3203663432427264122
+      Cow Walk Anim Max_1: 187312320867038250
+      Cow Walk Anim Max_10: -6235288920835752144
+      Cow Walk Anim Max_11: -7546574672206341715
+      Cow Walk Anim Max_12: 2188860123631201632
+      Cow Walk Anim Max_13: -8199041660184064998
+      Cow Walk Anim Max_14: -8763421262105590678
+      Cow Walk Anim Max_15: -3534211237782050753
+      Cow Walk Anim Max_16: 1666658266800467528
+      Cow Walk Anim Max_17: -1146548585133638312
+      Cow Walk Anim Max_18: -2521815271975122565
+      Cow Walk Anim Max_19: 1929887744014557
+      Cow Walk Anim Max_2: 2802067885544351540
+      Cow Walk Anim Max_20: -7163025169915233816
+      Cow Walk Anim Max_21: -9031990054988838370
+      Cow Walk Anim Max_22: -3856178802641262467
+      Cow Walk Anim Max_23: 8233171705261428570
+      Cow Walk Anim Max_24: 8915572817489628291
+      Cow Walk Anim Max_25: -8089917539851058924
+      Cow Walk Anim Max_26: 4176439141284771442
+      Cow Walk Anim Max_27: -4721962230465182469
+      Cow Walk Anim Max_28: 5981443635476775782
+      Cow Walk Anim Max_29: 4472784736189473763
+      Cow Walk Anim Max_3: 8641397639966510051
+      Cow Walk Anim Max_30: 1424149576735968703
+      Cow Walk Anim Max_31: 6483599956938724106
+      Cow Walk Anim Max_32: -7461623481957290431
+      Cow Walk Anim Max_33: 231299977311978308
+      Cow Walk Anim Max_34: 2199334062743586727
+      Cow Walk Anim Max_35: 2690664795676462045
+      Cow Walk Anim Max_4: -2661894886886839179
+      Cow Walk Anim Max_5: -6964565580192570475
+      Cow Walk Anim Max_6: 5252996070610804063
+      Cow Walk Anim Max_7: -6375817367141529902
+      Cow Walk Anim Max_8: 5669243362411294956
+      Cow Walk Anim Max_9: -4753863366296906517
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

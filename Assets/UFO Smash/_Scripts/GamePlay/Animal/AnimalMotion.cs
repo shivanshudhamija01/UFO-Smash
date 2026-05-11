@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimalMotion : MonoBehaviour
 {
     [SerializeField] private float speed;
+    private bool isAbducted = false;
     private Rigidbody2D rb;
 
     void Awake()
@@ -14,7 +15,9 @@ public class AnimalMotion : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isAbducted) return;
         Vector2 distanceTravelled = (Vector2)transform.right * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + distanceTravelled);
     }
+    public void SetAbduct() => isAbducted = true;
 }
