@@ -18,3 +18,12 @@ public enum UFOType
     Shield,
     Boss,
 }
+public enum TeachingPhase
+{
+    Introduce,
+    Confidence,
+    Mix,
+    Panic,
+    Mastery,
+    Survival
+}
