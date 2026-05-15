@@ -27,3 +27,19 @@ public enum TeachingPhase
     Mastery,
     Survival
 }
+public enum AnimalState
+{
+    roam,
+    panic,
+    abducting,
+    taken,
+    rescue
+}
+public enum UFOStates
+{
+    spline,
+    manual,
+    abduct,
+    blast,
+    success
+}

@@ -18,7 +18,11 @@ public class AnimalSpawner : MonoBehaviour
     public float maxMoveSpeed = 3f;
 
     private int currentAnimals;
-
+    private IAnimalService animalService;
+    private void Awake()
+    {
+        animalService = ServiceLocator.Get<IAnimalService>();
+    }
     private void Start()
     {
         StartCoroutine(SpawnRoutine());
@@ -88,21 +92,24 @@ public class AnimalSpawner : MonoBehaviour
         float speed =
             Random.Range(minMoveSpeed, maxMoveSpeed);
 
-        Animal animal =
-            animalObj.GetComponent<Animal>();
+        AnimalController animal =
+            animalObj.GetComponent<AnimalController>();
 
         animal.Initialize(
             targetPoint,
-            speed,
             this,
             selectedLane, index + 1);
 
         currentAnimals++;
+        animalService.AddAnimal(animal);
         selectedLane.currentAnimals++;
     }
 
-    public void AnimalRemoved(Animal animal)
+    public void AnimalRemoved(AnimalController animal)
     {
         currentAnimals--;
+        animalService.RemoveAnimal(animal);
     }
 }
+
+// Need to add the service to store the currently active animals in the scene and remove on animal removed;
