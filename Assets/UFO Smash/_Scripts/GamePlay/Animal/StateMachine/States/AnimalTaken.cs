@@ -23,3 +23,7 @@ public class AnimalTaken : BaseState<AnimalController>
 
     }
 }
+
+// This is the state , when UFO is successful of taking the animal away , 
+// At this, the player will lost the point and the animal is put back to the pool
+// and also i have to update the services also

@@ -68,6 +68,7 @@ public class AnimalSpawner : MonoBehaviour
         if (selectedLane == null)
             return;
 
+        Debug.Log("Animal is spawned in the lane : " + index);
         // Direction
         bool moveAToB = Random.value > 0.5f;
 

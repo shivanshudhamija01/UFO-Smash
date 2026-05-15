@@ -57,7 +57,7 @@ public class UFOSpawner : MonoBehaviour
         GameObject ufo = UFOPool.instance.GetUFO(profile.UfoType);
         if (ufo == null)
         {
-            Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
+            // Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
             return;
         }
         aliveUFOCount++;

@@ -40,7 +40,7 @@ public class AnimalRoam : BaseState<AnimalController>
     }
     public override void OnExitState()
     {
-        Debug.Log("Animal Roam Exit");
+        // Debug.Log("Animal Roam Exit");
     }
     public override void FixedUpdateState()
     {
@@ -53,6 +53,8 @@ public class AnimalRoam : BaseState<AnimalController>
         lane = controller.GetAssignedLane();
         moveSpeed = controller.GetMovingSpeed();
         transform = controller.GetTransform();
+        Debug.Log("Transform position is : " + transform.position);
+        Debug.Log("Target Position is : " + targetPoint.position);
     }
     private void ReturnToPool()
     {

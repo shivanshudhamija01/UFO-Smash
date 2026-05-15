@@ -102,11 +102,11 @@ public class UFO : MonoBehaviour
         Vector2 direction = (lockedAnimal.position - transform.position).normalized;
         if (direction.x < 0)
         {
-            Debug.Log("Means animal is present to the left of the UFO");
+            // Debug.Log("Means animal is present to the left of the UFO");
         }
         else
         {
-            Debug.Log("Means animal is present to the right of the UFO");
+            // Debug.Log("Means animal is present to the right of the UFO");
         }
         int dir = direction.x < 0 ? -1 : 1;
         float angle = dir * 30;
@@ -129,7 +129,7 @@ public class UFO : MonoBehaviour
     }
     private IEnumerator OverShootAndTiltWithJerk(float x, float y, float targetAngle)
     {
-        Debug.Log("OverShootAndTiltWithJerk is called");
+        // Debug.Log("OverShootAndTiltWithJerk is called");
         Vector2 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
@@ -162,7 +162,7 @@ public class UFO : MonoBehaviour
     }
     private IEnumerator OverShootAndTilt(float x, float y, float targetAngle)
     {
-        Debug.Log("OverShootAndTilt is called");
+        // Debug.Log("OverShootAndTilt is called");
         AnimalMotion animal = lockedAnimal.gameObject.GetComponent<AnimalMotion>();
         animal.SetAbduct();
         Vector2 startPos = transform.position;
@@ -196,7 +196,7 @@ public class UFO : MonoBehaviour
     }
     private IEnumerator MoveToAnimal()
     {
-        Debug.Log("Move To Animal");
+        // Debug.Log("Move To Animal");
         Vector2 startPos = transform.position;
         Vector2 targetPos = new Vector2(lockedAnimal.position.x, lockedAnimal.position.y + offset.y);
         Quaternion targetRot = Quaternion.Euler(0, 0, 0);

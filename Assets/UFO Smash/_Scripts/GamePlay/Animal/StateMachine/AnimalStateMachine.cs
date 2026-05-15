@@ -6,6 +6,7 @@ public class AnimalStateMachine : BaseStateMachine<AnimalController, AnimalState
 
     protected override void InitializeStates()
     {
+        RegisterState(AnimalState.sleep, new AnimalSleep(controller));
         RegisterState(AnimalState.roam, new AnimalRoam(controller));
         RegisterState(AnimalState.panic, new AnimalPanic(controller));
         RegisterState(AnimalState.abducting, new AnimalAbduct(controller));

@@ -33,7 +33,8 @@ public enum AnimalState
     panic,
     abducting,
     taken,
-    rescue
+    rescue,
+    sleep
 }
 public enum UFOStates
 {

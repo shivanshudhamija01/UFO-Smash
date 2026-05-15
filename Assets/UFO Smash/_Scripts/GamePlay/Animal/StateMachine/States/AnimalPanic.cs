@@ -22,3 +22,5 @@ public class AnimalPanic : BaseState<AnimalController>
 
     }
 }
+// When the UFO lock the animal , then needs to change the state to tht panic state.
+// In panic state, the animal stop moving and its animation will change

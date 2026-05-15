@@ -41,7 +41,7 @@ public class BaseStateMachine<TController, TStateEnum>
         // Validate state exists
         if (!stateRegistry.TryGetValue(newState, out var nextState))
         {
-            Debug.LogError($"State {newState} not registered in state machine!");
+            // Debug.LogError($"State {newState} not registered in state machine!");
             return false;
         }
 
@@ -75,7 +75,7 @@ public class BaseStateMachine<TController, TStateEnum>
     {
         if (stateRegistry.ContainsKey(stateType))
         {
-            Debug.LogWarning($"State {stateType} already registered, overwriting...");
+            // Debug.LogWarning($"State {stateType} already registered, overwriting...");
         }
         stateRegistry[stateType] = state;
     }

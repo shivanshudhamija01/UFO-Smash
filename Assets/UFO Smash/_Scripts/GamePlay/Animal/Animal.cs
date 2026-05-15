@@ -61,7 +61,7 @@ public class Animal : MonoBehaviour
 
         lane.currentAnimals--;
 
-        spawner.AnimalRemoved(this);
+        // spawner.AnimalRemoved(this);
 
         gameObject.SetActive(false);
     }

@@ -16,18 +16,23 @@ public class AnimalController : MonoBehaviour
         animalStateMachine = new AnimalStateMachine(this);
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
+    private void OnEnable()
+    {
+        animalStateMachine.ChangeState(AnimalState.sleep);
+    }
+    private void OnDisable()
+    {
+        animalStateMachine.ChangeState(AnimalState.sleep);
+    }
     public void Initialize(Transform target, AnimalSpawner animalSpawner, Lane assignedLane, int layer)
     {
         targetPoint = target;
         spawner = animalSpawner;
         lane = assignedLane;
         spriteRenderer.sortingOrder = layer;
+        animalStateMachine.ChangeState(AnimalState.roam);
         // May be here i need to add the logic for isMoving, but as it is a state machine perhaps , it works without it
         // isMoving = true;
-    }
-    private void Start()
-    {
-        animalStateMachine.ChangeState(AnimalState.roam);
     }
     void Update()
     {
