@@ -70,7 +70,8 @@ Assets/UFO Smash/_Scripts/GamePlay/Player/
 Assets/UFO Smash/_Scripts/GamePlay/UFO/StateMachine/States/
  UFOAbduct.cs
  UFOBlast.cs
- UFOEntry.cs
+ UFOHover.cs
+ UFOSpline.cs
  UFOSuccess.cs
 Assets/UFO Smash/_Scripts/GamePlay/UFO/
  StateMachine/UFOStateMachine.cs
