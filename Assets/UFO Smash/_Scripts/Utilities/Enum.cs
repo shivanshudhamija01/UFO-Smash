@@ -38,8 +38,7 @@ public enum AnimalState
 }
 public enum UFOStates
 {
-    spline,
-    manual,
+    entry,
     abduct,
     blast,
     success
