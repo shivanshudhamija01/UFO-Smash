@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UFOHover : BaseState<UFOController>
 {
@@ -10,7 +11,7 @@ public class UFOHover : BaseState<UFOController>
     private float manualMoveSpeed;
 
     private Coroutine approachRoutine;
-
+    private IAnimalService animalService;
     public UFOHover(UFOController controller)
         : base(controller)
     {
@@ -18,9 +19,13 @@ public class UFOHover : BaseState<UFOController>
 
     public override void OnEnterState()
     {
+        if (animalService == null)
+        {
+            animalService = ServiceLocator.Get<IAnimalService>();
+        }
         transform = controller.GetTransform();
 
-        lockedAnimal = controller.GetLockedAnimal();
+        lockedAnimal = LockAnimal();
 
         offset = controller.GetOffset();
 
@@ -184,5 +189,26 @@ public class UFOHover : BaseState<UFOController>
         transform.position = targetPos;
 
         controller.GetTorchLight().gameObject.SetActive(true);
+        controller.GetStateMachine().ChangeState(UFOStates.abduct);
+        // Here i need to change the UFO state to the abducting state, most important state, 
+    }
+    // This will lock the animal 
+    // But still have to handle so many things , as have to update the list , so that the other ufo will not lock the same animal again,
+    // And one more thing need to improve is that 
+    // Need to fix alot of things in this method
+    private Transform LockAnimal()
+    {
+        List<AnimalController> list = animalService.GetAnimalInScene();
+        int index = Random.Range(0, list.Count);
+        AnimalController animal = list[index];
+        if (animal != null)
+        {
+            animalService.RemoveAnimal(animal);
+        }
+        return animal.gameObject.transform;
     }
 }
+
+// I have two ways to decide the animal hover, 
+// 1. First is that, while moving along the spline , either the ufo will decide from the animal service , okay later i gonna follow this animal and pass the reference of this animal to the hover state
+// 2. Better version is that ,on enter into hover state, i will call a method to decide the okay this is my target, and i am going to follow this.

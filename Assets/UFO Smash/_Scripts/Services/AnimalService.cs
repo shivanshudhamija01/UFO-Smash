@@ -10,9 +10,22 @@ public class AnimalService : IAnimalService
         // Debug.Log("Animal added to the scene is : " + animal.gameObject.name + " " + " the count of list is : " + animalActiveInScene.Count);
     }
 
+
     public List<AnimalController> GetAnimalInScene()
     {
-        return animalActiveInScene;
+        if (animalActiveInScene != null)
+        {
+            return animalActiveInScene;
+        }
+        return null;
+    }
+    public int AnimalCountInScene()
+    {
+        if (animalActiveInScene != null)
+        {
+            return animalActiveInScene.Count;
+        }
+        return 0;
     }
 
     public void RemoveAnimal(AnimalController animal)

@@ -25,7 +25,11 @@ public class UFOController : MonoBehaviour
         stateMachine =
             new UFOStateMachine(this);
     }
-
+    // Remove this start method later and call the initialize method in spawning
+    private void Start()
+    {
+        Initialize(lockedAnimal);
+    }
     public void Initialize(Transform targetAnimal)
     {
         lockedAnimal = targetAnimal;
@@ -55,3 +59,5 @@ public class UFOController : MonoBehaviour
     public UFOStateMachine GetStateMachine()
         => stateMachine;
 }
+
+// I got it why the UFO movement is not working , because the initialize is called in Spawning script of both the animal and UFO controller

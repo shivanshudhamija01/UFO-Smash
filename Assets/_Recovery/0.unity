@@ -2798,10 +2798,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f76c4cd185749f78b613cdab9a2937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFOLight
-  leftX: -0.2
-  rightX: 0.2
-  leftY: 0.6
-  rightY: 0.6
+  smallShapePoints:
+  - {x: -0.2, y: 0.6, z: 0}
+  - {x: -0.2, y: 0.6, z: 0}
+  - {x: 0.2, y: 0.6, z: 0}
+  - {x: 0.2, y: 0.6, z: 0}
+  largeShapePoints:
+  - {x: -0.2, y: 0.6, z: 0}
+  - {x: -1.5, y: -5, z: 0}
+  - {x: 1.5, y: -5, z: 0}
+  - {x: 0.2, y: 0.6, z: 0}
   speed: 0
   animalLayer:
     serializedVersion: 2
@@ -3711,9 +3717,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7576287127738401955, guid: 4e819eeb4481d4d04b696f12c25bd84f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4231123954695290806}
-    - targetCorrespondingSourceObject: {fileID: 7576287127738401955, guid: 4e819eeb4481d4d04b696f12c25bd84f, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4231123954695290809}
   m_SourcePrefab: {fileID: 100100000, guid: 4e819eeb4481d4d04b696f12c25bd84f, type: 3}
 --- !u!4 &4231123954695290803 stripped
@@ -3721,19 +3724,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8089111051161589169, guid: 4e819eeb4481d4d04b696f12c25bd84f, type: 3}
   m_PrefabInstance: {fileID: 4231123954695290802}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4231123954695290806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657022551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6453773be234ee983e4ad1f4e764b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalMotion
-  speed: 0.5
 --- !u!61 &4231123954695290809
 BoxCollider2D:
   m_ObjectHideFlags: 0

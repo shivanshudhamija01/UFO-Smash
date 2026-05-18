@@ -53,8 +53,8 @@ public class AnimalRoam : BaseState<AnimalController>
         lane = controller.GetAssignedLane();
         moveSpeed = controller.GetMovingSpeed();
         transform = controller.GetTransform();
-        Debug.Log("Transform position is : " + transform.position);
-        Debug.Log("Target Position is : " + targetPoint.position);
+        // Debug.Log("Transform position is : " + transform.position);
+        // Debug.Log("Target Position is : " + targetPoint.position);
     }
     private void ReturnToPool()
     {
