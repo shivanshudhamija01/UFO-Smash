@@ -25,12 +25,8 @@ public class AnimalAbduct
     public override void OnEnterState()
     {
         Init();
-
-        // Decide tilt direction
-        targetTilt =
-            isMovingLeftToRight
-            ? -tiltAngle
-            : tiltAngle;
+        targetTilt = tiltAngle;
+        Debug.Log("The value of moving isLeftToRight is : " + isMovingLeftToRight);
 
         Debug.Log(
             "Animal entered into abduct state"
@@ -62,60 +58,30 @@ public class AnimalAbduct
 
     private void Init()
     {
-        transform =
-            controller.GetTransform();
+        transform = controller.GetTransform();
 
-        visual =
-            controller
-            .GetVisualTransform();
+        visual = controller.GetVisualTransform();
 
-        abductTarget =
-            controller
-            .GetAbductTarget();
+        abductTarget = controller.GetAbductTarget();
 
-        isMovingLeftToRight =
-            controller
-            .IsMovingLeftToRight();
+        isMovingLeftToRight = controller.IsMovingLeftToRight();
 
-        tiltAngle =
-            controller
-            .GetTiltAngle();
+        tiltAngle = controller.GetTiltAngle();
 
-        tiltSpeed =
-            controller
-            .GetTiltSpeed();
+        tiltSpeed = controller.GetTiltSpeed();
 
-        abductingSpeed =
-            controller
-            .GetAbductingSpeed();
+        abductingSpeed = controller.GetAbductingSpeed();
     }
 
     private void MoveTowardsUFO()
     {
-        transform.position =
-            Vector2.MoveTowards(
-                transform.position,
-                abductTarget.position,
-                abductingSpeed
-                * Time.deltaTime
-            );
+        transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * Time.deltaTime);
     }
 
     private void TiltVisual()
     {
-        Quaternion targetRotation =
-            Quaternion.Euler(
-                0,
-                0,
-                targetTilt
-            );
+        Quaternion targetRotation = Quaternion.Euler(0, 0, targetTilt);
 
-        visual.localRotation =
-            Quaternion.Lerp(
-                visual.localRotation,
-                targetRotation,
-                tiltSpeed
-                * Time.deltaTime
-            );
+        visual.localRotation = Quaternion.Lerp(visual.localRotation, targetRotation, tiltSpeed * Time.deltaTime);
     }
 }

@@ -89,9 +89,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalController
   moveSpeed: 0.35
   visualTransform: {fileID: 7464627279944704922}
-  tiltSpeed: 0.5
+  tiltSpeed: 1.5
   abductingSpeed: 0.5
-  tiltAngle: 40
+  tiltAngle: -45
 --- !u!61 &9134875441818392931
 BoxCollider2D:
   m_ObjectHideFlags: 0
