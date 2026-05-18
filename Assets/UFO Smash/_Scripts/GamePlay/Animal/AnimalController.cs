@@ -5,13 +5,21 @@ public class AnimalController : MonoBehaviour, IAbductable
     // i think i have to set the reference of the speed here, and then 
     // set accordingly to animal differently
     [SerializeField] private float moveSpeed;
+    [SerializeField] private Transform visualTransform;
+    [SerializeField] private float tiltSpeed = 5f;
+    [SerializeField] private float abductingSpeed = 10f;
+    [SerializeField] private float tiltAngle = 40f;
     private Transform targetPoint;
     private AnimalSpawner spawner;
     private Lane lane;
     private bool isMoving;
     private SpriteRenderer spriteRenderer;
     private AnimalStateMachine animalStateMachine;
+    #region  Abduct
     private Transform abductTarget;
+    private bool leftToRight;
+
+    #endregion
     private void Awake()
     {
         animalStateMachine = new AnimalStateMachine(this);
@@ -25,12 +33,13 @@ public class AnimalController : MonoBehaviour, IAbductable
     {
         animalStateMachine.ChangeState(AnimalState.sleep);
     }
-    public void Initialize(Transform target, AnimalSpawner animalSpawner, Lane assignedLane, int layer)
+    public void Initialize(Transform target, AnimalSpawner animalSpawner, Lane assignedLane, int layer, bool lTor)
     {
         targetPoint = target;
         spawner = animalSpawner;
         lane = assignedLane;
         spriteRenderer.sortingOrder = layer;
+        leftToRight = lTor;
         animalStateMachine.ChangeState(AnimalState.roam);
         // May be here i need to add the logic for isMoving, but as it is a state machine perhaps , it works without it
         // isMoving = true;
@@ -42,13 +51,6 @@ public class AnimalController : MonoBehaviour, IAbductable
             animalStateMachine.Update();
         }
     }
-    public Transform GetTargetPoint() => targetPoint;
-    public AnimalSpawner GetAnimalSpawner() => spawner;
-    public Lane GetAssignedLane() => lane;
-    public float GetMovingSpeed() => moveSpeed;
-    public Transform GetTransform() => transform;
-    public Transform GetAbductTarget() => abductTarget;
-
     public void BeginAbduction(Transform abductTarget)
     {
         this.abductTarget = abductTarget;
@@ -59,4 +61,15 @@ public class AnimalController : MonoBehaviour, IAbductable
     {
         animalStateMachine.ChangeState(AnimalState.rescue);
     }
+    public Transform GetTargetPoint() => targetPoint;
+    public AnimalSpawner GetAnimalSpawner() => spawner;
+    public Lane GetAssignedLane() => lane;
+    public float GetMovingSpeed() => moveSpeed;
+    public Transform GetTransform() => transform;
+    public Transform GetAbductTarget() => abductTarget;
+    public bool IsMovingLeftToRight() => leftToRight;
+    public float GetTiltAngle() => tiltAngle;
+    public float GetTiltSpeed() => tiltSpeed;
+    public float GetAbductingSpeed() => abductingSpeed;
+    public Transform GetVisualTransform() => visualTransform;
 }

@@ -99,7 +99,7 @@ public class AnimalSpawner : MonoBehaviour
         animal.Initialize(
             targetPoint,
             this,
-            selectedLane, index + 1);
+            selectedLane, index + 1, moveAToB);
 
         currentAnimals++;
         animalService.AddAnimal(animal);
