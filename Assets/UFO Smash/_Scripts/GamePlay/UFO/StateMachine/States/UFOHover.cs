@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class UFOHover : BaseState<UFOController>
 {
     private Transform transform;
-    private Transform lockedAnimal;
-
+    private IAbductable lockedAnimal;
+    private Transform lockedAnimalTransform;
     private Vector2 offset;
     private float manualMoveSpeed;
 
@@ -27,15 +27,17 @@ public class UFOHover : BaseState<UFOController>
 
         lockedAnimal = LockAnimal();
 
-        offset = controller.GetOffset();
-
-        manualMoveSpeed = controller.GetManualSpeed();
-
         if (lockedAnimal == null)
         {
             Debug.LogWarning("Locked animal is null");
             return;
         }
+        lockedAnimalTransform = lockedAnimal.GetTransform();
+
+        offset = controller.GetOffset();
+
+        manualMoveSpeed = controller.GetManualSpeed();
+
 
         approachRoutine = controller.StartCoroutine(UFOIntroMovement());
     }
@@ -59,7 +61,7 @@ public class UFOHover : BaseState<UFOController>
 
     private IEnumerator UFOIntroMovement()
     {
-        Vector2 direction = (lockedAnimal.position - transform.position).normalized;
+        Vector2 direction = (lockedAnimalTransform.position - transform.position).normalized;
 
         int dir = direction.x < 0 ? -1 : 1;
 
@@ -95,11 +97,17 @@ public class UFOHover : BaseState<UFOController>
 
         Quaternion startRot = transform.rotation;
 
-        Vector2 targetPos = new Vector2(lockedAnimal.position.x + x, lockedAnimal.position.y + y);
+        Vector2 targetPos = new Vector2(lockedAnimalTransform.position.x + x, lockedAnimalTransform.position.y + y);
 
         Quaternion targetRot = Quaternion.Euler(0, 0, targetAngle);
 
-        float duration = manualMoveSpeed;
+        float distance = Vector2.Distance(startPos, targetPos);
+
+        // Distance-based timing
+        float duration = distance / manualMoveSpeed;
+
+        // Clamp for consistency
+        duration = Mathf.Clamp(duration, 0.25f, 0.85f);
 
         float elapsed = 0f;
 
@@ -132,7 +140,7 @@ public class UFOHover : BaseState<UFOController>
 
         Quaternion startRot = transform.rotation;
 
-        Vector2 targetPos = new Vector2(lockedAnimal.position.x + x, lockedAnimal.position.y + y);
+        Vector2 targetPos = new Vector2(lockedAnimalTransform.position.x + x, lockedAnimalTransform.position.y + y);
 
         Quaternion targetRot = Quaternion.Euler(0, 0, targetAngle);
 
@@ -164,7 +172,7 @@ public class UFOHover : BaseState<UFOController>
     {
         Vector2 startPos = transform.position;
 
-        Vector2 targetPos = new Vector2(lockedAnimal.position.x, lockedAnimal.position.y + offset.y);
+        Vector2 targetPos = new Vector2(lockedAnimalTransform.position.x, lockedAnimalTransform.position.y + offset.y);
 
         Quaternion targetRot = Quaternion.Euler(0, 0, 0);
 
@@ -189,6 +197,7 @@ public class UFOHover : BaseState<UFOController>
         transform.position = targetPos;
 
         controller.GetTorchLight().gameObject.SetActive(true);
+        lockedAnimal.BeginAbduction(controller.transform);
         controller.GetStateMachine().ChangeState(UFOStates.abduct);
         // Here i need to change the UFO state to the abducting state, most important state, 
     }
@@ -196,7 +205,7 @@ public class UFOHover : BaseState<UFOController>
     // But still have to handle so many things , as have to update the list , so that the other ufo will not lock the same animal again,
     // And one more thing need to improve is that 
     // Need to fix alot of things in this method
-    private Transform LockAnimal()
+    private IAbductable LockAnimal()
     {
         List<AnimalController> list = animalService.GetAnimalInScene();
         int index = Random.Range(0, list.Count);
@@ -205,7 +214,7 @@ public class UFOHover : BaseState<UFOController>
         {
             animalService.RemoveAnimal(animal);
         }
-        return animal.gameObject.transform;
+        return animal;
     }
 }
 

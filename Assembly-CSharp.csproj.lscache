@@ -92,7 +92,9 @@ Assets/UFO Smash/_Scripts/
   UFOSpawner.cs
  Utilities/
   Enum.cs
-  Interfaces/IAnimalService.cs
+  Interfaces/
+   IAbductable.cs
+   IAnimalService.cs
   Lane.cs
   StateMachine/
    BaseState.cs

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AnimalController : MonoBehaviour
+public class AnimalController : MonoBehaviour, IAbductable
 {
     // i think i have to set the reference of the speed here, and then 
     // set accordingly to animal differently
@@ -11,6 +11,7 @@ public class AnimalController : MonoBehaviour
     private bool isMoving;
     private SpriteRenderer spriteRenderer;
     private AnimalStateMachine animalStateMachine;
+    private Transform abductTarget;
     private void Awake()
     {
         animalStateMachine = new AnimalStateMachine(this);
@@ -46,5 +47,16 @@ public class AnimalController : MonoBehaviour
     public Lane GetAssignedLane() => lane;
     public float GetMovingSpeed() => moveSpeed;
     public Transform GetTransform() => transform;
+    public Transform GetAbductTarget() => abductTarget;
 
+    public void BeginAbduction(Transform abductTarget)
+    {
+        this.abductTarget = abductTarget;
+        animalStateMachine.ChangeState(AnimalState.abducting);
+    }
+
+    public void CancelAbduction()
+    {
+        animalStateMachine.ChangeState(AnimalState.rescue);
+    }
 }

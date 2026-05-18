@@ -4184,7 +4184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024831197fd6643bf98cd55fe4c62ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFOController
-  splineContainer: {fileID: 454656014}
+  splineContainer: {fileID: 1701355738}
   splineMoveSpeed: 5
   rotateAlongSpline: 1
   manualMoveSpeed: 0.5
