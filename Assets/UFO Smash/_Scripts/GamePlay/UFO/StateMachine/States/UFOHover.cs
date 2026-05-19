@@ -197,7 +197,7 @@ public class UFOHover : BaseState<UFOController>
         transform.position = targetPos;
 
         controller.GetTorchLight().gameObject.SetActive(true);
-        lockedAnimal.BeginAbduction(controller.transform);
+        lockedAnimal.BeginAbduction(controller.transform, controller);
         controller.GetStateMachine().ChangeState(UFOStates.abduct);
         // Here i need to change the UFO state to the abducting state, most important state, 
     }

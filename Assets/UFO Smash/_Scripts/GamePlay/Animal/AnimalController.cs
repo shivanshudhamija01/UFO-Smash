@@ -18,7 +18,7 @@ public class AnimalController : MonoBehaviour, IAbductable
     #region  Abduct
     private Transform abductTarget;
     private bool leftToRight;
-
+    private UFOController currentUFO;
     #endregion
     private void Awake()
     {
@@ -51,9 +51,10 @@ public class AnimalController : MonoBehaviour, IAbductable
             animalStateMachine.Update();
         }
     }
-    public void BeginAbduction(Transform abductTarget)
+    public void BeginAbduction(Transform abductTarget, UFOController ufo)
     {
         this.abductTarget = abductTarget;
+        this.currentUFO = ufo;
         animalStateMachine.ChangeState(AnimalState.abducting);
     }
 
@@ -72,4 +73,6 @@ public class AnimalController : MonoBehaviour, IAbductable
     public float GetTiltSpeed() => tiltSpeed;
     public float GetAbductingSpeed() => abductingSpeed;
     public Transform GetVisualTransform() => visualTransform;
+    public UFOController GetCurrentUFO() => currentUFO;
+    public AnimalStateMachine GetStateMachine() => animalStateMachine;
 }

@@ -15,10 +15,10 @@ public class AnimalAbduct
     private float abductingSpeed;
 
     private float targetTilt;
+    private float captureDistance = 0.5f;
+    private UFOController uFOController;
 
-    public AnimalAbduct(
-        AnimalController controller)
-        : base(controller)
+    public AnimalAbduct(AnimalController controller) : base(controller)
     {
     }
 
@@ -28,27 +28,23 @@ public class AnimalAbduct
         targetTilt = tiltAngle;
         Debug.Log("The value of moving isLeftToRight is : " + isMovingLeftToRight);
 
-        Debug.Log(
-            "Animal entered into abduct state"
-        );
+        Debug.Log("Animal entered into abduct state");
     }
 
     public override void UpdateState()
     {
-        if (abductTarget == null)
-            return;
+        if (abductTarget == null) return;
 
         MoveTowardsUFO();
-
         TiltVisual();
+        CheckCapture();
     }
 
     public override void OnExitState()
     {
         if (visual != null)
         {
-            visual.localRotation =
-                Quaternion.identity;
+            visual.localRotation = Quaternion.identity;
         }
     }
 
@@ -71,6 +67,7 @@ public class AnimalAbduct
         tiltSpeed = controller.GetTiltSpeed();
 
         abductingSpeed = controller.GetAbductingSpeed();
+        uFOController = controller.GetCurrentUFO();
     }
 
     private void MoveTowardsUFO()
@@ -83,5 +80,21 @@ public class AnimalAbduct
         Quaternion targetRotation = Quaternion.Euler(0, 0, targetTilt);
 
         visual.localRotation = Quaternion.Lerp(visual.localRotation, targetRotation, tiltSpeed * Time.deltaTime);
+    }
+    private void CheckCapture()
+    {
+        float distance = Vector2.Distance(transform.position, abductTarget.position);
+
+        if (distance <= captureDistance)
+        {
+            // Change UFO state
+            if (uFOController != null)
+            {
+                uFOController.GetStateMachine().ChangeState(UFOStates.success);
+            }
+
+            // Change Animal state
+            controller.GetStateMachine().ChangeState(AnimalState.taken);
+        }
     }
 }
