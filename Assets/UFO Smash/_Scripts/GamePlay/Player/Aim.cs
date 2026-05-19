@@ -26,7 +26,7 @@ public class Aim : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePos - initialMousePos).normalized;
             speed = (mousePos - initialMousePos).magnitude;
-            playerTransform.up = direction;
+            // playerTransform.up = direction;
             trajectoryPredictor.ShowTrajectory(direction * shootSpeed * speed);
         }
         if (Input.GetMouseButtonUp(0))

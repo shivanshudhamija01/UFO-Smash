@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4339699541729911497}
   - component: {fileID: 3617779814467608490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3821939382352485173}
   - component: {fileID: 5076752542687440511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,9 +193,9 @@ GameObject:
   - component: {fileID: 8374456433496154703}
   - component: {fileID: 8556630890084833095}
   - component: {fileID: 1258305509076199882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stone
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

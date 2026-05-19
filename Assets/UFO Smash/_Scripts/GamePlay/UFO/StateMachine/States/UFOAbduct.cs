@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class UFOAbduct : BaseState<UFOController>
 {
+    private bool isStoneHit;
     public UFOAbduct(UFOController controller) : base(controller)
     {
     }
@@ -11,7 +12,6 @@ public class UFOAbduct : BaseState<UFOController>
     }
     public override void UpdateState()
     {
-
     }
     public override void OnExitState()
     {

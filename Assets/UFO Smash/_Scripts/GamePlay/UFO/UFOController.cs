@@ -16,7 +16,7 @@ public class UFOController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Light2D torchLight;
-    [SerializeField] private Transform lockedAnimal;
+    [SerializeField] private IAbductable lockedAnimal;
 
     private UFOStateMachine stateMachine;
 
@@ -30,7 +30,7 @@ public class UFOController : MonoBehaviour
     {
         Initialize(lockedAnimal);
     }
-    public void Initialize(Transform targetAnimal)
+    public void Initialize(IAbductable targetAnimal)
     {
         lockedAnimal = targetAnimal;
 
@@ -44,9 +44,30 @@ public class UFOController : MonoBehaviour
         stateMachine.Update();
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Stone"))
+            return;
+
+        // Only vulnerable in abduct state
+        if (stateMachine.GetCurrentState() != UFOStates.abduct)
+            return;
+
+        Debug.Log("Pathar vajeya");
+
+        // Release animal
+        if (lockedAnimal != null)
+        {
+            lockedAnimal.ReleaseFromAbduction();
+
+            lockedAnimal = null;
+        }
+
+        // UFO blast
+        stateMachine.ChangeState(UFOStates.blast);
+    }
     // Getters
     public Transform GetTransform() => transform;
-    public Transform GetLockedAnimal() => lockedAnimal;
     public Light2D GetTorchLight() => torchLight;
 
     public SplineContainer GetSpline() => splineContainer;
@@ -58,6 +79,15 @@ public class UFOController : MonoBehaviour
 
     public UFOStateMachine GetStateMachine()
         => stateMachine;
+    public void SetLockedAnimal(IAbductable animal)
+    {
+        lockedAnimal = animal;
+    }
+
+    public IAbductable GetLockedAnimal()
+    {
+        return lockedAnimal;
+    }
 }
 
 // I got it why the UFO movement is not working , because the initialize is called in Spawning script of both the animal and UFO controller

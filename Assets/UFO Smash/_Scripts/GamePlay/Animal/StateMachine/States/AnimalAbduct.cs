@@ -17,7 +17,6 @@ public class AnimalAbduct
     private float targetTilt;
     private float captureDistance = 0.5f;
     private UFOController uFOController;
-
     public AnimalAbduct(AnimalController controller) : base(controller)
     {
     }
@@ -34,7 +33,6 @@ public class AnimalAbduct
     public override void UpdateState()
     {
         if (abductTarget == null) return;
-
         MoveTowardsUFO();
         TiltVisual();
         CheckCapture();
@@ -42,10 +40,10 @@ public class AnimalAbduct
 
     public override void OnExitState()
     {
-        if (visual != null)
-        {
-            visual.localRotation = Quaternion.identity;
-        }
+        // if (visual != null)
+        // {
+        //     visual.localRotation = Quaternion.identity;
+        // }
     }
 
     public override void FixedUpdateState()

@@ -58,8 +58,9 @@ public class AnimalController : MonoBehaviour, IAbductable
         animalStateMachine.ChangeState(AnimalState.abducting);
     }
 
-    public void CancelAbduction()
+    public void ReleaseFromAbduction()
     {
+        currentUFO = null;
         animalStateMachine.ChangeState(AnimalState.rescue);
     }
     public Transform GetTargetPoint() => targetPoint;
