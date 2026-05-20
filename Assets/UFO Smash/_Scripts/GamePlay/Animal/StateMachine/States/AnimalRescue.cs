@@ -1,12 +1,9 @@
 using UnityEngine;
 
-public class AnimalRescue
-    : BaseState<AnimalController>
+public class AnimalRescue : BaseState<AnimalController>
 {
-    private Transform transform;
+    private Transform animalTransform;
     private Transform visual;
-
-    private Transform targetPoint;
 
     private float moveSpeed;
     private float tiltSpeed;
@@ -16,30 +13,26 @@ public class AnimalRescue
     private bool reachedGround;
 
     private const float reachThreshold = 0.1f;
+    private const float rotationThreshold = 2f;
 
-    private const float rotationThreshold = 1f;
-
-    public AnimalRescue(AnimalController controller) : base(controller)
+    public AnimalRescue(AnimalController controller)
+        : base(controller)
     {
     }
 
     public override void OnEnterState()
     {
-        transform = controller.GetTransform();
+        animalTransform = controller.GetTransform();
 
         visual = controller.GetVisualTransform();
-
-        targetPoint = controller.GetTargetPoint();
 
         moveSpeed = controller.GetAbductingSpeed();
 
         tiltSpeed = controller.GetTiltSpeed();
 
-        targetY = targetPoint.position.y;
+        targetY = controller.TargetPoint.position.y;
 
         reachedGround = false;
-
-        Debug.Log("Animal is rescued");
     }
 
     public override void UpdateState()
@@ -56,8 +49,7 @@ public class AnimalRescue
 
     public override void OnExitState()
     {
-        visual.localRotation =
-            Quaternion.identity;
+        visual.localRotation = Quaternion.identity;
     }
 
     public override void FixedUpdateState()
@@ -66,30 +58,24 @@ public class AnimalRescue
 
     private void MoveToGround()
     {
-
-        Vector3 currentPos = transform.position;
+        Vector3 currentPos = animalTransform.position;
 
         Vector3 targetPos = new Vector3(currentPos.x, targetY, currentPos.z);
 
-        transform.position = Vector3.MoveTowards(currentPos, targetPos, moveSpeed * Time.deltaTime);
-
-        // Reached ground
-        if (Mathf.Abs(transform.position.y - targetY) <= reachThreshold)
+        animalTransform.position = Vector2.MoveTowards(currentPos, targetPos, moveSpeed * Time.deltaTime);
+        // Debug.Log("I am inside the rescue state and current Pos and traget pos is : " + currentPos + " " + targetPos);
+        // Landed
+        if (Mathf.Abs(animalTransform.position.y - targetY) <= reachThreshold)
         {
-            transform.position = targetPos;
-
+            animalTransform.position = targetPos;
             reachedGround = true;
         }
     }
 
     private void TiltBack()
     {
-        Debug.Log("Tilt Back is called");
         visual.localRotation = Quaternion.Lerp(visual.localRotation, Quaternion.identity, tiltSpeed * Time.deltaTime);
 
-        float currentZ = Mathf.Abs(visual.localEulerAngles.z);
-
-        // Rotation recovered
         if (Quaternion.Angle(visual.localRotation, Quaternion.identity) <= rotationThreshold)
         {
             visual.localRotation = Quaternion.identity;

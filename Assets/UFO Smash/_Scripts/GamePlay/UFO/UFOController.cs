@@ -70,7 +70,7 @@ public class UFOController : MonoBehaviour
         if (stateMachine.GetCurrentState() != UFOStates.abduct)
             return;
 
-        Debug.Log("Pathar vajeya");
+        // Debug.Log("Pathar vajeya");
 
         // Release animal
         if (lockedAnimal != null)

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnimalController : MonoBehaviour, IAbductable
@@ -52,6 +53,7 @@ public class AnimalController : MonoBehaviour, IAbductable
         if (animalStateMachine != null)
         {
             animalStateMachine.Update();
+            Debug.Log("Animal current state is : " + animalStateMachine.GetCurrentState() + " " + "their tranform.position is : " + transform.position);
         }
     }
     public void BeginAbduction(Transform abductTarget, UFOController ufo)
@@ -66,10 +68,10 @@ public class AnimalController : MonoBehaviour, IAbductable
         currentUFO = null;
         animalStateMachine.ChangeState(AnimalState.rescue);
     }
-    public Transform GetTargetPoint() => targetPoint;
+    public Transform TargetPoint => targetPoint;
+    public Lane AssignedLane => lane;
+    public float MoveSpeed => moveSpeed;
     public AnimalSpawner GetAnimalSpawner() => spawner;
-    public Lane GetAssignedLane() => lane;
-    public float GetMovingSpeed() => moveSpeed;
     public Transform GetTransform() => transform;
     public Transform GetAbductTarget() => abductTarget;
     public bool IsMovingLeftToRight() => leftToRight;

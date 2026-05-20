@@ -23,7 +23,7 @@ public class AnimalAbduct
     {
         Init();
         targetTilt = tiltAngle;
-        Debug.Log("Animal entered into abduct state");
+        // Debug.Log("Animal entered into abduct state");
     }
 
     public override void UpdateState()
@@ -68,7 +68,7 @@ public class AnimalAbduct
 
     private void MoveTowardsUFO()
     {
-        transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, abductTarget.position, abductingSpeed * Time.deltaTime);
     }
 
     private void TiltVisual()

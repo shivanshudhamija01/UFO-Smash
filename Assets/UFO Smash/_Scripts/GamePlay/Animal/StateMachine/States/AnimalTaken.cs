@@ -54,10 +54,10 @@ public class AnimalTaken
     private void Init()
     {
         transform = controller.GetTransform();
-        lane = controller.GetAssignedLane();
+        lane = controller.AssignedLane;
         animalSpawner = controller.GetAnimalSpawner();
         visual = controller.GetVisualTransform();
-        Debug.Log("Animal is taken");
+        // Debug.Log("Animal is taken");
     }
     private void ReturnToPool()
     {

@@ -60,7 +60,7 @@ public class UFOSpawner : MonoBehaviour
 
                 waveBudget -= profile.Cost;
 
-                Debug.Log("Wave Budget cost is : " + waveBudget);
+                // Debug.Log("Wave Budget cost is : " + waveBudget);
             }
             else
             {
@@ -68,7 +68,7 @@ public class UFOSpawner : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 continue;
             }
-            Debug.Log("Wave Budget cost is : " + waveBudget);
+            // Debug.Log("Wave Budget cost is : " + waveBudget);
             float delay = spawnDelayCurve.Evaluate(currentWave);
             yield return new WaitForSeconds(delay);
         }
@@ -81,7 +81,7 @@ public class UFOSpawner : MonoBehaviour
 
         if (ufo == null)
         {
-            Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
+            // Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
             return;
         }
 
@@ -179,7 +179,7 @@ public class UFOSpawner : MonoBehaviour
     {
         if (availableSplines == null || availableSplines.Count == 0)
         {
-            Debug.LogWarning("No spline assigned!");
+            // Debug.LogWarning("No spline assigned!");
             return null;
         }
 

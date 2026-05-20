@@ -13,6 +13,10 @@ public class AnimalRoam : BaseState<AnimalController>
     public override void OnEnterState()
     {
         Init();
+        Debug.Log("Move speed of animal in roam state is : " + moveSpeed + " " + transform.gameObject.name);
+        Debug.Log("Animal position on roam enter: " + transform.position);
+        Debug.Log("Target position on roam enter: " + targetPoint.position);
+        Debug.Log("Distance on roam enter: " + Vector3.Distance(transform.position, targetPoint.position));
     }
     public override void UpdateState()
     {
@@ -31,7 +35,6 @@ public class AnimalRoam : BaseState<AnimalController>
         //     transform.localScale = new Vector3(1, 1, 1);
         // else
         //     transform.localScale = new Vector3(-1, 1, 1);
-
         // Reached destination
         if (Vector3.Distance(transform.position, targetPoint.position) < 0.1f)
         {
@@ -48,11 +51,12 @@ public class AnimalRoam : BaseState<AnimalController>
     }
     private void Init()
     {
-        targetPoint = controller.GetTargetPoint();
+        targetPoint = controller.TargetPoint;
         animalSpawner = controller.GetAnimalSpawner();
-        lane = controller.GetAssignedLane();
-        moveSpeed = controller.GetMovingSpeed();
+        lane = controller.AssignedLane;
+        moveSpeed = controller.MoveSpeed;
         transform = controller.GetTransform();
+        Debug.Log("Entered into animal roam state : " + transform.gameObject.name);
         // Debug.Log("Transform position is : " + transform.position);
         // Debug.Log("Target Position is : " + targetPoint.position);
     }

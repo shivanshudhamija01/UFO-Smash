@@ -8,7 +8,7 @@ public class UFOAbduct : BaseState<UFOController>
     }
     public override void OnEnterState()
     {
-        Debug.Log("Entered into the UFO abduct state");
+        // Debug.Log("Entered into the UFO abduct state");
     }
     public override void UpdateState()
     {
