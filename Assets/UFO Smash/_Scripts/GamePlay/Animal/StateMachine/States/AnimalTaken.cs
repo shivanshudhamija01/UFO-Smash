@@ -7,16 +7,15 @@ public class AnimalTaken
     private float shrinkSpeed = 3f;
     private float minScale = 0.2f;
     private Vector3 targetScale = Vector3.zero;
-
+    private Lane lane;
+    private AnimalSpawner animalSpawner;
     public AnimalTaken(AnimalController controller) : base(controller)
     {
     }
 
     public override void OnEnterState()
     {
-        transform = controller.GetTransform();
-
-        Debug.Log("Animal is taken");
+        Init();
     }
 
     public override void UpdateState()
@@ -41,14 +40,24 @@ public class AnimalTaken
         // Close enough to disappear
         if (Mathf.Abs(transform.localScale.x) <= minScale)
         {
-            transform.localScale = Vector3.one;
-
-            controller.gameObject.SetActive(false);
-
-            // Optional pooling callback
-            // controller
-            // .GetAnimalSpawner()
-            // .ReturnAnimal(controller);
+            ReturnToPool();
         }
     }
+    private void Init()
+    {
+        transform = controller.GetTransform();
+        lane = controller.GetAssignedLane();
+        animalSpawner = controller.GetAnimalSpawner();
+        Debug.Log("Animal is taken");
+    }
+    private void ReturnToPool()
+    {
+        lane.currentAnimals--;
+        animalSpawner.AnimalRemoved(this.controller);
+        transform.localScale = Vector3.one;
+        controller.gameObject.SetActive(false);
+    }
 }
+
+
+// Now when the animal is taken i have to do the same thing as i am doing in the animal roam state 

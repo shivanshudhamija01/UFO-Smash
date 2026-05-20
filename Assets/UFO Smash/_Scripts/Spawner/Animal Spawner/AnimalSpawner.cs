@@ -13,10 +13,6 @@ public class AnimalSpawner : MonoBehaviour
 
     public float minSpawnDelay = 1f;
     public float maxSpawnDelay = 3f;
-
-    public float minMoveSpeed = 1f;
-    public float maxMoveSpeed = 3f;
-
     private int currentAnimals;
     private IAnimalService animalService;
     private void Awake()
@@ -89,10 +85,6 @@ public class AnimalSpawner : MonoBehaviour
 
         animalObj.SetActive(true);
 
-        // Random speed
-        float speed =
-            Random.Range(minMoveSpeed, maxMoveSpeed);
-
         AnimalController animal =
             animalObj.GetComponent<AnimalController>();
 
@@ -114,3 +106,7 @@ public class AnimalSpawner : MonoBehaviour
 }
 
 // Need to add the service to store the currently active animals in the scene and remove on animal removed;
+
+// When the animal is taken, i have to update the service as well as the animal spawner 
+// In the animal spawner ,i have to clear the animal count from the lane where the animal is spawned,
+// and 

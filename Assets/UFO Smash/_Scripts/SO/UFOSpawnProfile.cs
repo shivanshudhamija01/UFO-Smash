@@ -12,4 +12,5 @@ public class UFOSpawnProfile : ScriptableObject
     [Header("Spawning Probability")]
     [Range(0, 1)]
     public float SpawnWeight;
+    public int RequiredAnimals = 1;
 }

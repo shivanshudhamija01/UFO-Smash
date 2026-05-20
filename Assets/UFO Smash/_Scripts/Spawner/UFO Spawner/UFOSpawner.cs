@@ -17,6 +17,12 @@ public class UFOSpawner : MonoBehaviour
     private int currentWave = 1;
     private int aliveUFOCount = 0;
     private bool isWaveRunning;
+    private IAnimalService animalService;
+    private int occupiedAnimals = 0;
+    private void Awake()
+    {
+        animalService = ServiceLocator.Get<IAnimalService>();
+    }
     void Start()
     {
         StartCoroutine(WaveRoutine());
@@ -46,8 +52,22 @@ public class UFOSpawner : MonoBehaviour
                 break;
             }
 
-            SpawnUFO(profile);
-            waveBudget -= profile.Cost;
+            if (CanSpawnUFO(profile))
+            {
+                SpawnUFO(profile);
+
+                occupiedAnimals += profile.RequiredAnimals;
+
+                waveBudget -= profile.Cost;
+
+                Debug.Log("Wave Budget cost is : " + waveBudget);
+            }
+            else
+            {
+                // Wait until animals available
+                yield return new WaitForSeconds(0.5f);
+                continue;
+            }
             Debug.Log("Wave Budget cost is : " + waveBudget);
             float delay = spawnDelayCurve.Evaluate(currentWave);
             yield return new WaitForSeconds(delay);
@@ -154,6 +174,7 @@ public class UFOSpawner : MonoBehaviour
                 0,
                 validProfiles.Count)];
     }
+    #region  HELPER-METHODS
     private SplineContainer GetRandomSpline()
     {
         if (availableSplines == null || availableSplines.Count == 0)
@@ -166,6 +187,29 @@ public class UFOSpawner : MonoBehaviour
 
         return availableSplines[index];
     }
+    private bool CanSpawnUFO(UFOSpawnProfile profile)
+    {
+        int animalsInScene = animalService.AnimalCountInScene();
+
+        int freeAnimals = animalsInScene - occupiedAnimals;
+
+        // Boss rule:// must be alone
+        if (profile.UfoType == UFOType.Boss)
+        {
+            return aliveUFOCount == 0 && freeAnimals >= profile.RequiredAnimals;
+        }
+
+        return freeAnimals >= profile.RequiredAnimals;
+    }
+    public void NotifyUFOFinished(UFOSpawnProfile profile)
+    {
+        aliveUFOCount--;
+
+        occupiedAnimals -= profile.RequiredAnimals;
+
+        occupiedAnimals = Mathf.Max(0, occupiedAnimals);
+    }
+    #endregion
     // Se how this gonna work is that , i have a wave and teaching system 
     // so the second wave will be spawned after a certain interval of time or before the interval if all the ufo are destoryed 
     // or after a delay if the player is unable to destroy the ufo's
