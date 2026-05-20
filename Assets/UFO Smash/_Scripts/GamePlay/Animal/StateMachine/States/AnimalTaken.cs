@@ -4,6 +4,7 @@ public class AnimalTaken
     : BaseState<AnimalController>
 {
     private Transform transform;
+    private Transform visual;
     private float shrinkSpeed = 3f;
     private float minScale = 0.2f;
     private Vector3 targetScale = Vector3.zero;
@@ -27,6 +28,10 @@ public class AnimalTaken
     {
         // Reset scale for pooling
         transform.localScale = Vector3.one;
+        if (visual != null)
+        {
+            visual.localRotation = Quaternion.identity;
+        }
     }
 
     public override void FixedUpdateState()
@@ -42,17 +47,21 @@ public class AnimalTaken
         {
             ReturnToPool();
         }
+
+        // can use the method instead of lerp 
+        // transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.zero, shrinkSpeed * Time.deltaTime);
     }
     private void Init()
     {
         transform = controller.GetTransform();
         lane = controller.GetAssignedLane();
         animalSpawner = controller.GetAnimalSpawner();
+        visual = controller.GetVisualTransform();
         Debug.Log("Animal is taken");
     }
     private void ReturnToPool()
     {
-        lane.currentAnimals--;
+        lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
         animalSpawner.AnimalRemoved(this.controller);
         transform.localScale = Vector3.one;
         controller.gameObject.SetActive(false);

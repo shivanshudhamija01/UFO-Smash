@@ -41,6 +41,9 @@ public class AnimalController : MonoBehaviour, IAbductable
         spriteRenderer.sortingOrder = layer;
         leftToRight = lTor;
         animalStateMachine.ChangeState(AnimalState.roam);
+        visualTransform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+        transform.localScale = leftToRight ? Vector3.one : new Vector3(-1, 1, 1);
         // May be here i need to add the logic for isMoving, but as it is a state machine perhaps , it works without it
         // isMoving = true;
     }

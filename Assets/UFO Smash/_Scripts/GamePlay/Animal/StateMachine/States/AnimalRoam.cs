@@ -24,13 +24,13 @@ public class AnimalRoam : BaseState<AnimalController>
             targetPoint.position,
             moveSpeed * Time.deltaTime);
 
-        Vector3 dir = targetPoint.position - transform.position;
+        // Vector3 dir = targetPoint.position - transform.position;
 
-        // Flip
-        if (dir.x > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else
-            transform.localScale = new Vector3(-1, 1, 1);
+        // // Flip
+        // if (dir.x > 0)
+        //     transform.localScale = new Vector3(1, 1, 1);
+        // else
+        //     transform.localScale = new Vector3(-1, 1, 1);
 
         // Reached destination
         if (Vector3.Distance(transform.position, targetPoint.position) < 0.1f)
@@ -58,7 +58,7 @@ public class AnimalRoam : BaseState<AnimalController>
     }
     private void ReturnToPool()
     {
-        lane.currentAnimals--;
+        lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
 
         animalSpawner.AnimalRemoved(this.controller);
 

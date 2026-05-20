@@ -8,8 +8,6 @@ public class AnimalAbduct
 
     private Transform abductTarget;
 
-    private bool isMovingLeftToRight;
-
     private float tiltAngle;
     private float tiltSpeed;
     private float abductingSpeed;
@@ -25,14 +23,16 @@ public class AnimalAbduct
     {
         Init();
         targetTilt = tiltAngle;
-        Debug.Log("The value of moving isLeftToRight is : " + isMovingLeftToRight);
-
         Debug.Log("Animal entered into abduct state");
     }
 
     public override void UpdateState()
     {
-        if (abductTarget == null) return;
+        if (abductTarget == null)
+        {
+            controller.ReleaseFromAbduction();
+            return;
+        }
         MoveTowardsUFO();
         TiltVisual();
         CheckCapture();
@@ -57,8 +57,6 @@ public class AnimalAbduct
         visual = controller.GetVisualTransform();
 
         abductTarget = controller.GetAbductTarget();
-
-        isMovingLeftToRight = controller.IsMovingLeftToRight();
 
         tiltAngle = controller.GetTiltAngle();
 

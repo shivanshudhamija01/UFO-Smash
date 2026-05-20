@@ -100,7 +100,7 @@ public class AnimalSpawner : MonoBehaviour
 
     public void AnimalRemoved(AnimalController animal)
     {
-        currentAnimals--;
+        currentAnimals = Mathf.Max(0, currentAnimals - 1);
         animalService.RemoveAnimal(animal);
     }
 }
