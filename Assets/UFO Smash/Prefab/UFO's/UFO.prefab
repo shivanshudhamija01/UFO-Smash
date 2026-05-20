@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 4103096629196302770}
   - component: {fileID: 4602161431910068119}
   - component: {fileID: 4353662562101895237}
+  - component: {fileID: 4559237162308390762}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Untagged
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7858361421508236424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e76e71d3760184f7cb9fe64421a5b835, type: 3}
   m_Name: 
@@ -306,6 +307,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.188381, y: 1.0423858}
   m_EdgeRadius: 0
+--- !u!114 &4559237162308390762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858361421508236424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024831197fd6643bf98cd55fe4c62ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UFOController
+  splineContainer: {fileID: 0}
+  splineMoveSpeed: 5
+  rotateAlongSpline: 1
+  manualMoveSpeed: 0.5
+  offset: {x: 2, y: 4.5}
+  tiltSpeed: 0
+  torchLight: {fileID: 8033362700281846707}
 --- !u!1 &9056552973805775666
 GameObject:
   m_ObjectHideFlags: 0

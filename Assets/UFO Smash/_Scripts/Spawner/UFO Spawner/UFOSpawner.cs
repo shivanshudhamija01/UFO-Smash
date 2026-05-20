@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using NUnit.Framework;
+using UnityEngine.Splines;
 
 
 public class UFOSpawner : MonoBehaviour
@@ -11,6 +12,8 @@ public class UFOSpawner : MonoBehaviour
     [SerializeField] private AnimationCurve waveCost;
     [SerializeField] private AnimationCurve spawnDelayCurve;
     [SerializeField] private float waveDelay;
+    [Header("Spline Paths")]
+    [SerializeField] private List<SplineContainer> availableSplines;
     private int currentWave = 1;
     private int aliveUFOCount = 0;
     private bool isWaveRunning;
@@ -43,9 +46,9 @@ public class UFOSpawner : MonoBehaviour
                 break;
             }
 
-            // SpawnUFO(profile);
+            SpawnUFO(profile);
             waveBudget -= profile.Cost;
-
+            Debug.Log("Wave Budget cost is : " + waveBudget);
             float delay = spawnDelayCurve.Evaluate(currentWave);
             yield return new WaitForSeconds(delay);
         }
@@ -55,11 +58,27 @@ public class UFOSpawner : MonoBehaviour
     private void SpawnUFO(UFOSpawnProfile profile)
     {
         GameObject ufo = UFOPool.instance.GetUFO(profile.UfoType);
+
         if (ufo == null)
         {
-            // Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
+            Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
             return;
         }
+
+        // Activate UFO
+        ufo.SetActive(true);
+
+        // Reset transform if needed
+        ufo.transform.position = Vector3.zero;
+
+        // Initialize controller
+        UFOController controller = ufo.GetComponent<UFOController>();
+        if (controller != null)
+        {
+            SplineContainer spline = GetRandomSpline();
+            controller.Initialize(spline);
+        }
+
         aliveUFOCount++;
     }
     private void HandleUFOFinished(UFO ufo)
@@ -135,7 +154,18 @@ public class UFOSpawner : MonoBehaviour
                 0,
                 validProfiles.Count)];
     }
+    private SplineContainer GetRandomSpline()
+    {
+        if (availableSplines == null || availableSplines.Count == 0)
+        {
+            Debug.LogWarning("No spline assigned!");
+            return null;
+        }
 
+        int index = Random.Range(0, availableSplines.Count);
+
+        return availableSplines[index];
+    }
     // Se how this gonna work is that , i have a wave and teaching system 
     // so the second wave will be spawned after a certain interval of time or before the interval if all the ufo are destoryed 
     // or after a delay if the player is unable to destroy the ufo's

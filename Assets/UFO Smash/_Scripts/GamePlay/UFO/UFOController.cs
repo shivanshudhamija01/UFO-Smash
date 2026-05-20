@@ -28,17 +28,34 @@ public class UFOController : MonoBehaviour
     // Remove this start method later and call the initialize method in spawning
     private void Start()
     {
-        Initialize(lockedAnimal);
+        // Initialize(lockedAnimal);
+        // Initialize();
     }
-    public void Initialize(IAbductable targetAnimal)
+    // public void Initialize(IAbductable targetAnimal)
+    // {
+    //     lockedAnimal = targetAnimal;
+
+    //     stateMachine.ChangeState(
+    //         UFOStates.spline
+    //     );
+    // }
+    public void Initialize(SplineContainer spline)
     {
-        lockedAnimal = targetAnimal;
+        splineContainer = spline;
+        if (splineContainer != null)
+        {
+            Vector3 startPos = splineContainer.EvaluatePosition(0f);
+            transform.position = startPos;
 
-        stateMachine.ChangeState(
-            UFOStates.spline
-        );
+            if (rotateAlongSpline)
+            {
+                Vector3 tangent = splineContainer.EvaluateTangent(0f);
+                float angle = Mathf.Atan2(tangent.y, tangent.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+        }
+        stateMachine.ChangeState(UFOStates.spline);
     }
-
     private void Update()
     {
         stateMachine.Update();
