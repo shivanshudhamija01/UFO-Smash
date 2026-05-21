@@ -14,13 +14,13 @@ public class UFOLight : MonoBehaviour
     private Vector3[] targetPath;
     private void Awake()
     {
-        currentPath = smallShapePoints;
-        targetPath = largeShapePoints;
         torch = GetComponent<Light2D>();
         torch.SetShapePath(currentPath);
     }
     private void OnEnable()
     {
+        currentPath = smallShapePoints;
+        targetPath = largeShapePoints;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 10, animalLayer);
         if (hit)
         {

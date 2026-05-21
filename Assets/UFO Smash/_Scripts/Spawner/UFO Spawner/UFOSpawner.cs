@@ -27,6 +27,14 @@ public class UFOSpawner : MonoBehaviour
     {
         StartCoroutine(WaveRoutine());
     }
+    private void OnEnable()
+    {
+        UFOController.OnUFOFinished += HandleUFOFinished;
+    }
+    private void OnDisable()
+    {
+        UFOController.OnUFOFinished -= HandleUFOFinished;
+    }
     private IEnumerator WaveRoutine()
     {
         while (true)
@@ -40,7 +48,7 @@ public class UFOSpawner : MonoBehaviour
     private IEnumerator SpawnWave()
     {
         isWaveRunning = true;
-
+        Debug.Log("Current Wave is : " + currentWave);
         TeachingPhase phase = GetCurrentPhase(currentWave);
         int waveBudget = Mathf.RoundToInt(waveCost.Evaluate(currentWave));
 
@@ -101,9 +109,20 @@ public class UFOSpawner : MonoBehaviour
 
         aliveUFOCount++;
     }
-    private void HandleUFOFinished(UFO ufo)
+    private void HandleUFOFinished(UFOController ufo)
     {
-        // Here i will writing the code for to set the ufo back to pool
+        aliveUFOCount--;
+
+        UFOSpawnProfile profile = ufoProfiles.Find(p => p.UfoType == ufo.GetUFOType());
+
+        if (profile != null)
+        {
+            occupiedAnimals -= profile.RequiredAnimals;
+
+            occupiedAnimals = Mathf.Max(0, occupiedAnimals);
+        }
+
+        UFOPool.instance.SetBackToPool(ufo.gameObject, ufo.GetUFOType());
     }
     private TeachingPhase GetCurrentPhase(int wave)
     {
@@ -196,7 +215,7 @@ public class UFOSpawner : MonoBehaviour
         // Boss rule:// must be alone
         if (profile.UfoType == UFOType.Boss)
         {
-            return aliveUFOCount == 0 && freeAnimals >= profile.RequiredAnimals;
+            return freeAnimals >= profile.RequiredAnimals;
         }
 
         return freeAnimals >= profile.RequiredAnimals;

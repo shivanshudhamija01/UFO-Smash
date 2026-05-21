@@ -57,6 +57,7 @@ public class UFOSuccess
         transform.rotation = Quaternion.identity;
 
         transform.localScale = startScale;
+
     }
 
     public override void FixedUpdateState()
@@ -95,7 +96,8 @@ public class UFOSuccess
         // Disable when tiny
         if (transform.localScale.x <= 0.05f)
         {
-            controller.gameObject.SetActive(false);
+            // controller.gameObject.SetActive(false);
+            controller.FinishUFO();
         }
     }
 }

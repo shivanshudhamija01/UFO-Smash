@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: UFO Shield
   m_EditorClassIdentifier: Assembly-CSharp::UFOSpawnProfile
   UfoType: 2
-  UfoPrefab: {fileID: 7858361421508236424, guid: 2789d8d2db50d464ea2d0042994d3ec9, type: 3}
+  UfoPrefab: {fileID: 7858361421508236424, guid: b438f4111e4764837b71727c17644f2e, type: 3}
   Cost: 5
   SpawnWeight: 0.3
+  RequiredAnimals: 1

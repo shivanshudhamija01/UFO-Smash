@@ -108,6 +108,7 @@ public class UFOBlast
         // TODO:
         // Spawn blast VFX
 
-        controller.gameObject.SetActive(false);
+        // controller.gameObject.SetActive(false);
+        controller.FinishUFO();
     }
 }

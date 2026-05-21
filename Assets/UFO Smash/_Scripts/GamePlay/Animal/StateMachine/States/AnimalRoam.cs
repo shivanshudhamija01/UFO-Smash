@@ -13,10 +13,6 @@ public class AnimalRoam : BaseState<AnimalController>
     public override void OnEnterState()
     {
         Init();
-        Debug.Log("Move speed of animal in roam state is : " + moveSpeed + " " + transform.gameObject.name);
-        Debug.Log("Animal position on roam enter: " + transform.position);
-        Debug.Log("Target position on roam enter: " + targetPoint);
-        Debug.Log("Distance on roam enter: " + Vector3.Distance(transform.position, targetPoint));
     }
     public override void UpdateState()
     {
@@ -56,13 +52,12 @@ public class AnimalRoam : BaseState<AnimalController>
         lane = controller.AssignedLane;
         moveSpeed = controller.MoveSpeed;
         transform = controller.GetTransform();
-        Debug.Log("Entered into animal roam state : " + transform.gameObject.name);
         // Debug.Log("Transform position is : " + transform.position);
         // Debug.Log("Target Position is : " + targetPoint.position);
     }
     private void ReturnToPool()
     {
-        lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
+        // lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
 
         animalSpawner.AnimalRemoved(this.controller);
 

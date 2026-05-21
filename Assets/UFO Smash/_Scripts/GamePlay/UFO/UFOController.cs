@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Splines;
 
 public class UFOController : MonoBehaviour
 {
+    public static event Action<UFOController> OnUFOFinished;
     [Header("Spline")]
     [SerializeField] private SplineContainer splineContainer;
     [SerializeField] private float splineMoveSpeed = 5f;
@@ -17,6 +19,8 @@ public class UFOController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Light2D torchLight;
     [SerializeField] private IAbductable lockedAnimal;
+    [Header("UFO Type")]
+    [SerializeField] private UFOType uFOType;
 
     private UFOStateMachine stateMachine;
 
@@ -83,10 +87,15 @@ public class UFOController : MonoBehaviour
         // UFO blast
         stateMachine.ChangeState(UFOStates.blast);
     }
+    public void FinishUFO()
+    {
+        torchLight.gameObject.SetActive(false);
+        OnUFOFinished?.Invoke(this);
+    }
     // Getters
     public Transform GetTransform() => transform;
     public Light2D GetTorchLight() => torchLight;
-
+    public UFOType GetUFOType() => uFOType;
     public SplineContainer GetSpline() => splineContainer;
     public float GetSplineSpeed() => splineMoveSpeed;
     public bool ShouldRotateSpline() => rotateAlongSpline;

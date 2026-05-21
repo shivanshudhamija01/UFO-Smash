@@ -54,7 +54,7 @@ public class AnimalController : MonoBehaviour, IAbductable
         if (animalStateMachine != null)
         {
             animalStateMachine.Update();
-            Debug.Log("Animal current state is : " + animalStateMachine.GetCurrentState() + " " + "their tranform.position is : " + transform.position);
+            // Debug.Log("Animal current state is : " + animalStateMachine.GetCurrentState() + " " + "their tranform.position is : " + transform.position);
         }
     }
     public void BeginAbduction(Transform abductTarget, UFOController ufo)
@@ -82,4 +82,5 @@ public class AnimalController : MonoBehaviour, IAbductable
     public Transform GetVisualTransform() => visualTransform;
     public UFOController GetCurrentUFO() => currentUFO;
     public AnimalStateMachine GetStateMachine() => animalStateMachine;
+    public int GetSortingOrder() => spriteRenderer.sortingOrder;
 }

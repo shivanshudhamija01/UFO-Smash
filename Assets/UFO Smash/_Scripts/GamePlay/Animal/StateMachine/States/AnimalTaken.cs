@@ -61,7 +61,7 @@ public class AnimalTaken
     }
     private void ReturnToPool()
     {
-        lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
+        // lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
         animalSpawner.AnimalRemoved(this.controller);
         transform.localScale = Vector3.one;
         controller.gameObject.SetActive(false);

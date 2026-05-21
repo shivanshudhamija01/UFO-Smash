@@ -13,12 +13,16 @@ public class AnimalSpawner : MonoBehaviour
 
     public float minSpawnDelay = 1f;
     public float maxSpawnDelay = 3f;
+
     private int currentAnimals;
+
     private IAnimalService animalService;
+
     private void Awake()
     {
         animalService = ServiceLocator.Get<IAnimalService>();
     }
+
     private void Start()
     {
         StartCoroutine(SpawnRoutine());
@@ -33,8 +37,7 @@ public class AnimalSpawner : MonoBehaviour
                 SpawnAnimal();
             }
 
-            float delay =
-                Random.Range(minSpawnDelay, maxSpawnDelay);
+            float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
 
             yield return new WaitForSeconds(delay);
         }
@@ -46,63 +49,101 @@ public class AnimalSpawner : MonoBehaviour
 
         int safety = 20;
         int index = 0;
+
         while (safety > 0)
         {
             index = Random.Range(0, lanes.Length);
-            Lane randomLane =
-                lanes[index];
+
+            Lane randomLane = lanes[index];
 
             if (randomLane.currentAnimals < maxAnimalsPerLane)
             {
                 selectedLane = randomLane;
                 break;
             }
-
             safety--;
         }
 
         if (selectedLane == null)
             return;
 
-        // Debug.Log("Animal is spawned in the lane : " + index);
         // Direction
         bool moveAToB = Random.value > 0.5f;
 
-        Transform spawnPoint =
-            moveAToB ? selectedLane.pointA : selectedLane.pointB;
+        Transform spawnPoint = moveAToB ? selectedLane.pointA : selectedLane.pointB;
 
-        Transform targetPoint =
-            moveAToB ? selectedLane.pointB : selectedLane.pointA;
+        Transform targetPoint = moveAToB ? selectedLane.pointB : selectedLane.pointA;
 
         // Get pooled animal
-        GameObject animalObj =
-            AnimalPool.Instance.GetAnimal();
+        GameObject animalObj = AnimalPool.Instance.GetAnimal();
 
         if (animalObj == null)
             return;
 
+        // Spawn position
         Vector3 spawnPos = spawnPoint.position;
+
         spawnPos.z = 0;
+
         animalObj.transform.position = spawnPos;
 
         animalObj.SetActive(true);
 
-        AnimalController animal =
-            animalObj.GetComponent<AnimalController>();
+        // Sorting Order Logic
+        int sortingOrder;
 
-        animal.Initialize(
-            targetPoint,
-            this,
-            selectedLane, index + 1, moveAToB);
+        if (!selectedLane.firstOrderTaken)
+        {
+            sortingOrder = 2 * index;
+
+            selectedLane.firstOrderTaken = true;
+        }
+        else
+        {
+            sortingOrder = (2 * index) + 1;
+
+            selectedLane.secondOrderTaken = true;
+        }
+
+        selectedLane.currentAnimals++;
+
+        AnimalController animal = animalObj.GetComponent<AnimalController>();
+
+        animal.Initialize(targetPoint, this, selectedLane, sortingOrder, moveAToB);
 
         currentAnimals++;
+
         animalService.AddAnimal(animal);
-        selectedLane.currentAnimals++;
     }
 
     public void AnimalRemoved(AnimalController animal)
     {
         currentAnimals = Mathf.Max(0, currentAnimals - 1);
+
+        Lane lane = animal.AssignedLane;
+
+        if (lane != null)
+        {
+            int laneIndex = System.Array.IndexOf(lanes, lane);
+
+            int firstOrder = 2 * laneIndex;
+
+            int secondOrder = firstOrder + 1;
+
+            int animalOrder = animal.GetSortingOrder();
+
+            if (animalOrder == firstOrder)
+            {
+                lane.firstOrderTaken = false;
+            }
+            else if (animalOrder == secondOrder)
+            {
+                lane.secondOrderTaken = false;
+            }
+
+            lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
+        }
+
         animalService.RemoveAnimal(animal);
     }
 }

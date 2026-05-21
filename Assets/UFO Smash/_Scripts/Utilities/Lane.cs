@@ -8,4 +8,6 @@ public class Lane
 
     [HideInInspector]
     public int currentAnimals;
+    public bool firstOrderTaken;
+    public bool secondOrderTaken;
 }
