@@ -10,7 +10,7 @@ public class AnimalController : MonoBehaviour, IAbductable
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private float abductingSpeed = 10f;
     [SerializeField] private float tiltAngle = 40f;
-    private Transform targetPoint;
+    private Vector3 targetPoint;
     private AnimalSpawner spawner;
     private Lane lane;
     private bool isMoving;
@@ -36,7 +36,8 @@ public class AnimalController : MonoBehaviour, IAbductable
     }
     public void Initialize(Transform target, AnimalSpawner animalSpawner, Lane assignedLane, int layer, bool lTor)
     {
-        targetPoint = target;
+        targetPoint = target.position;
+        targetPoint.z = 0;
         spawner = animalSpawner;
         lane = assignedLane;
         spriteRenderer.sortingOrder = layer;
@@ -68,7 +69,7 @@ public class AnimalController : MonoBehaviour, IAbductable
         currentUFO = null;
         animalStateMachine.ChangeState(AnimalState.rescue);
     }
-    public Transform TargetPoint => targetPoint;
+    public Vector3 TargetPoint => targetPoint;
     public Lane AssignedLane => lane;
     public float MoveSpeed => moveSpeed;
     public AnimalSpawner GetAnimalSpawner() => spawner;

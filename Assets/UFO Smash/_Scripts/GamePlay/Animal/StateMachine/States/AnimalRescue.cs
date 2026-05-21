@@ -30,7 +30,7 @@ public class AnimalRescue : BaseState<AnimalController>
 
         tiltSpeed = controller.GetTiltSpeed();
 
-        targetY = controller.TargetPoint.position.y;
+        targetY = controller.TargetPoint.y;
 
         reachedGround = false;
     }

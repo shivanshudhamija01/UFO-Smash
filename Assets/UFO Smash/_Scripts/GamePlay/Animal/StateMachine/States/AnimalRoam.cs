@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimalRoam : BaseState<AnimalController>
 {
-    private Transform targetPoint;
+    private Vector3 targetPoint;
     private AnimalSpawner animalSpawner;
     private Lane lane;
     private float moveSpeed;
@@ -15,8 +15,8 @@ public class AnimalRoam : BaseState<AnimalController>
         Init();
         Debug.Log("Move speed of animal in roam state is : " + moveSpeed + " " + transform.gameObject.name);
         Debug.Log("Animal position on roam enter: " + transform.position);
-        Debug.Log("Target position on roam enter: " + targetPoint.position);
-        Debug.Log("Distance on roam enter: " + Vector3.Distance(transform.position, targetPoint.position));
+        Debug.Log("Target position on roam enter: " + targetPoint);
+        Debug.Log("Distance on roam enter: " + Vector3.Distance(transform.position, targetPoint));
     }
     public override void UpdateState()
     {
@@ -25,7 +25,7 @@ public class AnimalRoam : BaseState<AnimalController>
 
         transform.position = Vector3.MoveTowards(
             transform.position,
-            targetPoint.position,
+            targetPoint,
             moveSpeed * Time.deltaTime);
 
         // Vector3 dir = targetPoint.position - transform.position;
@@ -36,7 +36,7 @@ public class AnimalRoam : BaseState<AnimalController>
         // else
         //     transform.localScale = new Vector3(-1, 1, 1);
         // Reached destination
-        if (Vector3.Distance(transform.position, targetPoint.position) < 0.1f)
+        if (Vector3.Distance(transform.position, targetPoint) < 0.1f)
         {
             ReturnToPool();
         }

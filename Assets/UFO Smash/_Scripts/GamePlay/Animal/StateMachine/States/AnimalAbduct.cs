@@ -68,7 +68,7 @@ public class AnimalAbduct
 
     private void MoveTowardsUFO()
     {
-        transform.position = Vector3.MoveTowards(transform.position, abductTarget.position, abductingSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * Time.deltaTime);
     }
 
     private void TiltVisual()

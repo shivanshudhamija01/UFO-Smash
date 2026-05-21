@@ -81,7 +81,9 @@ public class AnimalSpawner : MonoBehaviour
         if (animalObj == null)
             return;
 
-        animalObj.transform.position = spawnPoint.position;
+        Vector3 spawnPos = spawnPoint.position;
+        spawnPos.z = 0;
+        animalObj.transform.position = spawnPos;
 
         animalObj.SetActive(true);
 
@@ -104,9 +106,3 @@ public class AnimalSpawner : MonoBehaviour
         animalService.RemoveAnimal(animal);
     }
 }
-
-// Need to add the service to store the currently active animals in the scene and remove on animal removed;
-
-// When the animal is taken, i have to update the service as well as the animal spawner 
-// In the animal spawner ,i have to clear the animal count from the lane where the animal is spawned,
-// and 
