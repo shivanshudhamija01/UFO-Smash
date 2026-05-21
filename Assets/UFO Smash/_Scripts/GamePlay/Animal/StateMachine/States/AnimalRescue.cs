@@ -9,9 +9,10 @@ public class AnimalRescue : BaseState<AnimalController>
     private float tiltSpeed;
 
     private float targetY;
+    private float gravity = 5f;
 
     private bool reachedGround;
-
+    private float tiltSpeedModifier = 4f;
     private const float reachThreshold = 0.1f;
     private const float rotationThreshold = 2f;
 
@@ -26,9 +27,9 @@ public class AnimalRescue : BaseState<AnimalController>
 
         visual = controller.GetVisualTransform();
 
-        moveSpeed = controller.GetAbductingSpeed();
+        moveSpeed = controller.GetAbductingSpeed() * gravity;
 
-        tiltSpeed = controller.GetTiltSpeed();
+        tiltSpeed = controller.GetTiltSpeed() * tiltSpeedModifier;
 
         targetY = controller.TargetPoint.y;
 

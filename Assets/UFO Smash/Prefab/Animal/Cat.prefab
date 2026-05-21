@@ -263,6 +263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalController
   moveSpeed: 0.5
   visualTransform: {fileID: 4560211152025087749}
-  tiltSpeed: 1.5
-  abductingSpeed: 0.5
+  tiltSpeed: 1.75
+  abductingSpeed: 0.75
   tiltAngle: -45
