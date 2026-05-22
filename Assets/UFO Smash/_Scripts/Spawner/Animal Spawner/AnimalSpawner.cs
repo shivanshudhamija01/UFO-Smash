@@ -32,7 +32,6 @@ public class AnimalSpawner : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Current Animals in a scene is : " + currentAnimals);
             if (currentAnimals < maxAnimals)
             {
                 SpawnAnimal();
