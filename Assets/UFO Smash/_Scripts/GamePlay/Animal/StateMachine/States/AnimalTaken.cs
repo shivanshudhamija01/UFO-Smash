@@ -69,4 +69,3 @@ public class AnimalTaken
 }
 
 
-// Now when the animal is taken i have to do the same thing as i am doing in the animal roam state 

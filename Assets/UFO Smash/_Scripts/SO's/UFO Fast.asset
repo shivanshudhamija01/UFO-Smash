@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UFOSpawnProfile
   UfoType: 1
   UfoPrefab: {fileID: 7858361421508236424, guid: ccb020868a5e84bb8b7ee673e4e51f63, type: 3}
-  Cost: 3
+  Cost: 2
   SpawnWeight: 0.6
   RequiredAnimals: 1

@@ -4,7 +4,7 @@ public class AnimalRescue : BaseState<AnimalController>
 {
     private Transform animalTransform;
     private Transform visual;
-
+    private IAnimalService animalService;
     private float moveSpeed;
     private float tiltSpeed;
 
@@ -34,6 +34,10 @@ public class AnimalRescue : BaseState<AnimalController>
         targetY = controller.TargetPoint.y;
 
         reachedGround = false;
+        if (animalService == null)
+        {
+            animalService = ServiceLocator.Get<IAnimalService>();
+        }
     }
 
     public override void UpdateState()
@@ -80,8 +84,9 @@ public class AnimalRescue : BaseState<AnimalController>
         if (Quaternion.Angle(visual.localRotation, Quaternion.identity) <= rotationThreshold)
         {
             visual.localRotation = Quaternion.identity;
-
+            animalService.AddAnimal(this.controller);
             controller.GetStateMachine().ChangeState(AnimalState.roam);
+
         }
     }
 }

@@ -5,7 +5,6 @@ public class AnimalAbduct
 {
     private Transform transform;
     private Transform visual;
-
     private Transform abductTarget;
 
     private float tiltAngle;
@@ -94,3 +93,6 @@ public class AnimalAbduct
         }
     }
 }
+
+
+// May be here i have to add the animalService here so that 

@@ -14,7 +14,7 @@ public class UFOSpawner : MonoBehaviour
     [SerializeField] private float waveDelay;
     [Header("Spline Paths")]
     [SerializeField] private List<SplineContainer> availableSplines;
-    private int currentWave = 1;
+    private int currentWave = 10;
     private int aliveUFOCount = 0;
     private bool isWaveRunning;
     private IAnimalService animalService;
@@ -48,12 +48,13 @@ public class UFOSpawner : MonoBehaviour
     private IEnumerator SpawnWave()
     {
         isWaveRunning = true;
-        Debug.Log("Current Wave is : " + currentWave);
+        // Debug.Log("Current Wave is : " + currentWave);
         TeachingPhase phase = GetCurrentPhase(currentWave);
         int waveBudget = Mathf.RoundToInt(waveCost.Evaluate(currentWave));
 
         while (waveBudget > 0)
         {
+            Debug.Log("Animal present in the current scene is : " + animalService.AnimalCountInScene());
             UFOSpawnProfile profile = GetRandomUFOForPhase(phase, waveBudget);
             if (profile == null)
             {
@@ -73,6 +74,7 @@ public class UFOSpawner : MonoBehaviour
             else
             {
                 // Wait until animals available
+                Debug.Log("Else inside the spawn wave is called as there are no animals");
                 yield return new WaitForSeconds(0.5f);
                 continue;
             }
@@ -89,14 +91,12 @@ public class UFOSpawner : MonoBehaviour
 
         if (ufo == null)
         {
-            // Debug.LogWarning($"No pooled UFO available for {profile.UfoType}");
             return;
         }
 
         // Activate UFO
         ufo.SetActive(true);
 
-        // Reset transform if needed
         ufo.transform.position = Vector3.zero;
 
         // Initialize controller
@@ -178,9 +178,7 @@ public class UFOSpawner : MonoBehaviour
 
                 case TeachingPhase.Survival:
 
-                    validProfiles
-                        .Add(profile);
-
+                    validProfiles.Add(profile);
                     break;
             }
         }
@@ -188,24 +186,21 @@ public class UFOSpawner : MonoBehaviour
         if (validProfiles.Count == 0)
             return null;
 
-        return validProfiles[
-            Random.Range(
-                0,
-                validProfiles.Count)];
+        return validProfiles[Random.Range(0, validProfiles.Count)];
     }
     #region  HELPER-METHODS
+    // Will Give a random spline from the list of spline containers
     private SplineContainer GetRandomSpline()
     {
         if (availableSplines == null || availableSplines.Count == 0)
         {
-            // Debug.LogWarning("No spline assigned!");
             return null;
         }
-
         int index = Random.Range(0, availableSplines.Count);
 
         return availableSplines[index];
     }
+    // This method will return whether we can spawn that ufo profile or not 
     private bool CanSpawnUFO(UFOSpawnProfile profile)
     {
         int animalsInScene = animalService.AnimalCountInScene();
@@ -213,27 +208,15 @@ public class UFOSpawner : MonoBehaviour
         int freeAnimals = animalsInScene - occupiedAnimals;
 
         // Boss rule:// must be alone
-        if (profile.UfoType == UFOType.Boss)
+        if (aliveUFOCount == 0 && profile.UfoType == UFOType.Boss)
         {
             return freeAnimals >= profile.RequiredAnimals;
         }
 
         return freeAnimals >= profile.RequiredAnimals;
     }
-    public void NotifyUFOFinished(UFOSpawnProfile profile)
-    {
-        aliveUFOCount--;
-
-        occupiedAnimals -= profile.RequiredAnimals;
-
-        occupiedAnimals = Mathf.Max(0, occupiedAnimals);
-    }
     #endregion
-    // Se how this gonna work is that , i have a wave and teaching system 
-    // so the second wave will be spawned after a certain interval of time or before the interval if all the ufo are destoryed 
-    // or after a delay if the player is unable to destroy the ufo's
-
-    // what i needed in this UFOSpawner is that , 
-
-    // i have a wave coroutine and 
 }
+
+// 1. First it should feel like that okay the difficulty is increasing 
+// 2. Secondly make the boss spawn also 

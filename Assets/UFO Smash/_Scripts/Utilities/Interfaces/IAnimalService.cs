@@ -8,3 +8,4 @@ public interface IAnimalService
     public void RemoveAnimal(AnimalController animal);
     public int AnimalCountInScene();
 }
+
