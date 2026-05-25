@@ -69,3 +69,4 @@ public class AnimalTaken
 }
 
 
+// Here in exit state ,i have to fire an event to notify that, okay the game is over now

@@ -9,5 +9,6 @@ public class GameBootStrapper : MonoBehaviour
     void RegisterServices()
     {
         ServiceLocator.Register<IAnimalService>(new AnimalService());
+        ServiceLocator.Register<IScoreService>(new ScoreService());
     }
 }

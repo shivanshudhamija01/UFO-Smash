@@ -26,14 +26,16 @@ public class UFOController : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private Image healthBar;
     [SerializeField] private Canvas healthBarCanvas;
+    [Header("UFO Score Value")]
+    [SerializeField] private int scoreValue;
     private int currentHealth;
-
+    private IScoreService scoreService;
     private UFOStateMachine stateMachine;
 
     private void Awake()
     {
-        stateMachine =
-            new UFOStateMachine(this);
+        scoreService = ServiceLocator.Get<IScoreService>();
+        stateMachine = new UFOStateMachine(this);
     }
     // Remove this start method later and call the initialize method in spawning
     private void Start()
@@ -106,6 +108,7 @@ public class UFOController : MonoBehaviour
             lockedAnimal.ReleaseFromAbduction();
             lockedAnimal = null;
         }
+        scoreService.AddScore(scoreValue);
         stateMachine.ChangeState(UFOStates.blast);
     }
     public void FinishUFO()
