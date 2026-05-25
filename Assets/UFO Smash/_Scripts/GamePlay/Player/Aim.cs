@@ -2,67 +2,122 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject stonePrefab;
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private float shootSpeed = 10f;
+    [SerializeField]
+    private Transform firePoint;
+
+    [SerializeField]
+    private GameObject stonePrefab;
+
+    [SerializeField]
+    private Transform rightHandTransform;
+
+    [SerializeField]
+    private float shootSpeed = 10f;
+
+    [SerializeField]
+    private float maxAimRange = 10f;
+
+    [Header("Aim Restriction")]
+    [SerializeField]
+    private float minAimAngle = -70f;
+
+    [SerializeField]
+    private float maxAimAngle = 70f;
+
+    [SerializeField]
+    private float handRotationOffset = -90f;
 
     [Header("Stone Ammo")]
-    [SerializeField] private int maxStoneCount = 5;
+    [SerializeField]
+    private int maxStoneCount = 5;
 
     private int currentStoneCount;
 
-    private TrajectoryPredictor trajectoryPredictor;
+    private TrajectoryPredictor
+        trajectoryPredictor;
+
     private Vector3 initialMousePos;
+
     private Vector2 direction;
+
     private float speed;
 
     private bool canShoot = true;
 
-    void Awake()
+    private void Awake()
     {
         trajectoryPredictor = GetComponent<TrajectoryPredictor>();
     }
 
-    void Start()
+    private void Start()
     {
         currentStoneCount = maxStoneCount;
     }
 
-    void Update()
+    private void Update()
     {
-        if (!canShoot) return;
+        if (!canShoot)
+            return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (currentStoneCount <= 0) return;
+            if (currentStoneCount <= 0)
+                return;
 
             initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         if (Input.GetMouseButton(0))
         {
-            if (currentStoneCount <= 0) return;
+            if (currentStoneCount <= 0)
+                return;
 
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            direction = (mousePos - initialMousePos).normalized;
-
-            speed = (mousePos - initialMousePos).magnitude;
-
-            trajectoryPredictor.ShowTrajectory(direction * shootSpeed * speed);
+            HandleAim();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (currentStoneCount <= 0) return;
+            if (currentStoneCount <= 0)
+                return;
 
             Shoot(direction);
+
             trajectoryPredictor.HideTrajectory();
         }
     }
 
-    void Shoot(Vector2 direction)
+    private void HandleAim()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 rawDirection = mousePos - firePoint.position;
+
+        // Calculate angle
+        float angle = Mathf.Atan2(rawDirection.y, rawDirection.x) * Mathf.Rad2Deg;
+
+        // Clamp angle
+        angle = Mathf.Clamp(angle, minAimAngle, maxAimAngle);
+
+        // Convert back to direction
+        direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+
+        // Speed
+        speed = Vector2.Distance(mousePos, initialMousePos);
+
+        speed = Mathf.Clamp(speed, 0, maxAimRange);
+
+        // Rotate hand
+        RotateHand(angle);
+
+        trajectoryPredictor.ShowTrajectory(direction * shootSpeed * speed);
+    }
+
+    private void RotateHand(float angle)
+    {
+        rightHandTransform.rotation = Quaternion.Euler(0, 180, angle + handRotationOffset);
+    }
+
+    private void Shoot(Vector2 direction)
     {
         GameObject stone = Instantiate(stonePrefab, firePoint.position, firePoint.rotation);
 
@@ -71,6 +126,7 @@ public class Aim : MonoBehaviour
         rb.linearVelocity = direction * shootSpeed * speed;
 
         currentStoneCount--;
+
         Debug.Log("Stone Left: " + currentStoneCount);
     }
 
@@ -90,15 +146,4 @@ public class Aim : MonoBehaviour
     {
         return maxStoneCount;
     }
-
-    // if want to add gradual refilling
-    // public void AddStone(int amount = 1)
-    // {
-    //     currentStoneCount += amount;
-
-    //     currentStoneCount =
-    //         Mathf.Clamp(currentStoneCount, 0, maxStoneCount);
-
-    //     Debug.Log("Stone Count: " + currentStoneCount);
-    // }
 }

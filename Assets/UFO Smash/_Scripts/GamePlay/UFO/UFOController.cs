@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Splines;
+using UnityEngine.UI;
 
 public class UFOController : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class UFOController : MonoBehaviour
     [SerializeField] private IAbductable lockedAnimal;
     [Header("UFO Type")]
     [SerializeField] private UFOType uFOType;
+    [Header("UFO Health")]
+    [SerializeField] private int maxHealth;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private Canvas healthBarCanvas;
+    private int currentHealth;
 
     private UFOStateMachine stateMachine;
 
@@ -46,6 +52,9 @@ public class UFOController : MonoBehaviour
     public void Initialize(SplineContainer spline)
     {
         splineContainer = spline;
+        currentHealth = maxHealth;
+        healthBar.fillAmount = 1;
+        healthBarCanvas.gameObject.SetActive(false);
         if (splineContainer != null)
         {
             Vector3 startPos = splineContainer.EvaluatePosition(0f);
@@ -70,21 +79,33 @@ public class UFOController : MonoBehaviour
         if (!collision.gameObject.CompareTag("Stone"))
             return;
 
-        // Only vulnerable in abduct state
         if (stateMachine.GetCurrentState() != UFOStates.abduct)
             return;
 
-        // Debug.Log("Pathar vajeya");
+        Stone stone = collision.gameObject.GetComponent<Stone>();
 
-        // Release animal
+        int damage = stone != null ? stone.GetDamage() : 1;
+
+        TakeDamage(damage);
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.fillAmount = (float)currentHealth / maxHealth;
+        Debug.Log($"{gameObject.name} HP: {currentHealth}");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    private void Die()
+    {
         if (lockedAnimal != null)
         {
             lockedAnimal.ReleaseFromAbduction();
-
             lockedAnimal = null;
         }
-
-        // UFO blast
         stateMachine.ChangeState(UFOStates.blast);
     }
     public void FinishUFO()
@@ -105,6 +126,8 @@ public class UFOController : MonoBehaviour
 
     public UFOStateMachine GetStateMachine()
         => stateMachine;
+
+    public Canvas GetHealthBar() => healthBarCanvas;
     public void SetLockedAnimal(IAbductable animal)
     {
         lockedAnimal = animal;
