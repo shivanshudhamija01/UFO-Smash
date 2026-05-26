@@ -29,6 +29,9 @@ public class UFOController : MonoBehaviour
     [SerializeField] private Canvas healthBarCanvas;
     [Header("UFO Score Value")]
     [SerializeField] private int scoreValue;
+
+    [SerializeField] private Animator animator;
+
     private int currentHealth;
     private IScoreService scoreService;
     private UFOStateMachine stateMachine;
@@ -129,7 +132,7 @@ public class UFOController : MonoBehaviour
 
     public float GetManualSpeed() => manualMoveSpeed;
     public Vector2 GetOffset() => offset;
-
+    public Animator GetAnimator() => animator;
     public UFOStateMachine GetStateMachine()
         => stateMachine;
 

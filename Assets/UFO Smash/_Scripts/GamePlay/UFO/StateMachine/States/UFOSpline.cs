@@ -9,7 +9,8 @@ public class UFOSpline : BaseState<UFOController>
     private float splineLength;
     private float moveSpeed;
     private bool rotateAlongSpline;
-
+    private Animator animator;
+    private readonly int key = Animator.StringToHash("IsSpline");
     public UFOSpline(UFOController controller)
         : base(controller)
     {
@@ -27,6 +28,11 @@ public class UFOSpline : BaseState<UFOController>
 
         splineDistance = 0;
         splineLength = spline.CalculateLength();
+        if (animator == null)
+        {
+            animator = controller.GetAnimator();
+        }
+        animator.SetBool(key, true);
         // Debug
     }
 
@@ -59,6 +65,7 @@ public class UFOSpline : BaseState<UFOController>
 
     public override void OnExitState()
     {
+        animator.SetBool(key, false);
     }
 
     public override void FixedUpdateState()
