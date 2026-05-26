@@ -34,7 +34,8 @@ public class AnimalRoam : BaseState<AnimalController>
         // Reached destination
         if (Vector3.Distance(transform.position, targetPoint) < 0.1f)
         {
-            ReturnToPool();
+            if(!controller.IsLocked())
+                ReturnToPool();
         }
     }
     public override void OnExitState()

@@ -44,7 +44,7 @@ public class GamePlayPanel : MonoBehaviour
     {
         if (index < animalAlive.Count)
         {
-            animalAlive[index].color = new Color(0.85f, 0.85f, 0.85f);
+            animalAlive[index].color = new Color(0.5f, 0.5f, 0.5f);
             index++;
         }
     }

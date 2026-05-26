@@ -26,6 +26,11 @@ public class UFOHover : BaseState<UFOController>
         transform = controller.GetTransform();
 
         lockedAnimal = LockAnimal();
+        AnimalController animalController = lockedAnimal as AnimalController;
+        if(animalController != null)
+        {
+            animalController.SetLocked(true);
+        }
         controller.SetLockedAnimal(lockedAnimal);
         if (lockedAnimal == null)
         {
@@ -201,10 +206,6 @@ public class UFOHover : BaseState<UFOController>
         controller.GetStateMachine().ChangeState(UFOStates.abduct);
         // Here i need to change the UFO state to the abducting state, most important state, 
     }
-    // This will lock the animal 
-    // But still have to handle so many things , as have to update the list , so that the other ufo will not lock the same animal again,
-    // And one more thing need to improve is that 
-    // Need to fix alot of things in this method
     private IAbductable LockAnimal()
     {
         List<AnimalController> list = animalService.GetAnimalInScene();
@@ -217,7 +218,3 @@ public class UFOHover : BaseState<UFOController>
         return animal;
     }
 }
-
-// I have two ways to decide the animal hover, 
-// 1. First is that, while moving along the spline , either the ufo will decide from the animal service , okay later i gonna follow this animal and pass the reference of this animal to the hover state
-// 2. Better version is that ,on enter into hover state, i will call a method to decide the okay this is my target, and i am going to follow this.

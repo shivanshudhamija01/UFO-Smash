@@ -20,6 +20,7 @@ public class AnimalController : MonoBehaviour, IAbductable
     private Transform abductTarget;
     private bool leftToRight;
     private UFOController currentUFO;
+    private bool isLocked;
     #endregion
     private void Awake()
     {
@@ -59,6 +60,8 @@ public class AnimalController : MonoBehaviour, IAbductable
     }
     public void BeginAbduction(Transform abductTarget, UFOController ufo)
     {
+        // Here i am little confused to set it true or false
+        isLocked = true;
         this.abductTarget = abductTarget;
         this.currentUFO = ufo;
         animalStateMachine.ChangeState(AnimalState.abducting);
@@ -66,6 +69,7 @@ public class AnimalController : MonoBehaviour, IAbductable
 
     public void ReleaseFromAbduction()
     {
+        isLocked = false;
         currentUFO = null;
         animalStateMachine.ChangeState(AnimalState.rescue);
     }
@@ -83,4 +87,9 @@ public class AnimalController : MonoBehaviour, IAbductable
     public UFOController GetCurrentUFO() => currentUFO;
     public AnimalStateMachine GetStateMachine() => animalStateMachine;
     public int GetSortingOrder() => spriteRenderer.sortingOrder;
+    public bool IsLocked() => isLocked;
+    public void SetLocked(bool locked)
+    {
+        isLocked = locked;
+    }
 }
