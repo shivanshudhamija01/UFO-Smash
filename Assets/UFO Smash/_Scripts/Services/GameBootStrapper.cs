@@ -10,5 +10,6 @@ public class GameBootStrapper : MonoBehaviour
     {
         ServiceLocator.Register<IAnimalService>(new AnimalService());
         ServiceLocator.Register<IScoreService>(new ScoreService());
+        ServiceLocator.Register<IEventBus>(new EventBus());
     }
 }

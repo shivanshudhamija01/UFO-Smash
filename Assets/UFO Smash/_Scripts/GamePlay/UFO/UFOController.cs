@@ -1,4 +1,5 @@
 using System;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Splines;
@@ -31,10 +32,11 @@ public class UFOController : MonoBehaviour
     private int currentHealth;
     private IScoreService scoreService;
     private UFOStateMachine stateMachine;
-
+    private IEventBus eventBus;
     private void Awake()
     {
         scoreService = ServiceLocator.Get<IScoreService>();
+        eventBus = ServiceLocator.Get<IEventBus>();
         stateMachine = new UFOStateMachine(this);
     }
     // Remove this start method later and call the initialize method in spawning
@@ -109,6 +111,7 @@ public class UFOController : MonoBehaviour
             lockedAnimal = null;
         }
         scoreService.AddScore(scoreValue);
+        eventBus.Publish(new Events.OnUFODestroyed());
         stateMachine.ChangeState(UFOStates.blast);
     }
     public void FinishUFO()

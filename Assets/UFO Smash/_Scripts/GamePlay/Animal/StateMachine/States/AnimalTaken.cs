@@ -10,6 +10,7 @@ public class AnimalTaken
     private Vector3 targetScale = Vector3.zero;
     private Lane lane;
     private AnimalSpawner animalSpawner;
+    private IEventBus eventBus;
     public AnimalTaken(AnimalController controller) : base(controller)
     {
     }
@@ -28,6 +29,7 @@ public class AnimalTaken
     {
         // Reset scale for pooling
         transform.localScale = Vector3.one;
+        eventBus.Publish(new Events.OnAnimalTaken());
         if (visual != null)
         {
             visual.localRotation = Quaternion.identity;
@@ -57,6 +59,10 @@ public class AnimalTaken
         lane = controller.AssignedLane;
         animalSpawner = controller.GetAnimalSpawner();
         visual = controller.GetVisualTransform();
+        if (eventBus == null)
+        {
+            eventBus = ServiceLocator.Get<IEventBus>();
+        }
         // Debug.Log("Animal is taken");
     }
     private void ReturnToPool()

@@ -585,6 +585,7 @@ MonoBehaviour:
   maxHealth: 3
   healthBar: {fileID: 8340565005980603535}
   healthBarCanvas: {fileID: 3124900071412619128}
+  scoreValue: 50
 --- !u!1 &9056552973805775666
 GameObject:
   m_ObjectHideFlags: 0

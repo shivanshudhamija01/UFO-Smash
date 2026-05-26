@@ -19,21 +19,25 @@ public class UFOSpawner : MonoBehaviour
     private bool isWaveRunning;
     private IAnimalService animalService;
     private int occupiedAnimals = 0;
+    private IEventBus eventBus;
     private void Awake()
     {
         animalService = ServiceLocator.Get<IAnimalService>();
-    }
-    void Start()
-    {
-        StartCoroutine(WaveRoutine());
+        eventBus = ServiceLocator.Get<IEventBus>();
     }
     private void OnEnable()
     {
         UFOController.OnUFOFinished += HandleUFOFinished;
+        eventBus.Add<Events.OnGameStarted>(SpawnUFOs);
     }
     private void OnDisable()
     {
         UFOController.OnUFOFinished -= HandleUFOFinished;
+        eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
+    }
+    void SpawnUFOs(Events.OnGameStarted evt)
+    {
+        StartCoroutine(WaveRoutine());
     }
     private IEnumerator WaveRoutine()
     {

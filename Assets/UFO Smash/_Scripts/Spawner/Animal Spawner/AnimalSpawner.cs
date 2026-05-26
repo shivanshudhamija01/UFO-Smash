@@ -17,13 +17,25 @@ public class AnimalSpawner : MonoBehaviour
     private int currentAnimals;
 
     private IAnimalService animalService;
-
+    private IEventBus eventBus;
     private void Awake()
     {
         animalService = ServiceLocator.Get<IAnimalService>();
+        eventBus = ServiceLocator.Get<IEventBus>();
     }
 
     private void Start()
+    {
+    }
+    private void OnEnable()
+    {
+        eventBus.Add<Events.OnGameStarted>(SpawnAnimals);
+    }
+    private void OnDisable()
+    {
+        eventBus.Remove<Events.OnGameStarted>(SpawnAnimals);
+    }
+    private void SpawnAnimals(Events.OnGameStarted evt)
     {
         StartCoroutine(SpawnRoutine());
     }

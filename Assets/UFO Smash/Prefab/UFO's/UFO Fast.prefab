@@ -802,9 +802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFOController
   splineContainer: {fileID: 0}
-  splineMoveSpeed: 5
+  splineMoveSpeed: 6
   rotateAlongSpline: 1
-  manualMoveSpeed: 0.5
+  manualMoveSpeed: 0.65
   offset: {x: 2, y: 4.5}
   tiltSpeed: 0
   torchLight: {fileID: 8033362700281846707}
@@ -812,6 +812,7 @@ MonoBehaviour:
   maxHealth: 1
   healthBar: {fileID: 3424268664557935709}
   healthBarCanvas: {fileID: 5794611940677312585}
+  scoreValue: 10
 --- !u!1 &9056552973805775666
 GameObject:
   m_ObjectHideFlags: 0
