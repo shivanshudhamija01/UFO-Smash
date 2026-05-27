@@ -34,4 +34,9 @@ public class AnimalService : IAnimalService
             animalActiveInScene.Remove(animal);
         }
     }
+    public void ClearAll()
+    {
+        animalActiveInScene.Clear();
+    }
+
 }

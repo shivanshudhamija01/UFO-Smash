@@ -135,4 +135,22 @@ public class UFOPool : MonoBehaviour
         }
         return null;
     }
+    public void ReturnAll()
+    {
+        ReturnAllFromParent(basicUFOSpawnParent, UFOType.Basic);
+        ReturnAllFromParent(fastUFOSpawnParent, UFOType.Fast);
+        ReturnAllFromParent(shieldUFOSpawnParent, UFOType.Shield);
+        ReturnAllFromParent(bossUFOSpawnParent, UFOType.Boss);
+    }
+
+    private void ReturnAllFromParent(Transform parent, UFOType type)
+    {
+        if (parent == null) return;
+
+        foreach (Transform child in parent)
+        {
+            if (child.gameObject.activeSelf)
+                SetBackToPool(child.gameObject, type);
+        }
+    }
 }

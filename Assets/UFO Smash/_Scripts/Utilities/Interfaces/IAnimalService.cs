@@ -7,5 +7,6 @@ public interface IAnimalService
     public List<AnimalController> GetAnimalInScene();
     public void RemoveAnimal(AnimalController animal);
     public int AnimalCountInScene();
+    public void ClearAll();
 }
 

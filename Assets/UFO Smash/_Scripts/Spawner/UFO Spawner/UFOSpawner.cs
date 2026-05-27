@@ -29,14 +29,17 @@ public class UFOSpawner : MonoBehaviour
     {
         UFOController.OnUFOFinished += HandleUFOFinished;
         eventBus.Add<Events.OnGameStarted>(SpawnUFOs);
+        eventBus.Add<Events.OnGameRestarted>(ResetSpawner);
     }
     private void OnDisable()
     {
         UFOController.OnUFOFinished -= HandleUFOFinished;
         eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
+        eventBus.Remove<Events.OnGameRestarted>(ResetSpawner);
     }
     void SpawnUFOs(Events.OnGameStarted evt)
     {
+        eventBus.Publish(new Events.OnWaveIncrement(currentWave));
         StartCoroutine(WaveRoutine());
     }
     private IEnumerator WaveRoutine()
@@ -47,6 +50,8 @@ public class UFOSpawner : MonoBehaviour
             yield return new WaitUntil(() => aliveUFOCount <= 0);
             yield return new WaitForSeconds(waveDelay);
             currentWave++;
+            // Here need to fire an event to notify the ui that okay update the 
+            eventBus.Publish(new Events.OnWaveIncrement(currentWave));
         }
     }
     private IEnumerator SpawnWave()
@@ -216,6 +221,20 @@ public class UFOSpawner : MonoBehaviour
         return freeAnimals >= profile.RequiredAnimals;
     }
     #endregion
+
+    private void ResetSpawner(Events.OnGameRestarted evt)
+    {
+        StopAllCoroutines();
+
+        // Return all active UFOs back to pool
+        UFOPool.instance.ReturnAll();
+
+        currentWave = 1;
+        aliveUFOCount = 0;
+        occupiedAnimals = 0;
+        isWaveRunning = false;
+    }
+
 }
 
 // 1. First it should feel like that okay the difficulty is increasing 

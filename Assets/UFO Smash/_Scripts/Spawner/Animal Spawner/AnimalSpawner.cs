@@ -30,10 +30,14 @@ public class AnimalSpawner : MonoBehaviour
     private void OnEnable()
     {
         eventBus.Add<Events.OnGameStarted>(SpawnAnimals);
+        eventBus.Add<Events.OnGameRestarted>(ResetSpawner);
+
     }
     private void OnDisable()
     {
         eventBus.Remove<Events.OnGameStarted>(SpawnAnimals);
+        eventBus.Add<Events.OnGameRestarted>(ResetSpawner);
+
     }
     private void SpawnAnimals(Events.OnGameStarted evt)
     {
@@ -158,4 +162,19 @@ public class AnimalSpawner : MonoBehaviour
 
         animalService.RemoveAnimal(animal);
     }
+    private void ResetSpawner(Events.OnGameRestarted evt)
+    {
+        StopAllCoroutines();
+        AnimalPool.Instance.ReturnAll();
+        animalService.ClearAll(); // ← add this to your IAnimalService + implementation
+        currentAnimals = 0;
+
+        foreach (Lane lane in lanes)
+        {
+            lane.currentAnimals = 0;
+            lane.firstOrderTaken = false;
+            lane.secondOrderTaken = false;
+        }
+    }
+
 }

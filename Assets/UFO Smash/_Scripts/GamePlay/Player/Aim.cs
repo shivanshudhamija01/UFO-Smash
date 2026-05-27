@@ -31,17 +31,19 @@ public class Aim : MonoBehaviour
     private float speed;
 
     private bool canShoot = true;
+    private IEventBus eventBus;
 
     private void Awake()
     {
         trajectoryPredictor = GetComponent<TrajectoryPredictor>();
+        eventBus = ServiceLocator.Get<IEventBus>();
     }
 
     private void Start()
     {
         currentStoneCount = maxStoneCount;
+        eventBus.Publish(new Events.OnStoneReloaded(currentStoneCount));
     }
-
     private void Update()
     {
         if (!canShoot)
@@ -115,12 +117,17 @@ public class Aim : MonoBehaviour
         rb.linearVelocity = direction * shootSpeed * speed;
 
         currentStoneCount--;
+
+        eventBus.Publish(new Events.OnStoneShot(currentStoneCount));
+
+        // May be here i need to add the logic to hide the trajectory after shot
+        // trajectoryPredictor.HideTrajectory();
     }
 
     public void ReloadToMax()
     {
         currentStoneCount = maxStoneCount;
-
+        eventBus.Publish(new Events.OnStoneReloaded(currentStoneCount));
         // Debug.Log("Stones Reloaded!");
     }
 
@@ -134,7 +141,3 @@ public class Aim : MonoBehaviour
         return maxStoneCount;
     }
 }
-
-// What i think that i will add the logic for the stone pool in this script, 
-// So that when the stone hit the ground , it should be pooled back and it should damage the ufo only one time on hit ,
-// Not as long as it maintain the contact with it 

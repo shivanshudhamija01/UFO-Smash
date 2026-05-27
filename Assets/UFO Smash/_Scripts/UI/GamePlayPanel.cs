@@ -11,6 +11,7 @@ public class GamePlayPanel : MonoBehaviour
     [SerializeField] private Button pauseButton;
     [SerializeField] private TextMeshProUGUI scoreTxt;
     [SerializeField] private TextMeshProUGUI waveCountTxt;
+    [SerializeField] private TextMeshProUGUI stoneCountTxt;
     [SerializeField] private List<Image> animalAlive;
     private IEventBus eventBus;
     private IScoreService scoreService;
@@ -25,11 +26,17 @@ public class GamePlayPanel : MonoBehaviour
     {
         eventBus.Add<Events.OnAnimalTaken>(UpdateAnimalAlive);
         eventBus.Add<Events.OnUFODestroyed>(UpdateScore);
+        eventBus.Add<Events.OnStoneShot>(UpdateStoneCount);
+        eventBus.Add<Events.OnStoneReloaded>(UpdateStoneCountToMax);
+        eventBus.Add<Events.OnWaveIncrement>(UpdateCurrentWave);
     }
     private void OnDisable()
     {
         eventBus.Remove<Events.OnAnimalTaken>(UpdateAnimalAlive);
         eventBus.Remove<Events.OnUFODestroyed>(UpdateScore);
+        eventBus.Remove<Events.OnStoneShot>(UpdateStoneCount);
+        eventBus.Remove<Events.OnStoneReloaded>(UpdateStoneCountToMax);
+        eventBus.Remove<Events.OnWaveIncrement>(UpdateCurrentWave);
     }
     void OnGamePause()
     {
@@ -47,5 +54,21 @@ public class GamePlayPanel : MonoBehaviour
             animalAlive[index].color = new Color(0.5f, 0.5f, 0.5f);
             index++;
         }
+    }
+    private void UpdateStoneCount(Events.OnStoneShot evt)
+    {
+        int stoneCount = evt.CurrentAmmo;
+        stoneCountTxt.text = stoneCount.ToString();
+    }
+    private void UpdateStoneCountToMax(Events.OnStoneReloaded evt)
+    {
+        int stoneCount = evt.MaxAmmo;
+        stoneCountTxt.text = stoneCount.ToString();
+    }
+    private void UpdateCurrentWave(Events.OnWaveIncrement evt)
+    {
+        int waveNumber = evt.CurrentWave;
+        Debug.Log("Wave Number is asdnfklasjdfkljasd : " + waveNumber);
+        waveCountTxt.text = waveNumber.ToString();
     }
 }

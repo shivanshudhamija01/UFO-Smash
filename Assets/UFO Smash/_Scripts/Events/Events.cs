@@ -13,5 +13,30 @@ public class Events : MonoBehaviour
     {
 
     }
+    public struct OnStoneShot : IGameEvent
+    {
+        public int CurrentAmmo;
+        public OnStoneShot(int stoneLeft)
+        {
+            CurrentAmmo = stoneLeft;
+        }
+    }
+    public struct OnStoneReloaded : IGameEvent
+    {
+        public int MaxAmmo;
+        public OnStoneReloaded(int maxStones)
+        {
+            MaxAmmo = maxStones;
+        }
+    }
     public struct OnGameStarted : IGameEvent { }
+    public struct OnGameRestarted : IGameEvent { }
+    public struct OnWaveIncrement : IGameEvent
+    {
+        public int CurrentWave;
+        public OnWaveIncrement(int currentWave)
+        {
+            CurrentWave = currentWave;
+        }
+    }
 }

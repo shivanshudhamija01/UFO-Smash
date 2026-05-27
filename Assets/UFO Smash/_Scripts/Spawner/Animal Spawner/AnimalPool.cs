@@ -58,4 +58,13 @@ public class AnimalPool : MonoBehaviour
 
         return inactiveAnimals[randomIndex];
     }
+    public void ReturnAll()
+    {
+        foreach (GameObject obj in pooledAnimals)
+        {
+            if (obj.activeInHierarchy)
+                obj.SetActive(false);
+        }
+    }
+
 }
