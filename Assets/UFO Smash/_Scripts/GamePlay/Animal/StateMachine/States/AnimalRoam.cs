@@ -24,23 +24,16 @@ public class AnimalRoam : BaseState<AnimalController>
             targetPoint,
             moveSpeed * Time.deltaTime);
 
-        // Vector3 dir = targetPoint.position - transform.position;
 
-        // // Flip
-        // if (dir.x > 0)
-        //     transform.localScale = new Vector3(1, 1, 1);
-        // else
-        //     transform.localScale = new Vector3(-1, 1, 1);
         // Reached destination
         if (Vector3.Distance(transform.position, targetPoint) < 0.1f)
         {
-            if(!controller.IsLocked())
+            if (!controller.IsLocked())
                 ReturnToPool();
         }
     }
     public override void OnExitState()
     {
-        // Debug.Log("Animal Roam Exit");
     }
     public override void FixedUpdateState()
     {
@@ -53,8 +46,7 @@ public class AnimalRoam : BaseState<AnimalController>
         lane = controller.AssignedLane;
         moveSpeed = controller.MoveSpeed;
         transform = controller.GetTransform();
-        // Debug.Log("Transform position is : " + transform.position);
-        // Debug.Log("Target Position is : " + targetPoint.position);
+
     }
     private void ReturnToPool()
     {

@@ -20,16 +20,13 @@ public class MainMenuPanel : MonoBehaviour
     {
         // Fire an event
         eventBus.Publish(new Events.OnGameStarted());
-        Debug.Log("Play Button Is Clicked");
     }
     private void OnSettingButtonClicked()
     {
         // Fire an event ;
-        Debug.Log("Setting button is clicked");
     }
     private void OnExitButtonClicked()
     {
         // Fire an event ;
-        Debug.Log("Exit button is clicked");
     }
 }

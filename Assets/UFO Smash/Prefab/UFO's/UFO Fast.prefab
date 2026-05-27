@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5200878618788087400}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 3593108767993466629}
   m_Layer: 0
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 4094125634910093604}
   m_Layer: 0
   m_Name: Trail
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 4559237162308390762}
   m_Layer: 0
   m_Name: UFO Fast
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFOController
   splineContainer: {fileID: 0}
-  splineMoveSpeed: 6
+  splineMoveSpeed: 7
   rotateAlongSpline: 1
   manualMoveSpeed: 0.65
   offset: {x: 2, y: 4.5}
@@ -814,6 +814,9 @@ MonoBehaviour:
   healthBarCanvas: {fileID: 5794611940677312585}
   scoreValue: 10
   animator: {fileID: 3593108767993466629}
+  hitShakeDuration: 0
+  hitShakeStrength: 0
+  hitShakeSpeed: 45
 --- !u!1 &9056552973805775666
 GameObject:
   m_ObjectHideFlags: 0

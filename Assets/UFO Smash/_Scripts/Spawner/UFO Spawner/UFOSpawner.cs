@@ -14,7 +14,7 @@ public class UFOSpawner : MonoBehaviour
     [SerializeField] private float waveDelay;
     [Header("Spline Paths")]
     [SerializeField] private List<SplineContainer> availableSplines;
-    private int currentWave = 1;
+    [SerializeField] private int currentWave = 1;
     private int aliveUFOCount = 0;
     private bool isWaveRunning;
     private IAnimalService animalService;
@@ -52,13 +52,11 @@ public class UFOSpawner : MonoBehaviour
     private IEnumerator SpawnWave()
     {
         isWaveRunning = true;
-        Debug.Log("Current Wave is : " + currentWave);
+        // Debug.Log("Current Wave is : " + currentWave);
         TeachingPhase phase = GetCurrentPhase(currentWave);
         int waveBudget = Mathf.RoundToInt(waveCost.Evaluate(currentWave));
-        Debug.Log("Budget of this wave cost is : " + waveBudget);
         while (waveBudget > 0)
         {
-            // Debug.Log("Animal present in the current scene is : " + animalService.AnimalCountInScene());
             UFOSpawnProfile profile = GetRandomUFOForPhase(phase, waveBudget);
             if (profile == null)
             {
@@ -73,16 +71,14 @@ public class UFOSpawner : MonoBehaviour
 
                 waveBudget -= profile.Cost;
 
-                // Debug.Log("Wave Budget cost is : " + waveBudget);
+
             }
             else
             {
-                // Wait until animals available
-                Debug.Log("Else inside the spawn wave is called as there are no animals");
                 yield return new WaitForSeconds(0.5f);
                 continue;
             }
-            // Debug.Log("Wave Budget cost is : " + waveBudget);
+
             float delay = spawnDelayCurve.Evaluate(currentWave);
             yield return new WaitForSeconds(delay);
         }

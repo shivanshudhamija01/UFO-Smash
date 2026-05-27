@@ -2,39 +2,27 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
-    [SerializeField]
-    private Transform firePoint;
+    [SerializeField] private Transform firePoint;
 
-    [SerializeField]
-    private GameObject stonePrefab;
+    [SerializeField] private Transform rightHandTransform;
 
-    [SerializeField]
-    private Transform rightHandTransform;
+    [SerializeField] private float shootSpeed = 10f;
 
-    [SerializeField]
-    private float shootSpeed = 10f;
-
-    [SerializeField]
-    private float maxAimRange = 10f;
+    [SerializeField] private float maxAimRange = 10f;
 
     [Header("Aim Restriction")]
-    [SerializeField]
-    private float minAimAngle = -70f;
+    [SerializeField] private float minAimAngle = -70f;
 
-    [SerializeField]
-    private float maxAimAngle = 70f;
+    [SerializeField] private float maxAimAngle = 70f;
 
-    [SerializeField]
-    private float handRotationOffset = -90f;
+    [SerializeField] private float handRotationOffset = -90f;
 
     [Header("Stone Ammo")]
-    [SerializeField]
-    private int maxStoneCount = 5;
+    [SerializeField] private int maxStoneCount = 5;
 
     private int currentStoneCount;
 
-    private TrajectoryPredictor
-        trajectoryPredictor;
+    private TrajectoryPredictor trajectoryPredictor;
 
     private Vector3 initialMousePos;
 
@@ -119,22 +107,21 @@ public class Aim : MonoBehaviour
 
     private void Shoot(Vector2 direction)
     {
-        GameObject stone = Instantiate(stonePrefab, firePoint.position, firePoint.rotation);
+        // GameObject stone = Instantiate(stonePrefab, firePoint.position, firePoint.rotation);
+        GameObject stone = StonePool.Instance.Get(firePoint.position, firePoint.rotation);
 
         Rigidbody2D rb = stone.GetComponent<Rigidbody2D>();
 
         rb.linearVelocity = direction * shootSpeed * speed;
 
         currentStoneCount--;
-
-        Debug.Log("Stone Left: " + currentStoneCount);
     }
 
     public void ReloadToMax()
     {
         currentStoneCount = maxStoneCount;
 
-        Debug.Log("Stones Reloaded!");
+        // Debug.Log("Stones Reloaded!");
     }
 
     public int GetCurrentAmmo()
@@ -147,3 +134,7 @@ public class Aim : MonoBehaviour
         return maxStoneCount;
     }
 }
+
+// What i think that i will add the logic for the stone pool in this script, 
+// So that when the stone hit the ground , it should be pooled back and it should damage the ufo only one time on hit ,
+// Not as long as it maintain the contact with it 

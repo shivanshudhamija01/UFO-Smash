@@ -9,7 +9,6 @@ public class UFOAbduct : BaseState<UFOController>
     }
     public override void OnEnterState()
     {
-        // Debug.Log("Entered into the UFO abduct state");
         healthBar = controller.GetHealthBar();
         healthBar.gameObject.SetActive(true);
     }
@@ -25,5 +24,3 @@ public class UFOAbduct : BaseState<UFOController>
 
     }
 }
-// When the animal is about to reach the ufo center, then it will make the animal disappear and change the ufo state to ufo success, 
-// and then ufo will run away 

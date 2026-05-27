@@ -34,7 +34,6 @@ public class UFOSuccess
 
         anticipationTimer = 0f;
 
-        // Debug.Log("Entered into UFO Success state");
     }
 
     public override void UpdateState()

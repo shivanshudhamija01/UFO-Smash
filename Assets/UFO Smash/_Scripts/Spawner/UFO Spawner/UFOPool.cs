@@ -84,7 +84,6 @@ public class UFOPool : MonoBehaviour
     {
         if (obj == null)
         {
-            // Debug.LogWarning("UFO prefab is missing.");
             return;
         }
 

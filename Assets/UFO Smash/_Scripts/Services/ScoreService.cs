@@ -15,6 +15,5 @@ public class ScoreService : IScoreService
     public void AddScore(int amount)
     {
         score += amount;
-        Debug.Log("Score added: " + amount + ". Total Score: " + score);
     }
 }

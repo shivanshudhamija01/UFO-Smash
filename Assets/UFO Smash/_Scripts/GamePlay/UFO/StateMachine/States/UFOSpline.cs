@@ -28,11 +28,11 @@ public class UFOSpline : BaseState<UFOController>
 
         splineDistance = 0;
         splineLength = spline.CalculateLength();
-        if (animator == null)
-        {
-            animator = controller.GetAnimator();
-        }
-        animator.SetBool(key, true);
+        // if (animator == null)
+        // {
+        //     animator = controller.GetAnimator();
+        // }
+        // animator.SetBool(key, true);
         // Debug
     }
 
@@ -65,7 +65,7 @@ public class UFOSpline : BaseState<UFOController>
 
     public override void OnExitState()
     {
-        animator.SetBool(key, false);
+        // animator.SetBool(key, false);
     }
 
     public override void FixedUpdateState()

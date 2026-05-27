@@ -33,7 +33,7 @@ public class GamePlayPanel : MonoBehaviour
     }
     void OnGamePause()
     {
-        Debug.Log("Game Pause");
+
     }
     private void UpdateScore(Events.OnUFODestroyed evt)
     {

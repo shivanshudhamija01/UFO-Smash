@@ -29,9 +29,18 @@ public class UFOController : MonoBehaviour
     [SerializeField] private Canvas healthBarCanvas;
     [Header("UFO Score Value")]
     [SerializeField] private int scoreValue;
-
+    [Header("Animation")]
     [SerializeField] private Animator animator;
+    [Header("Hit Shake")]
+    [SerializeField] private float hitShakeDuration = 0.12f;
+    [SerializeField] private float hitShakeStrength = 0.08f;
+    [SerializeField] private float hitShakeSpeed = 45f;
+    private readonly int key = Animator.StringToHash("IsSpline");
+    private bool isShaking;
 
+    private float shakeTimer;
+
+    private Vector3 originalPosition;
     private int currentHealth;
     private IScoreService scoreService;
     private UFOStateMachine stateMachine;
@@ -62,6 +71,7 @@ public class UFOController : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.fillAmount = 1;
         healthBarCanvas.gameObject.SetActive(false);
+        animator.SetBool(key, true);
         if (splineContainer != null)
         {
             Vector3 startPos = splineContainer.EvaluatePosition(0f);
@@ -79,6 +89,7 @@ public class UFOController : MonoBehaviour
     private void Update()
     {
         stateMachine.Update();
+        HandleHitShake();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -91,21 +102,25 @@ public class UFOController : MonoBehaviour
 
         Stone stone = collision.gameObject.GetComponent<Stone>();
 
+        // Here i need to check whether it has damaged or not 
         int damage = stone != null ? stone.GetDamage() : 1;
-
-        TakeDamage(damage);
+        if (!stone.HasAlreadyHitUFO())
+        {
+            TakeDamage(damage);
+        }
     }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.fillAmount = (float)currentHealth / maxHealth;
-        Debug.Log($"{gameObject.name} HP: {currentHealth}");
+        StartHitShake();
 
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+
     private void Die()
     {
         if (lockedAnimal != null)
@@ -119,9 +134,48 @@ public class UFOController : MonoBehaviour
     }
     public void FinishUFO()
     {
+        animator.SetBool(key, false);
         torchLight.gameObject.SetActive(false);
         OnUFOFinished?.Invoke(this);
     }
+
+    #region UFO - Shake
+    private void StartHitShake()
+    {
+        if (stateMachine.GetCurrentState() == UFOStates.blast)
+            return;
+
+        shakeTimer = hitShakeDuration;
+        isShaking = true;
+        originalPosition = transform.position;
+    }
+
+    private void HandleHitShake()
+    {
+        if (!isShaking)
+            return;
+
+        shakeTimer -= Time.deltaTime;
+
+        if (shakeTimer <= 0)
+        {
+            isShaking = false;
+            transform.position = originalPosition;
+            return;
+        }
+
+        float progress = shakeTimer / hitShakeDuration;
+
+        float noiseX = (Mathf.PerlinNoise(Time.time * hitShakeSpeed, 0f) - 0.5f) * 2f;
+        float noiseY = (Mathf.PerlinNoise(0f, Time.time * hitShakeSpeed) - 0.5f) * 2f;
+
+        // Multiply by progress so shake eases out naturally
+        float xOffset = noiseX * hitShakeStrength * progress;
+        float yOffset = noiseY * hitShakeStrength * progress;
+
+        transform.position = originalPosition + new Vector3(xOffset, yOffset, 0f);
+    }
+    #endregion
     // Getters
     public Transform GetTransform() => transform;
     public Light2D GetTorchLight() => torchLight;
@@ -148,4 +202,4 @@ public class UFOController : MonoBehaviour
     }
 }
 
-// I got it why the UFO movement is not working , because the initialize is called in Spawning script of both the animal and UFO controller
+// Now try to play the idle animation in loop

@@ -43,7 +43,6 @@ public class UFOBlast
 
         fallDirection = new Vector2(xDirection, -1f).normalized;
 
-        // Debug.Log("UFO Hit by Stone!");
     }
 
     public override void UpdateState()
@@ -103,12 +102,6 @@ public class UFOBlast
 
     private void Blast()
     {
-        // Debug.Log("BOOM!");
-
-        // TODO:
-        // Spawn blast VFX
-
-        // controller.gameObject.SetActive(false);
         controller.FinishUFO();
     }
 }

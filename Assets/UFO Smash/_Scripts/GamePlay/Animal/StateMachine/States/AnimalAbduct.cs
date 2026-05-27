@@ -22,7 +22,6 @@ public class AnimalAbduct
     {
         Init();
         targetTilt = tiltAngle;
-        // Debug.Log("Animal entered into abduct state");
     }
 
     public override void UpdateState()

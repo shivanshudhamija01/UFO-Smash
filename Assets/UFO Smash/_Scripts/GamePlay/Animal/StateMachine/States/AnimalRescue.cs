@@ -68,8 +68,7 @@ public class AnimalRescue : BaseState<AnimalController>
         Vector3 targetPos = new Vector3(currentPos.x, targetY, currentPos.z);
 
         animalTransform.position = Vector2.MoveTowards(currentPos, targetPos, moveSpeed * Time.deltaTime);
-        // Debug.Log("I am inside the rescue state and current Pos and traget pos is : " + currentPos + " " + targetPos);
-        // Landed
+
         if (Mathf.Abs(animalTransform.position.y - targetY) <= reachThreshold)
         {
             animalTransform.position = targetPos;

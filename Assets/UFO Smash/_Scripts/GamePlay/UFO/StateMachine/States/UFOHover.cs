@@ -27,14 +27,13 @@ public class UFOHover : BaseState<UFOController>
 
         lockedAnimal = LockAnimal();
         AnimalController animalController = lockedAnimal as AnimalController;
-        if(animalController != null)
+        if (animalController != null)
         {
             animalController.SetLocked(true);
         }
         controller.SetLockedAnimal(lockedAnimal);
         if (lockedAnimal == null)
         {
-            Debug.LogWarning("Locked animal is null");
             return;
         }
         lockedAnimalTransform = lockedAnimal.GetTransform();

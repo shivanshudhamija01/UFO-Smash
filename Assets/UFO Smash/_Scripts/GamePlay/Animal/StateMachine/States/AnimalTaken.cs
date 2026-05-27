@@ -50,8 +50,6 @@ public class AnimalTaken
             ReturnToPool();
         }
 
-        // can use the method instead of lerp 
-        // transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.zero, shrinkSpeed * Time.deltaTime);
     }
     private void Init()
     {
@@ -63,16 +61,11 @@ public class AnimalTaken
         {
             eventBus = ServiceLocator.Get<IEventBus>();
         }
-        // Debug.Log("Animal is taken");
     }
     private void ReturnToPool()
     {
-        // lane.currentAnimals = Mathf.Max(0, lane.currentAnimals - 1);
         animalSpawner.AnimalRemoved(this.controller);
         transform.localScale = Vector3.one;
         controller.gameObject.SetActive(false);
     }
 }
-
-
-// Here in exit state ,i have to fire an event to notify that, okay the game is over now

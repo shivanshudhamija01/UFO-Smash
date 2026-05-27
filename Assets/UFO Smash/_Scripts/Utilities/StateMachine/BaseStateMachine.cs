@@ -41,7 +41,6 @@ public class BaseStateMachine<TController, TStateEnum>
         // Validate state exists
         if (!stateRegistry.TryGetValue(newState, out var nextState))
         {
-            // Debug.LogError($"State {newState} not registered in state machine!");
             return false;
         }
 

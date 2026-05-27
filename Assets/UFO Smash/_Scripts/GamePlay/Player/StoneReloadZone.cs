@@ -9,7 +9,7 @@ public class StoneReloadZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("On Trigger enter is called");
+
         if (!collision.CompareTag("Player"))
             return;
 

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 7466460168838606222}
   m_Layer: 0
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 3613042894535071534}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 4559237162308390762}
   m_Layer: 0
   m_Name: UFO Shield
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,6 +512,9 @@ MonoBehaviour:
   healthBarCanvas: {fileID: 8588381565266591764}
   scoreValue: 30
   animator: {fileID: 7466460168838606222}
+  hitShakeDuration: 0.15
+  hitShakeStrength: 0.1
+  hitShakeSpeed: 35
 --- !u!1 &8484691652114084566
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +677,7 @@ GameObject:
   - component: {fileID: 9067900836248234423}
   m_Layer: 0
   m_Name: GlowLight
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

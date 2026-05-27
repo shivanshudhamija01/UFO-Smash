@@ -55,7 +55,6 @@ public class AnimalController : MonoBehaviour, IAbductable
         if (animalStateMachine != null)
         {
             animalStateMachine.Update();
-            // Debug.Log("Animal current state is : " + animalStateMachine.GetCurrentState() + " " + "their tranform.position is : " + transform.position);
         }
     }
     public void BeginAbduction(Transform abductTarget, UFOController ufo)

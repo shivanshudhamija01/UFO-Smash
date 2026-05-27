@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 7764342322384978596}
   m_Layer: 0
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 7285303811887635835}
   m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 4559237162308390762}
   m_Layer: 0
   m_Name: UFO Boss
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -550,7 +550,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.021192908}
+  m_Offset: {x: 0.009218872, y: 0.14103878}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -560,7 +560,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.188381, y: 1.0423858}
+  m_Size: {x: 1.501824, y: 1.2820774}
   m_EdgeRadius: 0
 --- !u!114 &4559237162308390762
 MonoBehaviour:
@@ -575,9 +575,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UFOController
   splineContainer: {fileID: 0}
-  splineMoveSpeed: 5
+  splineMoveSpeed: 6
   rotateAlongSpline: 1
-  manualMoveSpeed: 0.5
+  manualMoveSpeed: 0.6
   offset: {x: 2, y: 4.5}
   tiltSpeed: 0
   torchLight: {fileID: 8033362700281846707}
@@ -587,6 +587,9 @@ MonoBehaviour:
   healthBarCanvas: {fileID: 3124900071412619128}
   scoreValue: 50
   animator: {fileID: 7764342322384978596}
+  hitShakeDuration: 0.12
+  hitShakeStrength: 0.08
+  hitShakeSpeed: 45
 --- !u!1 &9056552973805775666
 GameObject:
   m_ObjectHideFlags: 0
