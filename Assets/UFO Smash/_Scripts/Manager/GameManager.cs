@@ -30,14 +30,14 @@ public class GameManager : MonoBehaviour
         animalLivesCount--;
         if (animalLivesCount == 0)
         {
-            // Debug.Log("Game is over ");
-            // Time.timeScale = 0;
+            Debug.Log("Game is over ");
+            eventBus.Publish(new Events.OnGameOver());
+            Time.timeScale = 0;
         }
     }
 
     private void HandleUFODestroyed(Events.OnUFODestroyed data)
     {
         int score = scoreService.GetScore();
-        // Debug.Log("Score is : " + score);
     }
 }

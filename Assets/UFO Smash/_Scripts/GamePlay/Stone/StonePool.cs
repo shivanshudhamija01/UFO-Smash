@@ -9,10 +9,13 @@ public class StonePool : MonoBehaviour
     [SerializeField] private int poolSize = 10;
 
     private Queue<GameObject> pool = new Queue<GameObject>();
+    private List<GameObject> activeStones = new List<GameObject>();
+    private IEventBus eventBus;
 
     private void Awake()
     {
         Instance = this;
+        eventBus = ServiceLocator.Get<IEventBus>();
         for (int i = 0; i < poolSize; i++)
         {
             GameObject stone = Instantiate(stonePrefab, transform);
@@ -20,7 +23,14 @@ public class StonePool : MonoBehaviour
             pool.Enqueue(stone);
         }
     }
-
+    private void OnEnable()
+    {
+        eventBus.Add<Events.OnGameReset>(HandleReset);
+    }
+    private void OnDisable()
+    {
+        eventBus.Remove<Events.OnGameReset>(HandleReset);
+    }
     public GameObject Get(Vector3 position, Quaternion rotation)
     {
         GameObject stone;
@@ -37,7 +47,7 @@ public class StonePool : MonoBehaviour
 
         stone.transform.SetPositionAndRotation(position, rotation);
         stone.SetActive(true);
-
+        activeStones.Add(stone);
         Stone stoneComp = stone.GetComponent<Stone>();
         stoneComp?.ResetStone();
 
@@ -46,8 +56,19 @@ public class StonePool : MonoBehaviour
 
     public void Return(GameObject stone)
     {
+        if (activeStones.Contains(stone))
+        {
+            activeStones.Remove(stone);
+        }
+
         stone.SetActive(false);
-        transform.localScale = Vector3.one;
         pool.Enqueue(stone);
+    }
+    private void HandleReset(Events.OnGameReset e)
+    {
+        for (int i = activeStones.Count - 1; i >= 0; i--)
+        {
+            Return(activeStones[i]);
+        }
     }
 }

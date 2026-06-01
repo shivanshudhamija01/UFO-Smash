@@ -33,6 +33,8 @@ public class Aim : MonoBehaviour
     private Coroutine throwAnimCoroutine;
     private Coroutine resetHandCoroutine;
     private IEventBus eventBus;
+    private VariableJoystick variableJoystick;
+    private bool wasDraggingJoystick;
 
     private void Awake()
     {
@@ -45,13 +47,26 @@ public class Aim : MonoBehaviour
         currentStoneCount = maxStoneCount;
         eventBus.Publish(new Events.OnStoneReloaded(currentStoneCount));
     }
-
+    private void OnEnable()
+    {
+        eventBus.Add<Events.OnGameReset>(ResetStoneCount);
+    }
+    private void OnDisable()
+    {
+        eventBus.Remove<Events.OnGameReset>(ResetStoneCount);
+    }
     private void Update()
     {
         if (!canShoot)
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        Vector2 joystickInput = new Vector2(
+            variableJoystick.Horizontal,
+            variableJoystick.Vertical);
+
+        bool isDragging = joystickInput.magnitude > 0.1f;
+
+        if (isDragging)
         {
             if (currentStoneCount <= 0)
             {
@@ -59,46 +74,53 @@ public class Aim : MonoBehaviour
                 return;
             }
 
-            initialMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             stoneVisuals.SetActive(true);
-        }
-
-        if (Input.GetMouseButton(0))
-        {
-            if (currentStoneCount <= 0)
-                return;
-
             HandleAim();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        // Shoot when joystick is released
+        if (wasDraggingJoystick && !isDragging)
         {
-            if (currentStoneCount <= 0)
-                return;
+            if (currentStoneCount > 0)
+            {
+                Shoot(direction);
+            }
 
-            Shoot(direction);
             stoneVisuals.SetActive(false);
             trajectoryPredictor.HideTrajectory();
         }
+
+        wasDraggingJoystick = isDragging;
     }
 
     private void HandleAim()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 rawDirection = mousePos - firePoint.position;
+        Vector2 rawDirection = new Vector2(
+            variableJoystick.Horizontal,
+            variableJoystick.Vertical);
 
-        float angle = Mathf.Atan2(rawDirection.y, rawDirection.x) * Mathf.Rad2Deg;
+        if (rawDirection.sqrMagnitude < 0.01f)
+            return;
+
+        float angle =
+            Mathf.Atan2(rawDirection.y, rawDirection.x) * Mathf.Rad2Deg;
+
         angle = Mathf.Clamp(angle, minAimAngle, maxAimAngle);
 
         currentAimAngle = angle;
 
-        direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+        direction = new Vector2(
+            Mathf.Cos(angle * Mathf.Deg2Rad),
+            Mathf.Sin(angle * Mathf.Deg2Rad))
+            .normalized;
 
-        speed = Mathf.Clamp(Vector2.Distance(mousePos, initialMousePos), 0, maxAimRange);
+        // Power based on joystick distance from center
+        speed = Mathf.Clamp(rawDirection.magnitude, 0f, 1f) * maxAimRange;
 
         RotateHand(angle);
 
-        trajectoryPredictor.ShowTrajectory(direction * shootSpeed * speed);
+        trajectoryPredictor.ShowTrajectory(
+            direction * shootSpeed * speed);
     }
 
     private void RotateHand(float angle)
@@ -108,6 +130,9 @@ public class Aim : MonoBehaviour
 
     private void Shoot(Vector2 direction)
     {
+        if (speed <= 0.05f)
+            return;
+
         GameObject stone = StonePool.Instance.Get(firePoint.position, firePoint.rotation);
         Rigidbody2D rb = stone.GetComponent<Rigidbody2D>();
         rb.linearVelocity = direction * shootSpeed * speed;
@@ -202,7 +227,13 @@ public class Aim : MonoBehaviour
         eventBus.Publish(new Events.OnStoneReloaded(currentStoneCount));
         ResetHandToRest();
     }
-
+    private void ResetStoneCount(Events.OnGameReset evt)
+    {
+        currentStoneCount = maxStoneCount;
+        eventBus.Publish(new Events.OnStoneReloaded(currentStoneCount));
+    }
     public int GetCurrentAmmo() => currentStoneCount;
     public int GetMaxAmmo() => maxStoneCount;
+    public void SetVariableJoystick(VariableJoystick value) => variableJoystick = value;
 }
+// I have to take the reference of the joystick to the player 

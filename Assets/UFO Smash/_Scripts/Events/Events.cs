@@ -31,12 +31,26 @@ public class Events : MonoBehaviour
     }
     public struct OnGameStarted : IGameEvent { }
     public struct OnGameRestarted : IGameEvent { }
+    public struct OnGamePaused : IGameEvent { }
+    public struct OnGameResumed : IGameEvent { }
+    public struct OnGameReset : IGameEvent { }
+    public struct OnReturnToHome : IGameEvent { }
+    public struct OnGameOver : IGameEvent { }
     public struct OnWaveIncrement : IGameEvent
     {
         public int CurrentWave;
         public OnWaveIncrement(int currentWave)
         {
             CurrentWave = currentWave;
+        }
+    }
+    public struct OnGameInput : IGameEvent
+    {
+        public int Direction;
+
+        public OnGameInput(int direction)
+        {
+            Direction = direction;
         }
     }
 }

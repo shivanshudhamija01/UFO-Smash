@@ -30,13 +30,13 @@ public class UFOSpawner : MonoBehaviour
     {
         UFOController.OnUFOFinished += HandleUFOFinished;
         eventBus.Add<Events.OnGameStarted>(SpawnUFOs);
-        eventBus.Add<Events.OnGameRestarted>(ResetSpawner);
+        eventBus.Add<Events.OnGameReset>(ResetSpawner);
     }
     private void OnDisable()
     {
         UFOController.OnUFOFinished -= HandleUFOFinished;
         eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
-        eventBus.Remove<Events.OnGameRestarted>(ResetSpawner);
+        eventBus.Remove<Events.OnGameReset>(ResetSpawner);
     }
     void SpawnUFOs(Events.OnGameStarted evt)
     {
@@ -58,7 +58,6 @@ public class UFOSpawner : MonoBehaviour
     private IEnumerator SpawnWave()
     {
         isWaveRunning = true;
-        // Debug.Log("Current Wave is : " + currentWave);
         TeachingPhase phase = GetCurrentPhase(currentWave);
         int waveBudget = Mathf.RoundToInt(waveCost.Evaluate(currentWave));
         while (waveBudget > 0)
@@ -228,7 +227,7 @@ public class UFOSpawner : MonoBehaviour
     }
     #endregion
 
-    private void ResetSpawner(Events.OnGameRestarted evt)
+    private void ResetSpawner(Events.OnGameReset evt)
     {
         StopAllCoroutines();
 

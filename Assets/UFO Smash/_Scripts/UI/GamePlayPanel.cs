@@ -21,6 +21,7 @@ public class GamePlayPanel : MonoBehaviour
         eventBus = ServiceLocator.Get<IEventBus>();
         scoreService = ServiceLocator.Get<IScoreService>();
         pauseButton.onClick.AddListener(OnGamePause);
+        eventBus.Add<Events.OnGameReset>(ResetGame);
     }
     private void OnEnable()
     {
@@ -38,9 +39,14 @@ public class GamePlayPanel : MonoBehaviour
         eventBus.Remove<Events.OnStoneReloaded>(UpdateStoneCountToMax);
         eventBus.Remove<Events.OnWaveIncrement>(UpdateCurrentWave);
     }
+    private void Oestroy()
+    {
+        eventBus.Remove<Events.OnGameReset>(ResetGame);
+    }
     void OnGamePause()
     {
-
+        Time.timeScale = 0;
+        eventBus.Publish(new Events.OnGamePaused());
     }
     private void UpdateScore(Events.OnUFODestroyed evt)
     {
@@ -68,7 +74,15 @@ public class GamePlayPanel : MonoBehaviour
     private void UpdateCurrentWave(Events.OnWaveIncrement evt)
     {
         int waveNumber = evt.CurrentWave;
-        Debug.Log("Wave Number is asdnfklasjdfkljasd : " + waveNumber);
         waveCountTxt.text = waveNumber.ToString();
+    }
+    private void ResetGame(Events.OnGameReset evt)
+    {
+        index = 0;
+        Debug.Log("Reset game is called inside the gameplay panel");
+        for (int i = 0; i < animalAlive.Count; i++)
+        {
+            animalAlive[i].color = new Color(1f, 1f, 1f);
+        }
     }
 }

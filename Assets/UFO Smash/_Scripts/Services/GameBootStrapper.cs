@@ -8,8 +8,8 @@ public class GameBootStrapper : MonoBehaviour
     }
     void RegisterServices()
     {
+        ServiceLocator.Register<IEventBus>(new EventBus());
         ServiceLocator.Register<IAnimalService>(new AnimalService());
         ServiceLocator.Register<IScoreService>(new ScoreService());
-        ServiceLocator.Register<IEventBus>(new EventBus());
     }
 }

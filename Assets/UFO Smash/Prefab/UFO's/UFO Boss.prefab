@@ -590,6 +590,7 @@ MonoBehaviour:
   hitShakeDuration: 0.12
   hitShakeStrength: 0.08
   hitShakeSpeed: 45
+  ufoBodyRenderer: {fileID: 7691869994204549359}
 --- !u!1 &9056552973805775666
 GameObject:
   m_ObjectHideFlags: 0

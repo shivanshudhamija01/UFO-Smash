@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class AnimalService : IAnimalService
 {
+    private IEventBus eventBus;
+    public AnimalService()
+    {
+        eventBus = ServiceLocator.Get<IEventBus>();
+    }
     private List<AnimalController> animalActiveInScene = new List<AnimalController>();
     public void AddAnimal(AnimalController animal)
     {
@@ -38,5 +43,6 @@ public class AnimalService : IAnimalService
     {
         animalActiveInScene.Clear();
     }
+
 
 }

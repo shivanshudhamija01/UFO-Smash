@@ -7,19 +7,34 @@ public class PlayerMovement : MonoBehaviour
 
     private readonly int isWalkingHash = Animator.StringToHash("IsWalking");
 
-    void Update()
+    private IEventBus eventBus;
+    private int moveDirection;
+
+    private void Awake()
     {
-        bool isMoving = false;
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-            isMoving = true;
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-            isMoving = true;
-        }
+        eventBus = ServiceLocator.Get<IEventBus>();
+    }
+
+    private void OnEnable()
+    {
+        eventBus.Add<Events.OnGameInput>(HandleInput);
+    }
+
+    private void OnDisable()
+    {
+        eventBus.Remove<Events.OnGameInput>(HandleInput);
+    }
+
+    private void HandleInput(Events.OnGameInput evt)
+    {
+        moveDirection = evt.Direction;
+    }
+
+    private void Update()
+    {
+        bool isMoving = moveDirection != 0;
+
+        transform.Translate(Vector3.right * moveDirection * speed * Time.deltaTime);
 
         animator.SetBool(isWalkingHash, isMoving);
     }
