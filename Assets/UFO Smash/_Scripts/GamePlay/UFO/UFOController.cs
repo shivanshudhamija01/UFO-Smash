@@ -21,25 +21,31 @@ public class UFOController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Light2D torchLight;
     [SerializeField] private IAbductable lockedAnimal;
+
     [Header("UFO Type")]
     [SerializeField] private UFOType uFOType;
+    
     [Header("UFO Health")]
     [SerializeField] private int maxHealth;
     [SerializeField] private Image healthBar;
     [SerializeField] private Canvas healthBarCanvas;
+    
     [Header("UFO Score Value")]
     [SerializeField] private int scoreValue;
+    
     [Header("Animation")]
     [SerializeField] private Animator animator;
+    
     [Header("Hit Shake")]
     [SerializeField] private float hitShakeDuration = 0.12f;
     [SerializeField] private float hitShakeStrength = 0.08f;
     [SerializeField] private float hitShakeSpeed = 45f;
+
+    [Header("UFO Visuals")]
+    [SerializeField] private SpriteRenderer ufoBodyRenderer;
     private readonly int key = Animator.StringToHash("IsSpline");
     private bool isShaking;
-
     private float shakeTimer;
-
     private Vector3 originalPosition;
     private int currentHealth;
     private IScoreService scoreService;
@@ -183,7 +189,7 @@ public class UFOController : MonoBehaviour
     public SplineContainer GetSpline() => splineContainer;
     public float GetSplineSpeed() => splineMoveSpeed;
     public bool ShouldRotateSpline() => rotateAlongSpline;
-
+    public SpriteRenderer GetSpriteRenderer() => ufoBodyRenderer;
     public float GetManualSpeed() => manualMoveSpeed;
     public Vector2 GetOffset() => offset;
     public Animator GetAnimator() => animator;

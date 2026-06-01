@@ -47,6 +47,7 @@ public class StonePool : MonoBehaviour
     public void Return(GameObject stone)
     {
         stone.SetActive(false);
+        transform.localScale = Vector3.one;
         pool.Enqueue(stone);
     }
 }

@@ -202,3 +202,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stone
   damage: 1
+  maxTravelDistance: 15
+  minimumScale: 0.4

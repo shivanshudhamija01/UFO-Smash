@@ -12,6 +12,7 @@ public class UFOHover : BaseState<UFOController>
 
     private Coroutine approachRoutine;
     private IAnimalService animalService;
+    private SpriteRenderer ufoSpriteRenderer;
     public UFOHover(UFOController controller)
         : base(controller)
     {
@@ -25,11 +26,14 @@ public class UFOHover : BaseState<UFOController>
         }
         transform = controller.GetTransform();
 
+        ufoSpriteRenderer = controller.GetSpriteRenderer();
         lockedAnimal = LockAnimal();
         AnimalController animalController = lockedAnimal as AnimalController;
+        
         if (animalController != null)
         {
             animalController.SetLocked(true);
+            ufoSpriteRenderer.sortingOrder = animalController.GetSortingOrder();
         }
         controller.SetLockedAnimal(lockedAnimal);
         if (lockedAnimal == null)

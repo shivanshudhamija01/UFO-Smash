@@ -14,6 +14,7 @@ public class UFOSpawner : MonoBehaviour
     [SerializeField] private float waveDelay;
     [Header("Spline Paths")]
     [SerializeField] private List<SplineContainer> availableSplines;
+    [SerializeField] private SplineContainer bossSpline;
     [SerializeField] private int currentWave = 1;
     private int aliveUFOCount = 0;
     private bool isWaveRunning;
@@ -108,7 +109,12 @@ public class UFOSpawner : MonoBehaviour
         UFOController controller = ufo.GetComponent<UFOController>();
         if (controller != null)
         {
+            // Here i will check if the UFO to be spawned is boss or not , if it is boss , then i will assign the special boss spline to it 
             SplineContainer spline = GetRandomSpline();
+            if (profile.UfoType == UFOType.Boss)
+            {
+                spline = bossSpline;
+            }
             controller.Initialize(spline);
         }
 
