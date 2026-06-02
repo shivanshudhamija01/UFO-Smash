@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gamePlayPanel;
     [SerializeField] private GameObject gamePausePanel;
     [SerializeField] private GameObject gameLostPanel;
+    [SerializeField] private GameObject settingPanel;
 
     private IEventBus eventBus;
     private void Awake()
@@ -20,6 +21,8 @@ public class UIManager : MonoBehaviour
         eventBus.Add<Events.OnGameOver>(OnGameOver);
         eventBus.Add<Events.OnReturnToHome>(ReturnToHome);
         eventBus.Add<Events.OnGameRestarted>(OnGameRestart);
+        eventBus.Add<Events.OnSettingButtonClicked>(OpenUpSettingPanel);
+        eventBus.Add<Events.OnCloseButtonClicked>(CloseSettingPanel);
     }
     private void OnDisable()
     {
@@ -28,6 +31,8 @@ public class UIManager : MonoBehaviour
         eventBus.Remove<Events.OnGameResumed>(OnGameResumed);
         eventBus.Remove<Events.OnGameOver>(OnGameOver);
         eventBus.Remove<Events.OnReturnToHome>(ReturnToHome);
+        eventBus.Remove<Events.OnSettingButtonClicked>(OpenUpSettingPanel);
+        eventBus.Remove<Events.OnCloseButtonClicked>(CloseSettingPanel);
     }
 
 
@@ -64,5 +69,15 @@ public class UIManager : MonoBehaviour
         gameLostPanel.SetActive(false);
         gamePausePanel.SetActive(false);
         gamePlayPanel.SetActive(true);
+    }
+    private void OpenUpSettingPanel(Events.OnSettingButtonClicked evt)
+    {
+        mainMenuPanel.SetActive(false);
+        settingPanel.SetActive(true);
+    }
+    private void CloseSettingPanel(Events.OnCloseButtonClicked evt)
+    {
+        mainMenuPanel.SetActive(true);
+        settingPanel.SetActive(false);
     }
 }

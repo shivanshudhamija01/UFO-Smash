@@ -15,11 +15,13 @@ public class GamePlayPanel : MonoBehaviour
     [SerializeField] private List<Image> animalAlive;
     private IEventBus eventBus;
     private IScoreService scoreService;
+    private IAudioService audioService;
     private int index = 0;
     void Awake()
     {
         eventBus = ServiceLocator.Get<IEventBus>();
         scoreService = ServiceLocator.Get<IScoreService>();
+        audioService = ServiceLocator.Get<IAudioService>();
         pauseButton.onClick.AddListener(OnGamePause);
         eventBus.Add<Events.OnGameReset>(ResetGame);
     }
@@ -46,6 +48,7 @@ public class GamePlayPanel : MonoBehaviour
     void OnGamePause()
     {
         Time.timeScale = 0;
+        audioService.SFX(SoundType.Click);
         eventBus.Publish(new Events.OnGamePaused());
     }
     private void UpdateScore(Events.OnUFODestroyed evt)

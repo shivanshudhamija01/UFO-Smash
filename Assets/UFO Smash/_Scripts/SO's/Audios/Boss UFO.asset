@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Boss UFO
   m_EditorClassIdentifier: Assembly-CSharp::SoundInfo
   id: 12
-  audioClip: {fileID: 8300000, guid: 00b03ebfaa7bd49b68749d3161cde128, type: 3}
+  audioClip: {fileID: 8300000, guid: 7d02cef5bfc3b4e9b8b20ff0000021e9, type: 3}

@@ -36,6 +36,8 @@ public class Events : MonoBehaviour
     public struct OnGameReset : IGameEvent { }
     public struct OnReturnToHome : IGameEvent { }
     public struct OnGameOver : IGameEvent { }
+    public struct OnSettingButtonClicked : IGameEvent { }
+    public struct OnCloseButtonClicked : IGameEvent { }
     public struct OnWaveIncrement : IGameEvent
     {
         public int CurrentWave;

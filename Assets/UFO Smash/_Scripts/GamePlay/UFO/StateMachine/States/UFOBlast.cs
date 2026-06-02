@@ -23,7 +23,7 @@ public class UFOBlast
     private float acceleration = 15f;
 
     private float spinSpeed = 450f;
-
+    private IAudioService audioService;
     public UFOBlast(
         UFOController controller)
         : base(controller)
@@ -42,7 +42,11 @@ public class UFOBlast
         float xDirection = Random.Range(-0.5f, 0.5f);
 
         fallDirection = new Vector2(xDirection, -1f).normalized;
-
+        if (audioService == null)
+        {
+            audioService = ServiceLocator.Get<IAudioService>();
+        }
+        audioService.SFX(SoundType.UFODie);
     }
 
     public override void UpdateState()

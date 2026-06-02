@@ -7,10 +7,11 @@ public class MainMenuPanel : MonoBehaviour
     [SerializeField] private Button settingButton;
     [SerializeField] private Button exitButton;
     private IEventBus eventBus;
-
+    private IAudioService audioService;
     private void Awake()
     {
         eventBus = ServiceLocator.Get<IEventBus>();
+        audioService = ServiceLocator.Get<IAudioService>();
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingButton.onClick.AddListener(OnSettingButtonClicked);
         exitButton.onClick.AddListener(OnExitButtonClicked);
@@ -18,15 +19,17 @@ public class MainMenuPanel : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
-        // Fire an event
+        audioService.SFX(SoundType.Click);
         eventBus.Publish(new Events.OnGameStarted());
     }
     private void OnSettingButtonClicked()
     {
-        // Fire an event ;
+        audioService.SFX(SoundType.Click);
+        eventBus.Publish(new Events.OnSettingButtonClicked());
     }
     private void OnExitButtonClicked()
     {
-        // Fire an event ;
+        audioService.SFX(SoundType.Click);
+        Application.Quit();
     }
 }

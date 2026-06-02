@@ -240,3 +240,4 @@ MonoBehaviour:
   abductingSpeed: 0.75
   tiltAngle: -45
   animator: {fileID: 4134402445432332440}
+  animalType: 2

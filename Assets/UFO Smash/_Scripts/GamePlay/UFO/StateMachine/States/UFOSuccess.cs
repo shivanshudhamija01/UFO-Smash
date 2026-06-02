@@ -15,6 +15,7 @@ public class UFOSuccess
 
     private float anticipationTimer;
     private float anticipationDuration = 0.5f;
+    private IAudioService audioService;
 
     // Fixed top-left direction
     private Vector2 escapeDirection =
@@ -33,7 +34,11 @@ public class UFOSuccess
         startEscape = false;
 
         anticipationTimer = 0f;
-
+        if (audioService == null)
+        {
+            audioService = ServiceLocator.Get<IAudioService>();
+        }
+        audioService.SFX(SoundType.UFOSuccess);
     }
 
     public override void UpdateState()

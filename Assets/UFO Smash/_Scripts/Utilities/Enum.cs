@@ -59,4 +59,5 @@ public enum SoundType
     ScoreGain,
     GameOver,
     BossUFO,
+    UFOSuccess
 }

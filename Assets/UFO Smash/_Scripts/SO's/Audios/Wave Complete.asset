@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Wave Complete
   m_EditorClassIdentifier: Assembly-CSharp::SoundInfo
   id: 9
-  audioClip: {fileID: 8300000, guid: 56d1a0917f811426f8b8993fb06ad5ef, type: 3}
+  audioClip: {fileID: 8300000, guid: cefeac342ab0743a79bc5e4b1361398b, type: 3}

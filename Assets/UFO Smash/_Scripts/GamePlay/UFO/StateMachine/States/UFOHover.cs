@@ -29,7 +29,7 @@ public class UFOHover : BaseState<UFOController>
         ufoSpriteRenderer = controller.GetSpriteRenderer();
         lockedAnimal = LockAnimal();
         AnimalController animalController = lockedAnimal as AnimalController;
-        
+
         if (animalController != null)
         {
             animalController.SetLocked(true);

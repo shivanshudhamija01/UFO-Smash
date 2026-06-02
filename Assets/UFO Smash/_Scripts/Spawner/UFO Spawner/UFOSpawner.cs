@@ -21,10 +21,12 @@ public class UFOSpawner : MonoBehaviour
     private IAnimalService animalService;
     private int occupiedAnimals = 0;
     private IEventBus eventBus;
+    private IAudioService audioService;
     private void Awake()
     {
         animalService = ServiceLocator.Get<IAnimalService>();
         eventBus = ServiceLocator.Get<IEventBus>();
+        audioService = ServiceLocator.Get<IAudioService>();
     }
     private void OnEnable()
     {
@@ -53,6 +55,7 @@ public class UFOSpawner : MonoBehaviour
             currentWave++;
             // Here need to fire an event to notify the ui that okay update the 
             eventBus.Publish(new Events.OnWaveIncrement(currentWave));
+            audioService.SFX(SoundType.WaveComplete);
         }
     }
     private IEnumerator SpawnWave()

@@ -80,6 +80,7 @@ MonoBehaviour:
   abductingSpeed: 0.5
   tiltAngle: -45
   animator: {fileID: 4114460933865514121}
+  animalType: 1
 --- !u!61 &-7152055007701655935
 BoxCollider2D:
   m_ObjectHideFlags: 0

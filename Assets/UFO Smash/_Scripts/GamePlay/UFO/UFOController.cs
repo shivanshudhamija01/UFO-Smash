@@ -24,18 +24,18 @@ public class UFOController : MonoBehaviour
 
     [Header("UFO Type")]
     [SerializeField] private UFOType uFOType;
-    
+
     [Header("UFO Health")]
     [SerializeField] private int maxHealth;
     [SerializeField] private Image healthBar;
     [SerializeField] private Canvas healthBarCanvas;
-    
+
     [Header("UFO Score Value")]
     [SerializeField] private int scoreValue;
-    
+
     [Header("Animation")]
     [SerializeField] private Animator animator;
-    
+
     [Header("Hit Shake")]
     [SerializeField] private float hitShakeDuration = 0.12f;
     [SerializeField] private float hitShakeStrength = 0.08f;
@@ -58,19 +58,6 @@ public class UFOController : MonoBehaviour
         stateMachine = new UFOStateMachine(this);
     }
     // Remove this start method later and call the initialize method in spawning
-    private void Start()
-    {
-        // Initialize(lockedAnimal);
-        // Initialize();
-    }
-    // public void Initialize(IAbductable targetAnimal)
-    // {
-    //     lockedAnimal = targetAnimal;
-
-    //     stateMachine.ChangeState(
-    //         UFOStates.spline
-    //     );
-    // }
     public void Initialize(SplineContainer spline)
     {
         splineContainer = spline;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c43b6702d914bfd8493f924090d1a5, type: 3}
   m_Name: StoneHit
   m_EditorClassIdentifier: Assembly-CSharp::SoundInfo
-  id: 0
-  audioClip: {fileID: 0}
+  id: 5
+  audioClip: {fileID: 8300000, guid: 9026ad74bcdb546cc93057864d9c7d19, type: 3}

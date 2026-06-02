@@ -35,11 +35,13 @@ public class Aim : MonoBehaviour
     private IEventBus eventBus;
     private VariableJoystick variableJoystick;
     private bool wasDraggingJoystick;
+    private IAudioService audioService;
 
     private void Awake()
     {
         trajectoryPredictor = GetComponent<TrajectoryPredictor>();
         eventBus = ServiceLocator.Get<IEventBus>();
+        audioService = ServiceLocator.Get<IAudioService>();
     }
 
     private void Start()
@@ -136,7 +138,7 @@ public class Aim : MonoBehaviour
         GameObject stone = StonePool.Instance.Get(firePoint.position, firePoint.rotation);
         Rigidbody2D rb = stone.GetComponent<Rigidbody2D>();
         rb.linearVelocity = direction * shootSpeed * speed;
-
+        audioService.SFX(SoundType.StoneThrow);
         currentStoneCount--;
         eventBus.Publish(new Events.OnStoneShot(currentStoneCount));
 

@@ -15,6 +15,8 @@ public class AnimalAbduct
     private float captureDistance = 0.5f;
     private UFOController uFOController;
     private Animator animator;
+    private IAudioService audioService;
+    private AnimalType animalType;
     private int key = Animator.StringToHash("IsCaught");
     public AnimalAbduct(AnimalController controller) : base(controller)
     {
@@ -62,7 +64,7 @@ public class AnimalAbduct
         tiltAngle = controller.GetTiltAngle();
 
         tiltSpeed = controller.GetTiltSpeed();
-
+        animalType = controller.GetAnimalType();
         abductingSpeed = controller.GetAbductingSpeed();
         uFOController = controller.GetCurrentUFO();
         if (animator == null)
@@ -70,6 +72,22 @@ public class AnimalAbduct
             animator = controller.GetAnimator();
         }
         animator.SetTrigger(key);
+        if (audioService == null)
+        {
+            audioService = ServiceLocator.Get<IAudioService>();
+        }
+        if (animalType == AnimalType.COW)
+        {
+            audioService.SFX(SoundType.CowMoo);
+        }
+        else if (animalType == AnimalType.CAT)
+        {
+            audioService.SFX(SoundType.CatMeow);
+        }
+        else if (animalType == AnimalType.DOG)
+        {
+            audioService.SFX(SoundType.DogBark);
+        }
     }
 
     private void MoveTowardsUFO()

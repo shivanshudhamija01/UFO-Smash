@@ -6,9 +6,16 @@ public class Stone : MonoBehaviour
     [SerializeField] private float maxTravelDistance = 15f;
 
     [SerializeField] private float minimumScale = 0.3f;
-
+    private IAudioService audioService;
     private Vector3 spawnPosition;
     private bool hasDealtDamage = false;
+    private void Awake()
+    {
+        if (audioService == null)
+        {
+            audioService = ServiceLocator.Get<IAudioService>();
+        }
+    }
     private void OnEnable()
     {
 
@@ -48,6 +55,7 @@ public class Stone : MonoBehaviour
         {
             if (hasDealtDamage) return;
             hasDealtDamage = true;
+            audioService.SFX(SoundType.StoneHit);
         }
     }
     public bool HasAlreadyHitUFO() => hasDealtDamage;

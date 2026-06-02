@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UFO Destroy
   m_EditorClassIdentifier: Assembly-CSharp::SoundInfo
   id: 4
-  audioClip: {fileID: 8300000, guid: b8fb3443a9749435d873a2e33be9e698, type: 3}
+  audioClip: {fileID: 8300000, guid: e09ebdc6c550b412ab11de45349de96f, type: 3}
