@@ -10,7 +10,7 @@ public class TrajectoryPredictor : MonoBehaviour
 
     private GameObject[] trajectoryPoints;
 
-    private void Start()
+    private void Awake()
     {
         trajectoryPoints = new GameObject[numberOfPoints];
 
@@ -68,8 +68,8 @@ public class TrajectoryPredictor : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        HideTrajectory();
-    }
+    // private void OnDisable()
+    // {
+    //     HideTrajectory();
+    // }
 }

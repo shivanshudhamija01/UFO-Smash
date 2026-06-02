@@ -84,6 +84,7 @@ public class GamePlayPanel : MonoBehaviour
         index = 0;
         scoreTxt.text = scoreService.GetScore().ToString();
         waveCountTxt.text = "1";
+        stoneCountTxt.text = "5";
         Debug.Log("Reset game is called inside the gameplay panel");
         for (int i = 0; i < animalAlive.Count; i++)
         {
