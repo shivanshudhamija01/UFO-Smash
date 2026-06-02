@@ -10,7 +10,7 @@ public class UFOSpline : BaseState<UFOController>
     private bool rotateAlongSpline;
     private Animator animator;
     private IAudioService audioService;
-    private UFOType uFOType;
+    private UFOType ufoType;
     private readonly int key = Animator.StringToHash("IsSpline");
     public UFOSpline(UFOController controller)
         : base(controller)
@@ -29,11 +29,12 @@ public class UFOSpline : BaseState<UFOController>
 
         splineDistance = 0;
         splineLength = spline.CalculateLength();
+        ufoType = controller.GetUFOType(); 
         if (audioService == null)
         {
             audioService = ServiceLocator.Get<IAudioService>();
         }
-        if (uFOType == UFOType.Boss)
+        if (ufoType == UFOType.Boss)
         {
             audioService.SFX(SoundType.BossUFO);
         }

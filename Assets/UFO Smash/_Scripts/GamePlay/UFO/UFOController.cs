@@ -193,6 +193,22 @@ public class UFOController : MonoBehaviour
     {
         return lockedAnimal;
     }
+    public void ForceReset()
+    {
+        if (lockedAnimal != null)
+        {
+            lockedAnimal.ReleaseFromAbduction();
+            lockedAnimal = null;
+        }
+
+        currentHealth = maxHealth;
+
+        healthBar.fillAmount = 1f;
+        torchLight.gameObject.SetActive(false);
+        healthBarCanvas.gameObject.SetActive(false);
+
+        animator.SetBool(key, false);
+    }
 }
 
 // Now try to play the idle animation in loop

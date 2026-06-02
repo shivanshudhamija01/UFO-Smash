@@ -15,17 +15,25 @@ public class UFOLight : MonoBehaviour
     private void Awake()
     {
         torch = GetComponent<Light2D>();
+
+        currentPath = (Vector3[])smallShapePoints.Clone();
         torch.SetShapePath(currentPath);
     }
-    private void OnEnable()
+   private void OnEnable()
     {
-        currentPath = smallShapePoints;
-        targetPath = largeShapePoints;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, 10, animalLayer);
-        if (hit)
+        ResetLight();
+
+        RaycastHit2D hit =  Physics2D.Raycast(transform.position,-transform.up,10,animalLayer);
+
+        if(hit)
         {
             StartCoroutine(SpreadTorchLight());
         }
+}
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        ResetLight();
     }
     private IEnumerator SpreadTorchLight()
     {
@@ -48,5 +56,13 @@ public class UFOLight : MonoBehaviour
         }
         yield return null;
     }
+    public void ResetLight()
+    {
+        StopAllCoroutines();
 
+        currentPath = (Vector3[])smallShapePoints.Clone();
+        targetPath = (Vector3[])largeShapePoints.Clone();
+
+        torch.SetShapePath(currentPath);
+    }
 }

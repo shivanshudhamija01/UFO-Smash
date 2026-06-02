@@ -22,6 +22,7 @@ public class UFOSpawner : MonoBehaviour
     private int occupiedAnimals = 0;
     private IEventBus eventBus;
     private IAudioService audioService;
+    private Coroutine waveRoutine;
     private void Awake()
     {
         animalService = ServiceLocator.Get<IAnimalService>();
@@ -40,10 +41,17 @@ public class UFOSpawner : MonoBehaviour
         eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
         eventBus.Remove<Events.OnGameReset>(ResetSpawner);
     }
+    // void SpawnUFOs(Events.OnGameStarted evt)
+    // {
+    //     eventBus.Publish(new Events.OnWaveIncrement(currentWave));
+    //     StartCoroutine(WaveRoutine());
+    // }
     void SpawnUFOs(Events.OnGameStarted evt)
     {
-        eventBus.Publish(new Events.OnWaveIncrement(currentWave));
-        StartCoroutine(WaveRoutine());
+        if (waveRoutine != null)
+            StopCoroutine(waveRoutine);
+
+        waveRoutine = StartCoroutine(WaveRoutine());
     }
     private IEnumerator WaveRoutine()
     {
@@ -235,6 +243,7 @@ public class UFOSpawner : MonoBehaviour
         StopAllCoroutines();
 
         // Return all active UFOs back to pool
+
         UFOPool.instance.ReturnAll();
 
         currentWave = 1;
@@ -247,3 +256,23 @@ public class UFOSpawner : MonoBehaviour
 
 // 1. First it should feel like that okay the difficulty is increasing 
 // 2. Secondly make the boss spawn also 
+// private bool CanSpawnUFO(UFOSpawnProfile profile)
+// {
+//     int animalsInScene = animalService.AnimalCountInScene();
+//     int freeAnimals = animalsInScene - occupiedAnimals;
+
+//     bool bossAlive =
+//         aliveUFOCount > 0 &&
+//         GameObject.FindObjectsOfType<UFOController>()
+//             .Any(x => x.gameObject.activeSelf &&
+//                      x.GetUFOType() == UFOType.Boss);
+
+//     if (bossAlive)
+//         return false;
+
+//     if (profile.UfoType == UFOType.Boss)
+//         return aliveUFOCount == 0 &&
+//                freeAnimals >= profile.RequiredAnimals;
+
+//     return freeAnimals >= profile.RequiredAnimals;
+// }

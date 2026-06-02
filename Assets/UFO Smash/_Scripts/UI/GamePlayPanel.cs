@@ -41,7 +41,7 @@ public class GamePlayPanel : MonoBehaviour
         eventBus.Remove<Events.OnStoneReloaded>(UpdateStoneCountToMax);
         eventBus.Remove<Events.OnWaveIncrement>(UpdateCurrentWave);
     }
-    private void Oestroy()
+    private void OnDestroy()
     {
         eventBus.Remove<Events.OnGameReset>(ResetGame);
     }
@@ -82,6 +82,8 @@ public class GamePlayPanel : MonoBehaviour
     private void ResetGame(Events.OnGameReset evt)
     {
         index = 0;
+        scoreTxt.text = scoreService.GetScore().ToString();
+        waveCountTxt.text = "1";
         Debug.Log("Reset game is called inside the gameplay panel");
         for (int i = 0; i < animalAlive.Count; i++)
         {

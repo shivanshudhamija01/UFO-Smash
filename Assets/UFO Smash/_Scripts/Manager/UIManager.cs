@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
         eventBus.Remove<Events.OnGameResumed>(OnGameResumed);
         eventBus.Remove<Events.OnGameOver>(OnGameOver);
         eventBus.Remove<Events.OnReturnToHome>(ReturnToHome);
+        eventBus.Remove<Events.OnGameRestarted>(OnGameRestart);
         eventBus.Remove<Events.OnSettingButtonClicked>(OpenUpSettingPanel);
         eventBus.Remove<Events.OnCloseButtonClicked>(CloseSettingPanel);
     }

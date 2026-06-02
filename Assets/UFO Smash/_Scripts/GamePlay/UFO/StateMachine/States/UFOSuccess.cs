@@ -98,7 +98,7 @@ public class UFOSuccess
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, shrinkSpeed * Time.deltaTime);
 
         // Disable when tiny
-        if (transform.localScale.x <= 0.05f)
+        if (transform.localScale.x <= 0.1f)
         {
             // controller.gameObject.SetActive(false);
             controller.FinishUFO();

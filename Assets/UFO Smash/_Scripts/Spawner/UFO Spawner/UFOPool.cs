@@ -143,14 +143,22 @@ public class UFOPool : MonoBehaviour
         ReturnAllFromParent(bossUFOSpawnParent, UFOType.Boss);
     }
 
-    private void ReturnAllFromParent(Transform parent, UFOType type)
+    private void ReturnAllFromParent(Transform parent,UFOType type)
     {
         if (parent == null) return;
 
         foreach (Transform child in parent)
         {
-            if (child.gameObject.activeSelf)
-                SetBackToPool(child.gameObject, type);
+            if (!child.gameObject.activeSelf) continue;
+
+            UFOController controller = child.GetComponent<UFOController>();
+
+            if (controller != null)
+            {
+                controller.ForceReset();
+        }
+
+            SetBackToPool(child.gameObject, type);
         }
     }
 }

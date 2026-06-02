@@ -33,7 +33,7 @@ public class UFOHover : BaseState<UFOController>
         if (animalController != null)
         {
             animalController.SetLocked(true);
-            ufoSpriteRenderer.sortingOrder = animalController.GetSortingOrder();
+            ufoSpriteRenderer.sortingOrder = animalController.GetSortingOrder() + 1;
         }
         controller.SetLockedAnimal(lockedAnimal);
         if (lockedAnimal == null)
@@ -209,15 +209,30 @@ public class UFOHover : BaseState<UFOController>
         controller.GetStateMachine().ChangeState(UFOStates.abduct);
         // Here i need to change the UFO state to the abducting state, most important state, 
     }
+    // private IAbductable LockAnimal()
+    // {
+    //     List<AnimalController> list = animalService.GetAnimalInScene();
+    //     int index = Random.Range(0, list.Count);
+    //     AnimalController animal = list[index];
+    //     if (animal != null)
+    //     {
+    //         animalService.RemoveAnimal(animal);
+    //     }
+    //     return animal;
+    // }
     private IAbductable LockAnimal()
     {
         List<AnimalController> list = animalService.GetAnimalInScene();
+
+        if (list == null || list.Count == 0)
+            return null;
+
         int index = Random.Range(0, list.Count);
+
         AnimalController animal = list[index];
-        if (animal != null)
-        {
-            animalService.RemoveAnimal(animal);
-        }
+
+        animalService.RemoveAnimal(animal);
+
         return animal;
     }
 }

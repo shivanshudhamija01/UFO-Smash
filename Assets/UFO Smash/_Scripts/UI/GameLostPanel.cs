@@ -32,10 +32,11 @@ public class GameLostPanel : MonoBehaviour
     }
     private IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 1f;    
+        yield return new WaitForSeconds(0.1f);
         eventBus.Publish(new Events.OnGameRestarted());
         eventBus.Publish(new Events.OnGameStarted());
     }
 }
 
-// On Game Restart , i have to add a little delay , to invoke the game play event 
+
