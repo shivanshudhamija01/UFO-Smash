@@ -15,7 +15,8 @@ public class AnimalRescue : BaseState<AnimalController>
     private float tiltSpeedModifier = 4f;
     private const float reachThreshold = 0.1f;
     private const float rotationThreshold = 2f;
-
+    private Animator animator;
+    private int key = Animator.StringToHash("IsReleased");
     public AnimalRescue(AnimalController controller)
         : base(controller)
     {
@@ -23,21 +24,7 @@ public class AnimalRescue : BaseState<AnimalController>
 
     public override void OnEnterState()
     {
-        animalTransform = controller.GetTransform();
-
-        visual = controller.GetVisualTransform();
-
-        moveSpeed = controller.GetAbductingSpeed() * gravity;
-
-        tiltSpeed = controller.GetTiltSpeed() * tiltSpeedModifier;
-
-        targetY = controller.TargetPoint.y;
-
-        reachedGround = false;
-        if (animalService == null)
-        {
-            animalService = ServiceLocator.Get<IAnimalService>();
-        }
+        Init();
     }
 
     public override void UpdateState()
@@ -60,7 +47,30 @@ public class AnimalRescue : BaseState<AnimalController>
     public override void FixedUpdateState()
     {
     }
+    private void Init()
+    {
+        animalTransform = controller.GetTransform();
 
+        visual = controller.GetVisualTransform();
+
+        moveSpeed = controller.GetAbductingSpeed() * gravity;
+
+        tiltSpeed = controller.GetTiltSpeed() * tiltSpeedModifier;
+
+        targetY = controller.TargetPoint.y;
+
+        reachedGround = false;
+        if (animalService == null)
+        {
+            animalService = ServiceLocator.Get<IAnimalService>();
+        }
+        if (animator == null)
+        {
+            animator = controller.GetAnimator();
+        }
+        Debug.Log("Hello hello " + animator);
+        animator.SetTrigger(key);
+    }
     private void MoveToGround()
     {
         Vector3 currentPos = animalTransform.position;
@@ -88,4 +98,5 @@ public class AnimalRescue : BaseState<AnimalController>
 
         }
     }
+
 }

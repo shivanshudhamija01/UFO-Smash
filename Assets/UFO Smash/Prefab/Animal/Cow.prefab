@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3913064311065019848}
   - component: {fileID: 7441810278673959248}
-  - component: {fileID: 8887877760192097117}
   - component: {fileID: 4989871010634187311}
   - component: {fileID: 9134875441818392931}
   m_Layer: 3
@@ -63,18 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8887877760192097117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5513526927124561746}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737b74aed85764fafbe6e3888f8a9180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Animal
 --- !u!114 &4989871010634187311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +79,7 @@ MonoBehaviour:
   tiltSpeed: 1.5
   abductingSpeed: 0.5
   tiltAngle: -45
+  animator: {fileID: 8462343459562754306}
 --- !u!61 &9134875441818392931
 BoxCollider2D:
   m_ObjectHideFlags: 0

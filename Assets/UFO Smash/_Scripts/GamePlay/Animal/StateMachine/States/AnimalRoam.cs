@@ -7,11 +7,14 @@ public class AnimalRoam : BaseState<AnimalController>
     private Lane lane;
     private float moveSpeed;
     private Transform transform;
+    private Animator animator;
+    private int key = Animator.StringToHash("IsWalking");
     public AnimalRoam(AnimalController controller) : base(controller)
     {
     }
     public override void OnEnterState()
     {
+        Debug.Log("Entered into the roam state");
         Init();
     }
     public override void UpdateState()
@@ -46,7 +49,11 @@ public class AnimalRoam : BaseState<AnimalController>
         lane = controller.AssignedLane;
         moveSpeed = controller.MoveSpeed;
         transform = controller.GetTransform();
-
+        if (animator == null)
+        {
+            animator = controller.GetAnimator();
+        }
+        animator.SetTrigger(key);
     }
     private void ReturnToPool()
     {

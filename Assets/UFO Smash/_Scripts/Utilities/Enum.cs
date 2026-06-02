@@ -44,3 +44,19 @@ public enum UFOStates
     blast,
     success
 }
+public enum SoundType
+{
+    BGM,
+    Click,
+    StoneThrow,
+    UFOEntry,
+    UFODie,
+    StoneHit,
+    CowMoo,
+    CatMeow,
+    DogBark,
+    WaveComplete,
+    ScoreGain,
+    GameOver,
+    BossUFO,
+}

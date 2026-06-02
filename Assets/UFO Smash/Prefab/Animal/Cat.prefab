@@ -124,8 +124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8089111051161589169}
   - component: {fileID: 7767034756648029811}
-  - component: {fileID: 5648410305502472863}
-  - component: {fileID: 9133762416871870547}
   - component: {fileID: 7154363993531761913}
   - component: {fileID: -5243672501588260588}
   m_Layer: 3
@@ -178,31 +176,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5648410305502472863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576287127738401955}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 737b74aed85764fafbe6e3888f8a9180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Animal
---- !u!114 &9133762416871870547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7576287127738401955}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6453773be234ee983e4ad1f4e764b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalMotion
-  speed: 0.5
 --- !u!61 &7154363993531761913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,3 +239,4 @@ MonoBehaviour:
   tiltSpeed: 1.75
   abductingSpeed: 0.75
   tiltAngle: -45
+  animator: {fileID: 4134402445432332440}

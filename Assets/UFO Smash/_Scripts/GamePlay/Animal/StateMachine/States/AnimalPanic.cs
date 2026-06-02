@@ -7,7 +7,7 @@ public class AnimalPanic : BaseState<AnimalController>
     }
     public override void OnEnterState()
     {
-
+        Debug.Log("Animal entered into panic state");
     }
     public override void OnExitState()
     {

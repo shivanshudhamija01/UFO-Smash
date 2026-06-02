@@ -14,12 +14,15 @@ public class AnimalAbduct
     private float targetTilt;
     private float captureDistance = 0.5f;
     private UFOController uFOController;
+    private Animator animator;
+    private int key = Animator.StringToHash("IsCaught");
     public AnimalAbduct(AnimalController controller) : base(controller)
     {
     }
 
     public override void OnEnterState()
     {
+        Debug.Log("Entered into the caught state");
         Init();
         targetTilt = tiltAngle;
     }
@@ -62,6 +65,11 @@ public class AnimalAbduct
 
         abductingSpeed = controller.GetAbductingSpeed();
         uFOController = controller.GetCurrentUFO();
+        if (animator == null)
+        {
+            animator = controller.GetAnimator();
+        }
+        animator.SetTrigger(key);
     }
 
     private void MoveTowardsUFO()

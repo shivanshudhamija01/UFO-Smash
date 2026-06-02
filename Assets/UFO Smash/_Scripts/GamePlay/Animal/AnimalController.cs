@@ -10,6 +10,7 @@ public class AnimalController : MonoBehaviour, IAbductable
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private float abductingSpeed = 10f;
     [SerializeField] private float tiltAngle = 40f;
+    [SerializeField] private Animator animator;
     private Vector3 targetPoint;
     private AnimalSpawner spawner;
     private Lane lane;
@@ -87,6 +88,7 @@ public class AnimalController : MonoBehaviour, IAbductable
     public AnimalStateMachine GetStateMachine() => animalStateMachine;
     public int GetSortingOrder() => spriteRenderer.sortingOrder;
     public bool IsLocked() => isLocked;
+    public Animator GetAnimator() => animator;
     public void SetLocked(bool locked)
     {
         isLocked = locked;
