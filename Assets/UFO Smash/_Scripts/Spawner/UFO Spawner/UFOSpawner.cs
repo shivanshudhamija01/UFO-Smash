@@ -15,7 +15,8 @@ public class UFOSpawner : MonoBehaviour
     [Header("Spline Paths")]
     [SerializeField] private List<SplineContainer> availableSplines;
     [SerializeField] private SplineContainer bossSpline;
-    [SerializeField] private int currentWave = 1;
+    [SerializeField] private int waveNumber = 1;
+    private int currentWave;
     private int aliveUFOCount = 0;
     private bool isWaveRunning;
     private IAnimalService animalService;
@@ -25,6 +26,7 @@ public class UFOSpawner : MonoBehaviour
     private Coroutine waveRoutine;
     private void Awake()
     {
+        currentWave = waveNumber;
         animalService = ServiceLocator.Get<IAnimalService>();
         eventBus = ServiceLocator.Get<IEventBus>();
         audioService = ServiceLocator.Get<IAudioService>();
@@ -41,16 +43,12 @@ public class UFOSpawner : MonoBehaviour
         eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
         eventBus.Remove<Events.OnGameReset>(ResetSpawner);
     }
-    // void SpawnUFOs(Events.OnGameStarted evt)
-    // {
-    //     eventBus.Publish(new Events.OnWaveIncrement(currentWave));
-    //     StartCoroutine(WaveRoutine());
-    // }
     void SpawnUFOs(Events.OnGameStarted evt)
     {
         if (waveRoutine != null)
             StopCoroutine(waveRoutine);
 
+        eventBus.Publish(new Events.OnWaveIncrement(currentWave));
         waveRoutine = StartCoroutine(WaveRoutine());
     }
     private IEnumerator WaveRoutine()
@@ -246,7 +244,7 @@ public class UFOSpawner : MonoBehaviour
 
         UFOPool.instance.ReturnAll();
 
-        currentWave = 1;
+        currentWave = waveNumber;
         aliveUFOCount = 0;
         occupiedAnimals = 0;
         isWaveRunning = false;

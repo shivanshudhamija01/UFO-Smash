@@ -34,7 +34,10 @@ public class AudioService : IAudioService
         if (audioMap.TryGetValue(soundType, out var sound))
         {
             // Here may be i need to play the volume according to the clips 
-            sfxSource.PlayOneShot(sound.audioClip, sfxSource.volume);
+            float finalVolume = sound.volume * sfxVolume;
+
+            sfxSource.PlayOneShot(sound.audioClip, finalVolume);
+            // sfxSource.PlayOneShot(sound.audioClip, sfxSource.volume);
         }
     }
     public float GetBGMVolume()

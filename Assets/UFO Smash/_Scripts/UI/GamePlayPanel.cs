@@ -15,6 +15,7 @@ public class GamePlayPanel : MonoBehaviour
     private IScoreService scoreService;
     private IAudioService audioService;
     private int index = 0;
+    private int currentWave = 1;
     void Awake()
     {
         eventBus = ServiceLocator.Get<IEventBus>();
@@ -74,14 +75,16 @@ public class GamePlayPanel : MonoBehaviour
     }
     private void UpdateCurrentWave(Events.OnWaveIncrement evt)
     {
+        Debug.Log("I Changed the wave number");
         int waveNumber = evt.CurrentWave;
+        currentWave = evt.CurrentWave;
         waveCountTxt.text = waveNumber.ToString();
     }
     private void ResetGame(Events.OnGameReset evt)
     {
         index = 0;
         scoreTxt.text = scoreService.GetScore().ToString();
-        waveCountTxt.text = "1";
+        waveCountTxt.text = currentWave.ToString();
         stoneCountTxt.text = "5";
         Debug.Log("Reset game is called inside the gameplay panel");
         for (int i = 0; i < animalAlive.Count; i++)

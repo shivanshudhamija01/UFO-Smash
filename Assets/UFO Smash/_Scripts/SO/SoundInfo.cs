@@ -4,4 +4,6 @@ public class SoundInfo : ScriptableObject
 {
     public SoundType id;
     public AudioClip audioClip;
+    [Range(0, 1)]
+    public float volume;
 }
