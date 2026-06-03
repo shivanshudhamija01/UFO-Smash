@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using Unity.VisualScripting;
 public class GameLostPanel : MonoBehaviour
 {
     [SerializeField] private Button restartButton;
@@ -32,7 +31,7 @@ public class GameLostPanel : MonoBehaviour
     }
     private IEnumerator RestartGame()
     {
-        Time.timeScale = 1f;    
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(0.1f);
         eventBus.Publish(new Events.OnGameRestarted());
         eventBus.Publish(new Events.OnGameStarted());

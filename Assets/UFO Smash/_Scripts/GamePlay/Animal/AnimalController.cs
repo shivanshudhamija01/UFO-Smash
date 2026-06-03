@@ -23,7 +23,9 @@ public class AnimalController : MonoBehaviour, IAbductable
     private bool leftToRight;
     private UFOController currentUFO;
     private bool isLocked;
+    private float speedMultiplier = 1f;
     #endregion
+
     private void Awake()
     {
         animalStateMachine = new AnimalStateMachine(this);
@@ -94,5 +96,14 @@ public class AnimalController : MonoBehaviour, IAbductable
     public void SetLocked(bool locked)
     {
         isLocked = locked;
+    }
+    public float GetSpeedMultiplier()
+    {
+        return speedMultiplier;
+    }
+
+    public void SetSpeedMultiplier(float value)
+    {
+        speedMultiplier = value;
     }
 }

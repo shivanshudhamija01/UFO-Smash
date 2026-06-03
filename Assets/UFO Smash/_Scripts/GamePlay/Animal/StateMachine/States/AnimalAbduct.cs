@@ -92,7 +92,7 @@ public class AnimalAbduct
 
     private void MoveTowardsUFO()
     {
-        transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * controller.GetSpeedMultiplier() * Time.deltaTime);
     }
 
     private void TiltVisual()
@@ -110,7 +110,7 @@ public class AnimalAbduct
             // Change UFO state
             if (uFOController != null)
             {
-                uFOController.GetStateMachine().ChangeState(UFOStates.success);
+                uFOController.NotifyAnimalCaptured();
             }
 
             // Change Animal state

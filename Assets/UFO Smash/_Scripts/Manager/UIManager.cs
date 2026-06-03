@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     private IEventBus eventBus;
     private void Awake()
     {
+        mainMenuPanel.SetActive(true);
         eventBus = ServiceLocator.Get<IEventBus>();
     }
     private void OnEnable()

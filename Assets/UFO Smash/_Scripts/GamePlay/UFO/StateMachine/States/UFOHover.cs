@@ -7,6 +7,8 @@ public class UFOHover : BaseState<UFOController>
     private Transform transform;
     private IAbductable lockedAnimal;
     private Transform lockedAnimalTransform;
+
+    private List<AnimalController> lockedAnimals = new List<AnimalController>();
     private Vector2 offset;
     private float manualMoveSpeed;
 
@@ -18,36 +20,96 @@ public class UFOHover : BaseState<UFOController>
     {
     }
 
+    // public override void OnEnterState()
+    // {
+    //     if (animalService == null)
+    //     {
+    //         animalService = ServiceLocator.Get<IAnimalService>();
+    //     }
+    //     transform = controller.GetTransform();
+
+    //     ufoSpriteRenderer = controller.GetSpriteRenderer();
+    //     lockedAnimal = LockAnimal();
+    //     AnimalController animalController = lockedAnimal as AnimalController;
+
+    //     if (animalController != null)
+    //     {
+    //         animalController.SetLocked(true);
+    //         ufoSpriteRenderer.sortingOrder = animalController.GetSortingOrder() + 1;
+    //     }
+    //     controller.SetLockedAnimal(lockedAnimal);
+    //     if (lockedAnimal == null)
+    //     {
+    //         return;
+    //     }
+    //     lockedAnimalTransform = lockedAnimal.GetTransform();
+
+    //     offset = controller.GetOffset();
+
+    //     manualMoveSpeed = controller.GetManualSpeed();
+
+
+    //     approachRoutine = controller.StartCoroutine(UFOIntroMovement());
+    // }
     public override void OnEnterState()
     {
         if (animalService == null)
         {
             animalService = ServiceLocator.Get<IAnimalService>();
         }
+
         transform = controller.GetTransform();
 
         ufoSpriteRenderer = controller.GetSpriteRenderer();
-        lockedAnimal = LockAnimal();
-        AnimalController animalController = lockedAnimal as AnimalController;
 
-        if (animalController != null)
+        if (controller.GetUFOType() == UFOType.Boss)
         {
-            animalController.SetLocked(true);
-            ufoSpriteRenderer.sortingOrder = animalController.GetSortingOrder() + 1;
+            LockNearestAnimals(3);
+            controller.SetLockedAnimals(lockedAnimals);
+            if (lockedAnimals.Count == 0)
+                return;
+
+            AnimalController primaryTarget =
+                lockedAnimals[0];
+
+            lockedAnimal = primaryTarget;
+
+            lockedAnimalTransform =
+                primaryTarget.transform;
+
+            ufoSpriteRenderer.sortingOrder =
+                primaryTarget.GetSortingOrder() + 1;
         }
-        controller.SetLockedAnimal(lockedAnimal);
-        if (lockedAnimal == null)
+        else
         {
-            return;
+            lockedAnimal = LockAnimal();
+
+            AnimalController animalController =
+                lockedAnimal as AnimalController;
+
+            if (animalController != null)
+            {
+                animalController.SetLocked(true);
+
+                ufoSpriteRenderer.sortingOrder =
+                    animalController.GetSortingOrder() + 1;
+            }
+
+            controller.SetLockedAnimal(lockedAnimal);
+
+            if (lockedAnimal == null)
+                return;
+
+            lockedAnimalTransform =
+                lockedAnimal.GetTransform();
         }
-        lockedAnimalTransform = lockedAnimal.GetTransform();
 
         offset = controller.GetOffset();
 
         manualMoveSpeed = controller.GetManualSpeed();
 
-
-        approachRoutine = controller.StartCoroutine(UFOIntroMovement());
+        approachRoutine =
+            controller.StartCoroutine(UFOIntroMovement());
     }
 
     public override void UpdateState()
@@ -204,22 +266,34 @@ public class UFOHover : BaseState<UFOController>
 
         transform.position = targetPos;
 
+        // controller.GetTorchLight().gameObject.SetActive(true);
+        // lockedAnimal.BeginAbduction(controller.transform, controller);
+        // controller.GetStateMachine().ChangeState(UFOStates.abduct);
         controller.GetTorchLight().gameObject.SetActive(true);
-        lockedAnimal.BeginAbduction(controller.transform, controller);
-        controller.GetStateMachine().ChangeState(UFOStates.abduct);
-        // Here i need to change the UFO state to the abducting state, most important state, 
+
+        if (controller.GetUFOType() == UFOType.Boss)
+        {
+            foreach (AnimalController animal in lockedAnimals)
+            {
+                if (animal == null)
+                    continue;
+
+                animal.BeginAbduction(
+                    controller.transform,
+                    controller);
+            }
+        }
+        else
+        {
+            lockedAnimal.BeginAbduction(
+                controller.transform,
+                controller);
+        }
+
+        controller.GetStateMachine()
+                  .ChangeState(UFOStates.abduct);
     }
-    // private IAbductable LockAnimal()
-    // {
-    //     List<AnimalController> list = animalService.GetAnimalInScene();
-    //     int index = Random.Range(0, list.Count);
-    //     AnimalController animal = list[index];
-    //     if (animal != null)
-    //     {
-    //         animalService.RemoveAnimal(animal);
-    //     }
-    //     return animal;
-    // }
+
     private IAbductable LockAnimal()
     {
         List<AnimalController> list = animalService.GetAnimalInScene();
@@ -235,4 +309,46 @@ public class UFOHover : BaseState<UFOController>
 
         return animal;
     }
+    private void LockNearestAnimals(int count)
+    {
+        List<AnimalController> animals =
+            animalService.GetAnimalInScene();
+
+        if (animals == null || animals.Count == 0)
+            return;
+
+        animals.Sort((a, b) =>
+        {
+            float distA =
+                Vector2.Distance(
+                    transform.position,
+                    a.transform.position);
+
+            float distB =
+                Vector2.Distance(
+                    transform.position,
+                    b.transform.position);
+
+            return distA.CompareTo(distB);
+        });
+
+        int maxCount =
+            Mathf.Min(count, animals.Count);
+
+        for (int i = 0; i < maxCount; i++)
+        {
+            AnimalController animal =
+                animals[i];
+
+            animal.SetLocked(true);
+
+            lockedAnimals.Add(animal);
+        }
+
+        foreach (AnimalController animal in lockedAnimals)
+        {
+            animalService.RemoveAnimal(animal);
+        }
+    }
+
 }

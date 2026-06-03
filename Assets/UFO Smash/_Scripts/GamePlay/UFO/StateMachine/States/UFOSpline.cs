@@ -29,7 +29,7 @@ public class UFOSpline : BaseState<UFOController>
 
         splineDistance = 0;
         splineLength = spline.CalculateLength();
-        ufoType = controller.GetUFOType(); 
+        ufoType = controller.GetUFOType();
         if (audioService == null)
         {
             audioService = ServiceLocator.Get<IAudioService>();

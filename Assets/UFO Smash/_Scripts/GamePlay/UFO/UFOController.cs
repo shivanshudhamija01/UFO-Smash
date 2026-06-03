@@ -1,9 +1,10 @@
 using System;
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Splines;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class UFOController : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class UFOController : MonoBehaviour
 
     [Header("UFO Visuals")]
     [SerializeField] private SpriteRenderer ufoBodyRenderer;
+    private Coroutine slowRoutine;
+
+
+    private UFOLight ufoLight;
     private readonly int key = Animator.StringToHash("IsSpline");
     private bool isShaking;
     private float shakeTimer;
@@ -51,11 +56,15 @@ public class UFOController : MonoBehaviour
     private IScoreService scoreService;
     private UFOStateMachine stateMachine;
     private IEventBus eventBus;
+    private int capturedAnimals;
+    private List<AnimalController> lockedAnimals = new List<AnimalController>();
     private void Awake()
     {
         scoreService = ServiceLocator.Get<IScoreService>();
         eventBus = ServiceLocator.Get<IEventBus>();
         stateMachine = new UFOStateMachine(this);
+        ufoLight = torchLight.GetComponent<UFOLight>();
+
     }
     // Remove this start method later and call the initialize method in spawning
     public void Initialize(SplineContainer spline)
@@ -63,6 +72,7 @@ public class UFOController : MonoBehaviour
         splineContainer = spline;
         currentHealth = maxHealth;
         healthBar.fillAmount = 1;
+        capturedAnimals = 0;
         healthBarCanvas.gameObject.SetActive(false);
         animator.SetBool(key, true);
         if (splineContainer != null)
@@ -107,19 +117,81 @@ public class UFOController : MonoBehaviour
         currentHealth -= damage;
         healthBar.fillAmount = (float)currentHealth / maxHealth;
         StartHitShake();
-
+        SlowAbductingAnimals();
+        if (ufoLight != null)
+        {
+            ufoLight.PlayHitEffect();
+        }
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+    private void SlowAbductingAnimals()
+    {
+        if (slowRoutine != null)
+            StopCoroutine(slowRoutine);
 
+        slowRoutine = StartCoroutine(SlowRoutine());
+    }
+    private IEnumerator SlowRoutine()
+    {
+        Debug.Log("Slow down coroutine");
+        if (uFOType == UFOType.Boss)
+        {
+            foreach (var animal in lockedAnimals)
+            {
+                if (animal != null)
+                    animal.SetSpeedMultiplier(0.3f);
+            }
+        }
+        else
+        {
+            AnimalController animal =
+                lockedAnimal as AnimalController;
+
+            if (animal != null)
+                animal.SetSpeedMultiplier(0.3f);
+        }
+
+        yield return new WaitForSeconds(0.4f);
+
+        if (uFOType == UFOType.Boss)
+        {
+            foreach (var animal in lockedAnimals)
+            {
+                if (animal != null)
+                    animal.SetSpeedMultiplier(1f);
+            }
+        }
+        else
+        {
+            AnimalController animal =
+                lockedAnimal as AnimalController;
+
+            if (animal != null)
+                animal.SetSpeedMultiplier(1f);
+        }
+    }
     private void Die()
     {
-        if (lockedAnimal != null)
+        if (uFOType == UFOType.Boss)
         {
-            lockedAnimal.ReleaseFromAbduction();
-            lockedAnimal = null;
+            foreach (var animal in lockedAnimals)
+            {
+                if (animal != null)
+                    animal.ReleaseFromAbduction();
+            }
+
+            lockedAnimals.Clear();
+        }
+        else
+        {
+            if (lockedAnimal != null)
+            {
+                lockedAnimal.ReleaseFromAbduction();
+                lockedAnimal = null;
+            }
         }
         scoreService.AddScore(scoreValue);
         eventBus.Publish(new Events.OnUFODestroyed());
@@ -202,12 +274,32 @@ public class UFOController : MonoBehaviour
         }
 
         currentHealth = maxHealth;
-
+        capturedAnimals = 0;
         healthBar.fillAmount = 1f;
         torchLight.gameObject.SetActive(false);
         healthBarCanvas.gameObject.SetActive(false);
 
         animator.SetBool(key, false);
+    }
+    public void NotifyAnimalCaptured()
+    {
+        capturedAnimals++;
+
+        int requiredCaptures = uFOType == UFOType.Boss ? 3 : 1;
+
+        if (capturedAnimals >= requiredCaptures)
+        {
+            stateMachine.ChangeState(UFOStates.success);
+        }
+    }
+    public void SetLockedAnimals(List<AnimalController> animals)
+    {
+        lockedAnimals = animals;
+    }
+
+    public List<AnimalController> GetLockedAnimals()
+    {
+        return lockedAnimals;
     }
 }
 
