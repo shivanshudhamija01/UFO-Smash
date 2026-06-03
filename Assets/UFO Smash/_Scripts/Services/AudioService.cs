@@ -51,14 +51,14 @@ public class AudioService : IAudioService
     {
         bgmVolume = value;
         bgmSource.volume = value;
-        PlayerPrefs.SetFloat("BGM", value);
+        PlayerPrefs.SetFloat(Keys.BGM, value);
     }
 
     public void SetSFXVolume(float value)
     {
         sfxVolume = value;
         sfxSource.volume = value;
-        PlayerPrefs.SetFloat("SFX", value);
+        PlayerPrefs.SetFloat(Keys.SFX, value);
     }
 
 }

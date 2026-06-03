@@ -44,6 +44,8 @@ public class UFOController : MonoBehaviour
 
     [Header("UFO Visuals")]
     [SerializeField] private SpriteRenderer ufoBodyRenderer;
+    [Header("UFO Collider")]
+    [SerializeField] private Collider2D ufoCollider;
     private Coroutine slowRoutine;
 
 
@@ -75,6 +77,7 @@ public class UFOController : MonoBehaviour
         capturedAnimals = 0;
         healthBarCanvas.gameObject.SetActive(false);
         animator.SetBool(key, true);
+        ufoCollider.isTrigger = false;
         if (splineContainer != null)
         {
             Vector3 startPos = splineContainer.EvaluatePosition(0f);
@@ -194,6 +197,7 @@ public class UFOController : MonoBehaviour
             }
         }
         scoreService.AddScore(scoreValue);
+        ufoCollider.isTrigger = true;
         eventBus.Publish(new Events.OnUFODestroyed());
         stateMachine.ChangeState(UFOStates.blast);
     }
@@ -278,7 +282,7 @@ public class UFOController : MonoBehaviour
         healthBar.fillAmount = 1f;
         torchLight.gameObject.SetActive(false);
         healthBarCanvas.gameObject.SetActive(false);
-
+        ufoCollider.isTrigger = false;
         animator.SetBool(key, false);
     }
     public void NotifyAnimalCaptured()

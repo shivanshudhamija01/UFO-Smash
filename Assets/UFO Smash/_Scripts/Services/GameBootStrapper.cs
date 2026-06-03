@@ -40,8 +40,8 @@ public class GameBootStrapper : MonoBehaviour
     }
     void Initialize()
     {
-        float savedBGM = PlayerPrefs.GetFloat("BGM", 1f);
-        float savedSFX = PlayerPrefs.GetFloat("SFX", 1f);
+        float savedBGM = PlayerPrefs.GetFloat(Keys.BGM, 1f);
+        float savedSFX = PlayerPrefs.GetFloat(Keys.SFX, 1f);
 
         audioService.SetBGMVolume(savedBGM);
         audioService.SetSFXVolume(savedSFX);

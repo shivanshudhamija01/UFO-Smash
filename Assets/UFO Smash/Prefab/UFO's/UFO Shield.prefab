@@ -186,6 +186,9 @@ MonoBehaviour:
   animalLayer:
     serializedVersion: 2
     m_Bits: 8
+  normalIntensity: 1
+  dimIntensity: 0.25
+  flickerDuration: 0.3
 --- !u!1 &6180451319229118473
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +519,7 @@ MonoBehaviour:
   hitShakeStrength: 0.1
   hitShakeSpeed: 35
   ufoBodyRenderer: {fileID: 7691869994204549359}
+  ufoCollider: {fileID: 4353662562101895237}
 --- !u!1 &8484691652114084566
 GameObject:
   m_ObjectHideFlags: 0
