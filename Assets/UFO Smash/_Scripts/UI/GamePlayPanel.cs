@@ -11,6 +11,7 @@ public class GamePlayPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI waveCountTxt;
     [SerializeField] private TextMeshProUGUI stoneCountTxt;
     [SerializeField] private List<Image> animalAlive;
+    [SerializeField] private VariableJoystick variableJoystick;
     private IEventBus eventBus;
     private IScoreService scoreService;
     private IAudioService audioService;
@@ -31,6 +32,8 @@ public class GamePlayPanel : MonoBehaviour
         eventBus.Add<Events.OnStoneShot>(UpdateStoneCount);
         eventBus.Add<Events.OnStoneReloaded>(UpdateStoneCountToMax);
         eventBus.Add<Events.OnWaveIncrement>(UpdateCurrentWave);
+        eventBus.Add<Events.DisableGameplayInput>(OnPauseGame);
+        eventBus.Add<Events.OnGameStarted>(OnGameStart);
     }
     private void OnDisable()
     {
@@ -39,6 +42,8 @@ public class GamePlayPanel : MonoBehaviour
         eventBus.Remove<Events.OnStoneShot>(UpdateStoneCount);
         eventBus.Remove<Events.OnStoneReloaded>(UpdateStoneCountToMax);
         eventBus.Remove<Events.OnWaveIncrement>(UpdateCurrentWave);
+        eventBus.Remove<Events.DisableGameplayInput>(OnPauseGame);
+        eventBus.Remove<Events.OnGameStarted>(OnGameStart);
     }
     private void OnDestroy()
     {
@@ -83,6 +88,8 @@ public class GamePlayPanel : MonoBehaviour
     private void ResetGame(Events.OnGameReset evt)
     {
         index = 0;
+        pauseButton.interactable = true;
+        variableJoystick.enabled = true;
         scoreTxt.text = scoreService.GetScore().ToString();
         waveCountTxt.text = currentWave.ToString();
         stoneCountTxt.text = "5";
@@ -91,5 +98,15 @@ public class GamePlayPanel : MonoBehaviour
         {
             animalAlive[i].color = new Color(1f, 1f, 1f);
         }
+    }
+    private void OnPauseGame(Events.DisableGameplayInput evt)
+    {
+        pauseButton.interactable = false;
+        variableJoystick.enabled = false;
+    }
+    private void OnGameStart(Events.OnGameStarted evt)
+    {
+        pauseButton.interactable = true;
+        variableJoystick.enabled = true;
     }
 }

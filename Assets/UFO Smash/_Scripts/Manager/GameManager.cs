@@ -1,8 +1,11 @@
 using UnityEngine;
-
+using System.Collections;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int maxAnimalLives;
+    [SerializeField] private float gameOverDelay = 2f;
+
+    private bool isGameOverSequenceRunning;
     private int animalLivesCount;
 
     private IEventBus eventBus;
@@ -13,6 +16,7 @@ public class GameManager : MonoBehaviour
         eventBus = ServiceLocator.Get<IEventBus>();
         scoreService = ServiceLocator.Get<IScoreService>();
         animalLivesCount = maxAnimalLives;
+        isGameOverSequenceRunning = false;
     }
 
     private void OnEnable()
@@ -31,18 +35,25 @@ public class GameManager : MonoBehaviour
 
     private void HandleAnimalTaken(Events.OnAnimalTaken data)
     {
+        if (isGameOverSequenceRunning)
+            return;
+
         animalLivesCount--;
+
         if (animalLivesCount <= 0)
         {
-            Debug.Log("Game is over ");
-            // Here may be i need to add something like that , as if the game is over, then instantly not set the time.timescale to zero , instead fire an event to pause the game , and then pop up the game lost panel 
-            eventBus.Publish(new Events.PauseGame());
-
-            eventBus.Publish(new Events.OnGameOver());
-            Time.timeScale = 0;
+            isGameOverSequenceRunning = true;
+            StartCoroutine(GameOverRoutine());
         }
     }
+    private IEnumerator GameOverRoutine()
+    {
+        eventBus.Publish(new Events.DisableGameplayInput());
 
+        yield return new WaitForSeconds(gameOverDelay);
+
+        eventBus.Publish(new Events.OnGameOver());
+    }
     private void HandleUFODestroyed(Events.OnUFODestroyed data)
     {
         int score = scoreService.GetScore();
@@ -50,5 +61,7 @@ public class GameManager : MonoBehaviour
     private void HandleGameReset(Events.OnGameReset evt)
     {
         animalLivesCount = maxAnimalLives;
+        isGameOverSequenceRunning = false;
+
     }
 }

@@ -5522,6 +5522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   maxAnimalLives: 3
+  gameOverDelay: 1
 --- !u!1 &786222839
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,8 +8288,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Variable Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984438, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -8339,6 +8348,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6156125835658968588, guid: b5cec3ca29a94f547bb3d924a4b7916f, type: 3}
+    - target: {fileID: 3881087804030458057, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11845,6 +11858,7 @@ MonoBehaviour:
   - {fileID: 892457372}
   - {fileID: 2090734786}
   - {fileID: 467715349}
+  variableJoystick: {fileID: 1271283032}
 --- !u!95 &1853555926
 Animator:
   serializedVersion: 7

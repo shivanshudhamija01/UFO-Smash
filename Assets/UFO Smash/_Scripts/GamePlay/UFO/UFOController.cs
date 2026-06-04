@@ -157,7 +157,7 @@ public class UFOController : MonoBehaviour
                 animal.SetSpeedMultiplier(0.3f);
         }
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
 
         if (uFOType == UFOType.Boss)
         {
@@ -276,6 +276,14 @@ public class UFOController : MonoBehaviour
             lockedAnimal.ReleaseFromAbduction();
             lockedAnimal = null;
         }
+        foreach (var animal in lockedAnimals)
+        {
+            if (animal != null)
+            {
+                animal.ReleaseFromAbduction();
+            }
+        }
+        lockedAnimals.Clear();
 
         currentHealth = maxHealth;
         capturedAnimals = 0;

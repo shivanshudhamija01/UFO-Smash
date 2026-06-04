@@ -48,6 +48,7 @@ public class AnimalController : MonoBehaviour, IAbductable
         spriteRenderer.sortingOrder = layer;
         leftToRight = lTor;
         animalStateMachine.ChangeState(AnimalState.roam);
+        SetSpeedMultiplier(1f);
         visualTransform.localRotation = Quaternion.identity;
         transform.localScale = Vector3.one;
         transform.localScale = leftToRight ? Vector3.one : new Vector3(-1, 1, 1);
