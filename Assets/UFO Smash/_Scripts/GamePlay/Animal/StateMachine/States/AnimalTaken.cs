@@ -59,7 +59,7 @@ public class AnimalTaken
         visual = controller.GetVisualTransform();
         if (eventBus == null)
         {
-            eventBus = ServiceLocator.Get<IEventBus>();
+            eventBus = ServiceLocator.GetService<IEventBus>();
         }
     }
     private void ReturnToPool()

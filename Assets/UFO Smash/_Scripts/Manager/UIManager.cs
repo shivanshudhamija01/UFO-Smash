@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         mainMenuPanel.SetActive(true);
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
     }
     private void OnEnable()
     {

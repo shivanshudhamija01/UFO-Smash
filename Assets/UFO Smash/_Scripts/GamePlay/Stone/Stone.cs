@@ -13,7 +13,7 @@ public class Stone : MonoBehaviour
     {
         if (audioService == null)
         {
-            audioService = ServiceLocator.Get<IAudioService>();
+            audioService = ServiceLocator.GetService<IAudioService>();
         }
     }
     private void OnEnable()

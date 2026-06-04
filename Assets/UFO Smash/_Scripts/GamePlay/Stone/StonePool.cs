@@ -15,7 +15,7 @@ public class StonePool : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
         for (int i = 0; i < poolSize; i++)
         {
             GameObject stone = Instantiate(stonePrefab, transform);

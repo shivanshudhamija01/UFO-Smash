@@ -36,7 +36,7 @@ public class UFOSuccess
         anticipationTimer = 0f;
         if (audioService == null)
         {
-            audioService = ServiceLocator.Get<IAudioService>();
+            audioService = ServiceLocator.GetService<IAudioService>();
         }
         audioService.SFX(SoundType.UFOSuccess);
     }

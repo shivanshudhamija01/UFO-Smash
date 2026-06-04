@@ -20,8 +20,8 @@ public class AnimalSpawner : MonoBehaviour
     private IEventBus eventBus;
     private void Awake()
     {
-        animalService = ServiceLocator.Get<IAnimalService>();
-        eventBus = ServiceLocator.Get<IEventBus>();
+        animalService = ServiceLocator.GetService<IAnimalService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
     }
 
     private void Start()

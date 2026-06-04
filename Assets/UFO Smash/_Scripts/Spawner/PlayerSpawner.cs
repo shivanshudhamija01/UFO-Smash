@@ -13,7 +13,7 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
     }
 
     private void OnEnable()

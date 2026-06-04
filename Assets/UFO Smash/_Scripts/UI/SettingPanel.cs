@@ -11,8 +11,8 @@ public class SettingPanel : MonoBehaviour
 
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        audioService = ServiceLocator.GetService<IAudioService>();
         closeButton.onClick.AddListener(OnCloseButtonClicked);
 
         // Load Saved Values

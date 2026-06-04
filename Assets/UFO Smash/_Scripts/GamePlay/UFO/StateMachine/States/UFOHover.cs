@@ -55,7 +55,7 @@ public class UFOHover : BaseState<UFOController>
     {
         if (animalService == null)
         {
-            animalService = ServiceLocator.Get<IAnimalService>();
+            animalService = ServiceLocator.GetService<IAnimalService>();
         }
 
         transform = controller.GetTransform();
@@ -189,7 +189,8 @@ public class UFOHover : BaseState<UFOController>
 
             transform.position = Vector2.Lerp(startPos, targetPos, t);
 
-            if (t > 0.25f)
+            // 0.25f
+            if (t > 0.1f)
             {
                 float smoothT = Mathf.SmoothStep(0, 1, t);
 

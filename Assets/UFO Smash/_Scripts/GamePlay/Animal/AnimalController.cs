@@ -75,6 +75,7 @@ public class AnimalController : MonoBehaviour, IAbductable
     {
         isLocked = false;
         currentUFO = null;
+        SetSpeedMultiplier(1f);
         animalStateMachine.ChangeState(AnimalState.rescue);
     }
     public Vector3 TargetPoint => targetPoint;

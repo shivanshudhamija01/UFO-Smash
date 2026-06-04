@@ -8,7 +8,7 @@ public class ScoreService : IScoreService
     public ScoreService()
     {
         score = 0;
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
         eventBus.Add<Events.OnGameReset>(ResetScore);
         highScore = PlayerPrefs.GetInt(Keys.HIGH_SCORE, 0);
     }

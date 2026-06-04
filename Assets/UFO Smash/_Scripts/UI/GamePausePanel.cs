@@ -10,8 +10,8 @@ public class GamePausePanel : MonoBehaviour
     private IAudioService audioService;
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        audioService = ServiceLocator.GetService<IAudioService>();
         resumeButton.onClick.AddListener(OnGameResumed);
         restartButton.onClick.AddListener(OnGameReset);
         homeButton.onClick.AddListener(OnHomeButtonClicked);

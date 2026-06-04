@@ -7,7 +7,7 @@ public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private IEventBus eventBus;
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
     }
 
     public void OnPointerDown(PointerEventData eventData)

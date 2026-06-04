@@ -530,8 +530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400, y: 0.0000005910797}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchoredPosition: {x: 420, y: 0.0000005910797}
+  m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &144809528
 MonoBehaviour:
@@ -2570,7 +2570,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 200, y: 0.0000005910797}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &436223260
 MonoBehaviour:
@@ -3463,7 +3463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -4931,7 +4931,7 @@ GameObject:
   - component: {fileID: 695412684}
   - component: {fileID: 695412683}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Enviroment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9780,7 +9780,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 109.99998}
-  m_SizeDelta: {x: 0, y: 120}
+  m_SizeDelta: {x: 0, y: 140}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1530377704
 GameObject:
@@ -11250,16 +11250,16 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 45
-      value: 2
-      inSlope: 0.10261528
-      outSlope: 0.10261528
+      value: 1.5
+      inSlope: -0.0002052315
+      outSlope: -0.0002052315
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.45582822
     - serializedVersion: 3
-      time: 50
-      value: 1
+      time: 50.109863
+      value: 1.5
       inSlope: 0.00010302663
       outSlope: 0.00010302663
       tangentMode: 0
@@ -11278,7 +11278,7 @@ MonoBehaviour:
   - {fileID: 1772041800}
   - {fileID: 926192401}
   bossSpline: {fileID: 1772041800}
-  waveNumber: 25
+  waveNumber: 1
 --- !u!1 &1759993160
 GameObject:
   m_ObjectHideFlags: 0
@@ -11852,7 +11852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1853555921
 MonoBehaviour:
   m_ObjectHideFlags: 0

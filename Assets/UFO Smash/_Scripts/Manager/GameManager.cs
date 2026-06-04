@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
-        scoreService = ServiceLocator.Get<IScoreService>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        scoreService = ServiceLocator.GetService<IScoreService>();
+        audioService = ServiceLocator.GetService<IAudioService>();
         animalLivesCount = maxAnimalLives;
         isGameOverSequenceRunning = false;
     }

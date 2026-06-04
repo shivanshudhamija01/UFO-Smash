@@ -62,7 +62,7 @@ public class AnimalRescue : BaseState<AnimalController>
         reachedGround = false;
         if (animalService == null)
         {
-            animalService = ServiceLocator.Get<IAnimalService>();
+            animalService = ServiceLocator.GetService<IAnimalService>();
         }
         if (animator == null)
         {

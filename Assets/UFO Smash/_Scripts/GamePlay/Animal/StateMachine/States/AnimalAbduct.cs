@@ -74,7 +74,7 @@ public class AnimalAbduct
         animator.SetTrigger(key);
         if (audioService == null)
         {
-            audioService = ServiceLocator.Get<IAudioService>();
+            audioService = ServiceLocator.GetService<IAudioService>();
         }
         if (animalType == AnimalType.COW)
         {
@@ -93,6 +93,7 @@ public class AnimalAbduct
     private void MoveTowardsUFO()
     {
         transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * controller.GetSpeedMultiplier() * Time.deltaTime);
+        Debug.Log("Value of speed by the animal name " + transform.name + " is  : " + abductingSpeed * controller.GetAbductingSpeed());
     }
 
     private void TiltVisual()

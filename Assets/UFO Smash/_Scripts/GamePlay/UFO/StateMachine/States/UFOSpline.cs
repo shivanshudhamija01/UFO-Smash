@@ -32,7 +32,7 @@ public class UFOSpline : BaseState<UFOController>
         ufoType = controller.GetUFOType();
         if (audioService == null)
         {
-            audioService = ServiceLocator.Get<IAudioService>();
+            audioService = ServiceLocator.GetService<IAudioService>();
         }
         if (ufoType == UFOType.Boss)
         {

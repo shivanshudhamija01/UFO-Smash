@@ -40,8 +40,8 @@ public class Aim : MonoBehaviour
     private void Awake()
     {
         trajectoryPredictor = GetComponent<TrajectoryPredictor>();
-        eventBus = ServiceLocator.Get<IEventBus>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        audioService = ServiceLocator.GetService<IAudioService>();
     }
 
     private void Start()

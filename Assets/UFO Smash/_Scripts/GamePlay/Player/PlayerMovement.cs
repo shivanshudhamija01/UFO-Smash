@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
     }
 
     private void Start()

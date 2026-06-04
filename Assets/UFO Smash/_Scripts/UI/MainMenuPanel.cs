@@ -14,9 +14,9 @@ public class MainMenuPanel : MonoBehaviour
     private IScoreService scoreService;
     private void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
-        audioService = ServiceLocator.Get<IAudioService>();
-        scoreService = ServiceLocator.Get<IScoreService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        audioService = ServiceLocator.GetService<IAudioService>();
+        scoreService = ServiceLocator.GetService<IScoreService>();
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingButton.onClick.AddListener(OnSettingButtonClicked);
         exitButton.onClick.AddListener(OnExitButtonClicked);

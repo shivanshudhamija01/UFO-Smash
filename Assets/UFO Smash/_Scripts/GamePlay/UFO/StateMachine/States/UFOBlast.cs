@@ -44,7 +44,7 @@ public class UFOBlast
         fallDirection = new Vector2(xDirection, -1f).normalized;
         if (audioService == null)
         {
-            audioService = ServiceLocator.Get<IAudioService>();
+            audioService = ServiceLocator.GetService<IAudioService>();
         }
         audioService.SFX(SoundType.UFODie);
     }

@@ -6,7 +6,7 @@ public class AnimalService : IAnimalService
     private IEventBus eventBus;
     public AnimalService()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
     }
     private List<AnimalController> animalActiveInScene = new List<AnimalController>();
     public void AddAnimal(AnimalController animal)

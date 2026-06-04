@@ -20,23 +20,23 @@ public class GameBootStrapper : MonoBehaviour
         // ServiceLocator.Register<IScoreService>(new ScoreService());
         // ServiceLocator.Register<IAudioService>(new AudioService(audioManager));
         var eventBus = new EventBus();
-        ServiceLocator.Register<IEventBus>(eventBus);
+        ServiceLocator.RegisterService<IEventBus>(eventBus);
 
         var animalService = new AnimalService();
-        ServiceLocator.Register<IAnimalService>(animalService);
+        ServiceLocator.RegisterService<IAnimalService>(animalService);
 
         var scoreService = new ScoreService();
-        ServiceLocator.Register<IScoreService>(scoreService);
+        ServiceLocator.RegisterService<IScoreService>(scoreService);
 
         var audioService = new AudioService(audioManager);
-        ServiceLocator.Register<IAudioService>(audioService);
+        ServiceLocator.RegisterService<IAudioService>(audioService);
     }
     void SetServiceReference()
     {
         // eventBus = ServiceLocator.Get<IEventBus>();
         // animalService = ServiceLocator.Get<IAnimalService>();
         // scoreService = ServiceLocator.Get<IScoreService>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        audioService = ServiceLocator.GetService<IAudioService>();
     }
     void Initialize()
     {

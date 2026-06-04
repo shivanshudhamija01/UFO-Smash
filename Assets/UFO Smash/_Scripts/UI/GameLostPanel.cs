@@ -9,8 +9,8 @@ public class GameLostPanel : MonoBehaviour
     private IAudioService audioService;
     void Awake()
     {
-        eventBus = ServiceLocator.Get<IEventBus>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        audioService = ServiceLocator.GetService<IAudioService>();
         restartButton.onClick.AddListener(OnGameReset);
         homeButton.onClick.AddListener(OnHomeButtonClicked);
     }

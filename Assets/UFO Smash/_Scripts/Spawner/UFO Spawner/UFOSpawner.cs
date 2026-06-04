@@ -27,9 +27,9 @@ public class UFOSpawner : MonoBehaviour
     private void Awake()
     {
         currentWave = waveNumber;
-        animalService = ServiceLocator.Get<IAnimalService>();
-        eventBus = ServiceLocator.Get<IEventBus>();
-        audioService = ServiceLocator.Get<IAudioService>();
+        animalService = ServiceLocator.GetService<IAnimalService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
+        audioService = ServiceLocator.GetService<IAudioService>();
     }
     private void OnEnable()
     {

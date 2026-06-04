@@ -62,8 +62,8 @@ public class UFOController : MonoBehaviour
     private List<AnimalController> lockedAnimals = new List<AnimalController>();
     private void Awake()
     {
-        scoreService = ServiceLocator.Get<IScoreService>();
-        eventBus = ServiceLocator.Get<IEventBus>();
+        scoreService = ServiceLocator.GetService<IScoreService>();
+        eventBus = ServiceLocator.GetService<IEventBus>();
         stateMachine = new UFOStateMachine(this);
         ufoLight = torchLight.GetComponent<UFOLight>();
 
