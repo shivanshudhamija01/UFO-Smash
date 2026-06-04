@@ -43,6 +43,10 @@ public class UFOSpawner : MonoBehaviour
         eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
         eventBus.Remove<Events.OnGameReset>(ResetSpawner);
     }
+    void Update()
+    {
+        Debug.Log("Animal that can be abducted is : " + animalService.GetAnimalInScene().Count);
+    }
     void SpawnUFOs(Events.OnGameStarted evt)
     {
         if (waveRoutine != null)
@@ -226,8 +230,8 @@ public class UFOSpawner : MonoBehaviour
 
         int freeAnimals = animalsInScene - occupiedAnimals;
 
-        // Boss rule:// must be alone
-        if (aliveUFOCount == 0 && profile.UfoType == UFOType.Boss)
+        // Boss rule:// must be alone aliveUFOCount == 0
+        if (profile.UfoType == UFOType.Boss)
         {
             return freeAnimals >= profile.RequiredAnimals;
         }

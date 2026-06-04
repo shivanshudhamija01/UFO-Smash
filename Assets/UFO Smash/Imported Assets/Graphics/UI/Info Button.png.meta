@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb24a18f6a3769a45b5fba20be604cd0
+guid: fdd996c9424f84fc4921e3da8a9a35cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7994264020484857153
-    second: Right Button_0
+      213: 4444092231753568692
+    second: Slice 90_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Right Button_0
+      name: Slice 90_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 129
-        height: 129
+        width: 1084
+        height: 1061
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb260529a3bae0190800000000000000
-      internalID: -7994264020484857153
+      spriteID: 4b19eb6c6569cad30800000000000000
+      internalID: 4444092231753568692
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Right Button_0: -7994264020484857153
+      Slice 90_0: 4444092231753568692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

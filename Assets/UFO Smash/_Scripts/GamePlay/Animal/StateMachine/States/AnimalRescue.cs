@@ -68,7 +68,6 @@ public class AnimalRescue : BaseState<AnimalController>
         {
             animator = controller.GetAnimator();
         }
-        Debug.Log("Hello hello " + animator);
         animator.SetTrigger(key);
     }
     private void MoveToGround()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cdfce303119fa4c5a8f00a4cca24e2cf
+guid: 85b793c3a9af94be5b395fb6970e68fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5284508435389519239
-    second: Slice 46 1_0
+      213: 4530183219454312603
+    second: Slice 91 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slice 46 1_0
+      name: Slice 91 1_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 99
-        height: 67
+        width: 75
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78592f76c68565940800000000000000
-      internalID: 5284508435389519239
+      spriteID: b90820bd2a17ede30800000000000000
+      internalID: 4530183219454312603
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slice 46 1_0: 5284508435389519239
+      Slice 91 1_0: 4530183219454312603
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

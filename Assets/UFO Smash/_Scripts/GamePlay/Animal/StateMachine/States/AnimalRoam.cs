@@ -14,7 +14,6 @@ public class AnimalRoam : BaseState<AnimalController>
     }
     public override void OnEnterState()
     {
-        Debug.Log("Entered into the roam state");
         Init();
     }
     public override void UpdateState()

@@ -27,7 +27,6 @@ public class SettingPanel : MonoBehaviour
     {
         audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnCloseButtonClicked());
-        Debug.Log("Close button is clicked");
     }
     private void OnBgmValueChanged(float value)
     {

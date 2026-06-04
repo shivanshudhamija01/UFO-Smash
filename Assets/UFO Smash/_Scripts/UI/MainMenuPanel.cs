@@ -9,6 +9,7 @@ public class MainMenuPanel : MonoBehaviour
     [SerializeField] private Button settingButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private Button infoButton;
     private IEventBus eventBus;
     private IAudioService audioService;
     private IScoreService scoreService;
@@ -20,6 +21,7 @@ public class MainMenuPanel : MonoBehaviour
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingButton.onClick.AddListener(OnSettingButtonClicked);
         exitButton.onClick.AddListener(OnExitButtonClicked);
+        infoButton.onClick.AddListener(OnInfoButtonClicked);
     }
     void OnEnable()
     {
@@ -40,5 +42,10 @@ public class MainMenuPanel : MonoBehaviour
     {
         audioService.UISFX(SoundType.Click);
         Application.Quit();
+    }
+    private void OnInfoButtonClicked()
+    {
+        audioService.UISFX(SoundType.Click);
+        eventBus.Publish(new Events.OnInfoButtonClicked());
     }
 }

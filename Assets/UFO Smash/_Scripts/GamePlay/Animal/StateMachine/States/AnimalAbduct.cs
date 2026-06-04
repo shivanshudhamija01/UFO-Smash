@@ -24,7 +24,6 @@ public class AnimalAbduct
 
     public override void OnEnterState()
     {
-        Debug.Log("Entered into the caught state");
         Init();
         targetTilt = tiltAngle;
     }
@@ -93,7 +92,6 @@ public class AnimalAbduct
     private void MoveTowardsUFO()
     {
         transform.position = Vector2.MoveTowards(transform.position, abductTarget.position, abductingSpeed * controller.GetSpeedMultiplier() * Time.deltaTime);
-        Debug.Log("Value of speed by the animal name " + transform.name + " is  : " + abductingSpeed * controller.GetAbductingSpeed());
     }
 
     private void TiltVisual()

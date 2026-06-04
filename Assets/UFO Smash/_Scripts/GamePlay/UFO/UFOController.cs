@@ -139,7 +139,6 @@ public class UFOController : MonoBehaviour
     }
     private IEnumerator SlowRoutine()
     {
-        Debug.Log("Slow down coroutine");
         if (uFOType == UFOType.Boss)
         {
             foreach (var animal in lockedAnimals)

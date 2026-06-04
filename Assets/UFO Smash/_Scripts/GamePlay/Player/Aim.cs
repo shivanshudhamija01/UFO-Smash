@@ -232,8 +232,19 @@ public class Aim : MonoBehaviour
     private void ResetStoneCount(Events.OnGameReset evt)
     {
         currentStoneCount = maxStoneCount;
+
         eventBus.Publish(new Events.OnStoneReloaded(currentStoneCount));
+        direction = Vector2.zero;
+
+        wasDraggingJoystick = false;
+
+        variableJoystick.ResetJoystick();
+
+        trajectoryPredictor.HideTrajectory();
+
+        stoneVisuals.SetActive(false);
     }
+
     public int GetCurrentAmmo() => currentStoneCount;
     public int GetMaxAmmo() => maxStoneCount;
     public void SetVariableJoystick(VariableJoystick value) => variableJoystick = value;

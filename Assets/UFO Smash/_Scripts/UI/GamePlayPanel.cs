@@ -81,7 +81,6 @@ public class GamePlayPanel : MonoBehaviour
     }
     private void UpdateCurrentWave(Events.OnWaveIncrement evt)
     {
-        Debug.Log("I Changed the wave number");
         int waveNumber = evt.CurrentWave;
         currentWave = evt.CurrentWave;
         waveCountTxt.text = waveNumber.ToString();
@@ -94,7 +93,6 @@ public class GamePlayPanel : MonoBehaviour
         scoreTxt.text = scoreService.GetScore().ToString();
         waveCountTxt.text = currentWave.ToString();
         stoneCountTxt.text = "5";
-        Debug.Log("Reset game is called inside the gameplay panel");
         for (int i = 0; i < animalAlive.Count; i++)
         {
             animalAlive[i].color = new Color(1f, 1f, 1f);
