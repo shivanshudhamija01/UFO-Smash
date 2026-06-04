@@ -43,10 +43,6 @@ public class UFOSpawner : MonoBehaviour
         eventBus.Remove<Events.OnGameStarted>(SpawnUFOs);
         eventBus.Remove<Events.OnGameReset>(ResetSpawner);
     }
-    void Update()
-    {
-        Debug.Log("Animal that can be abducted is : " + animalService.GetAnimalInScene().Count);
-    }
     void SpawnUFOs(Events.OnGameStarted evt)
     {
         if (waveRoutine != null)
