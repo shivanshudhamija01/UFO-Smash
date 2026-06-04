@@ -25,7 +25,7 @@ public class SettingPanel : MonoBehaviour
     }
     private void OnCloseButtonClicked()
     {
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnCloseButtonClicked());
         Debug.Log("Close button is clicked");
     }

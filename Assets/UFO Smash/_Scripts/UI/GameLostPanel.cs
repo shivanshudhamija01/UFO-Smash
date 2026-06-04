@@ -17,7 +17,7 @@ public class GameLostPanel : MonoBehaviour
 
     void OnGameReset()
     {
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnGameReset());
         StartCoroutine(RestartGame());
 
@@ -25,7 +25,7 @@ public class GameLostPanel : MonoBehaviour
     void OnHomeButtonClicked()
     {
         Time.timeScale = 1;
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnGameReset());
         eventBus.Publish(new Events.OnReturnToHome());
     }

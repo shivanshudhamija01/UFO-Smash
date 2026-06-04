@@ -344,7 +344,7 @@ public class UFOHover : BaseState<UFOController>
 
             lockedAnimals.Add(animal);
         }
-
+        Debug.Log("Locked animals count is : " + lockedAnimals.Count);
         foreach (AnimalController animal in lockedAnimals)
         {
             animalService.RemoveAnimal(animal);

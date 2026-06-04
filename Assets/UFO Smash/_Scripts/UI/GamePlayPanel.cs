@@ -52,7 +52,8 @@ public class GamePlayPanel : MonoBehaviour
     void OnGamePause()
     {
         Time.timeScale = 0;
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
+        audioService.PauseGamePlayAudio();
         eventBus.Publish(new Events.OnGamePaused());
     }
     private void UpdateScore(Events.OnUFODestroyed evt)

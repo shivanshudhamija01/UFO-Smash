@@ -27,17 +27,18 @@ public class MainMenuPanel : MonoBehaviour
     }
     private void OnPlayButtonClicked()
     {
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
+        audioService.ResumeGamePauseAudio();
         eventBus.Publish(new Events.OnGameStarted());
     }
     private void OnSettingButtonClicked()
     {
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnSettingButtonClicked());
     }
     private void OnExitButtonClicked()
     {
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         Application.Quit();
     }
 }

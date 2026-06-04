@@ -8,6 +8,7 @@ public class AudioService : IAudioService
     private Dictionary<SoundType, SoundInfo> audioMap = new();
     private AudioSource bgmSource;
     private AudioSource sfxSource;
+    private AudioSource guiSource;
     private float bgmVolume = 1f;
     private float sfxVolume = 1f;
 
@@ -15,6 +16,7 @@ public class AudioService : IAudioService
     {
         sfxSource = audioManager.SFXSource;
         bgmSource = audioManager.BGMSource;
+        guiSource = audioManager.GUISource;
         foreach (var sound in audioManager.Audios)
         {
             audioMap[sound.id] = sound;
@@ -40,6 +42,14 @@ public class AudioService : IAudioService
             // sfxSource.PlayOneShot(sound.audioClip, sfxSource.volume);
         }
     }
+    public void UISFX(SoundType soundType)
+    {
+        if (audioMap.TryGetValue(soundType, out var sound))
+        {
+            float finalVolume = sound.volume * sfxVolume;
+            guiSource.PlayOneShot(sound.audioClip, finalVolume);
+        }
+    }
     public float GetBGMVolume()
     {
         return bgmVolume;
@@ -63,5 +73,12 @@ public class AudioService : IAudioService
         sfxSource.volume = value;
         PlayerPrefs.SetFloat(Keys.SFX, value);
     }
-
+    public void PauseGamePlayAudio()
+    {
+        sfxSource.Pause();
+    }
+    public void ResumeGamePauseAudio()
+    {
+        sfxSource.UnPause();
+    }
 }

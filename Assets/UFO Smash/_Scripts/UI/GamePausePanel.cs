@@ -20,12 +20,13 @@ public class GamePausePanel : MonoBehaviour
     private void OnGameResumed()
     {
         Time.timeScale = 1;
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
+        audioService.ResumeGamePauseAudio();
         eventBus.Publish(new Events.OnGameResumed());
     }
     private void OnGameReset()
     {
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnGameReset());
         StartCoroutine(RestartGame());
 
@@ -33,7 +34,7 @@ public class GamePausePanel : MonoBehaviour
     private void OnHomeButtonClicked()
     {
         Time.timeScale = 1;
-        audioService.SFX(SoundType.Click);
+        audioService.UISFX(SoundType.Click);
         eventBus.Publish(new Events.OnGameReset());
         eventBus.Publish(new Events.OnReturnToHome());
     }

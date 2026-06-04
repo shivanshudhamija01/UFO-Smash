@@ -237,7 +237,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   visualTransform: {fileID: 4560211152025087749}
   tiltSpeed: 1.75
-  abductingSpeed: 0.75
+  abductingSpeed: 0.65
   tiltAngle: -45
   animator: {fileID: 4134402445432332440}
   animalType: 2
